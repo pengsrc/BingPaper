@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9CDD46C7-8C1C-425E-BE44-7D22398A2DE2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BingPaper</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C5FCA44F01B362C61930A33E2A8DE7B664433B4A</key>
+		<string>github.com:prettyxw/BingPaper.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BingPaper.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C5FCA44F01B362C61930A33E2A8DE7B664433B4A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:prettyxw/BingPaper.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C5FCA44F01B362C61930A33E2A8DE7B664433B4A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C5FCA44F01B362C61930A33E2A8DE7B664433B4A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BingPaper</string>
+		</dict>
+	</array>
+</dict>
+</plist>

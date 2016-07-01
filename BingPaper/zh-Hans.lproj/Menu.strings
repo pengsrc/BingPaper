@@ -1,0 +1,18 @@
+
+/* Class = "NSButtonCell"; title = "Dock Icon"; ObjectID = "2R1-3a-BMH"; */
+"2R1-3a-BMH.title" = "Dock 栏图标";
+
+/* Class = "NSButtonCell"; title = "About"; ObjectID = "6M6-Uk-yrH"; */
+"6M6-Uk-yrH.title" = "关于";
+
+/* Class = "NSButtonCell"; title = "Quit"; ObjectID = "Hr4-sd-meE"; */
+"Hr4-sd-meE.title" = "退出";
+
+/* Class = "NSTextFieldCell"; title = "Bing Paper"; ObjectID = "VwN-ZN-Spn"; */
+"VwN-ZN-Spn.title" = "BingPaper";
+
+/* Class = "NSButtonCell"; title = "Today !"; ObjectID = "jDq-jy-kaQ"; */
+"jDq-jy-kaQ.title" = "Today !";
+
+/* Class = "NSButtonCell"; title = "Auto Change"; ObjectID = "y0Q-9f-tFq"; */
+"y0Q-9f-tFq.title" = "自动更换壁纸";

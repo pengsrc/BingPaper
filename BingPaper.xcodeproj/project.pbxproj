@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7602FDF91B522F7300E6EC7D /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7602FDFB1B522F7300E6EC7D /* Menu.xib */; };
+		7602FE001B52355400E6EC7D /* StatusBarIcon384x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7602FDFF1B52355400E6EC7D /* StatusBarIcon384x256.png */; };
+		7602FE031B526EC900E6EC7D /* PictureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7602FE021B526EC900E6EC7D /* PictureManager.swift */; };
+		7602FE051B52BEF000E6EC7D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7602FE071B52BEF000E6EC7D /* Credits.rtf */; };
+		763C22AA1AB2DCC000BACA07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22A91AB2DCC000BACA07 /* AppDelegate.swift */; };
+		763C22AE1AB2DCC000BACA07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 763C22AD1AB2DCC000BACA07 /* Images.xcassets */; };
+		763C22BD1AB2DCC000BACA07 /* BingPaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22BC1AB2DCC000BACA07 /* BingPaperTests.swift */; };
+		763C22CB1AB2E48400BACA07 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22CA1AB2E48400BACA07 /* StatusBarView.swift */; };
+		76FB444A1AB2F0F00088432F /* StatusBarIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76FB44491AB2F0F00088432F /* StatusBarIcon@3x.png */; };
+		76FB444D1AB2F82F0088432F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB444C1AB2F82F0088432F /* MenuViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		763C22B71AB2DCC000BACA07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 763C229C1AB2DCC000BACA07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 763C22A31AB2DCC000BACA07;
+			remoteInfo = BingPaper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7602FDFC1B522F8000E6EC7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Menu.xib; sourceTree = "<group>"; };
+		7602FDFD1B522F8E00E6EC7D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Menu.strings"; sourceTree = "<group>"; };
+		7602FDFE1B522FA800E6EC7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Menu.strings; sourceTree = "<group>"; };
+		7602FDFF1B52355400E6EC7D /* StatusBarIcon384x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusBarIcon384x256.png; sourceTree = "<group>"; };
+		7602FE011B526C7800E6EC7D /* BingPaper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BingPaper.entitlements; sourceTree = "<group>"; };
+		7602FE021B526EC900E6EC7D /* PictureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureManager.swift; sourceTree = "<group>"; };
+		7602FE041B52961D00E6EC7D /* BingPaper.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BingPaper.playground; sourceTree = "<group>"; };
+		7602FE081B52BEF500E6EC7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Base; path = Base.lproj/Credits.rtf; sourceTree = "<group>"; };
+		7602FE091B52BEF600E6EC7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		7602FE0A1B52BF5400E6EC7D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
+		763C22A41AB2DCC000BACA07 /* BingPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		763C22A81AB2DCC000BACA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		763C22A91AB2DCC000BACA07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		763C22AD1AB2DCC000BACA07 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		763C22B61AB2DCC000BACA07 /* BingPaperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BingPaperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		763C22BB1AB2DCC000BACA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		763C22BC1AB2DCC000BACA07 /* BingPaperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingPaperTests.swift; sourceTree = "<group>"; };
+		763C22CA1AB2E48400BACA07 /* StatusBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		76FB44491AB2F0F00088432F /* StatusBarIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StatusBarIcon@3x.png"; sourceTree = "<group>"; };
+		76FB444C1AB2F82F0088432F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		763C22A11AB2DCC000BACA07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		763C22B31AB2DCC000BACA07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		763C229B1AB2DCC000BACA07 = {
+			isa = PBXGroup;
+			children = (
+				7602FE041B52961D00E6EC7D /* BingPaper.playground */,
+				763C22A61AB2DCC000BACA07 /* BingPaper */,
+				763C22B91AB2DCC000BACA07 /* BingPaperTests */,
+				763C22A51AB2DCC000BACA07 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		763C22A51AB2DCC000BACA07 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				763C22A41AB2DCC000BACA07 /* BingPaper.app */,
+				763C22B61AB2DCC000BACA07 /* BingPaperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		763C22A61AB2DCC000BACA07 /* BingPaper */ = {
+			isa = PBXGroup;
+			children = (
+				763C22A91AB2DCC000BACA07 /* AppDelegate.swift */,
+				763C22CA1AB2E48400BACA07 /* StatusBarView.swift */,
+				76FB444C1AB2F82F0088432F /* MenuViewController.swift */,
+				7602FE021B526EC900E6EC7D /* PictureManager.swift */,
+				7602FDFB1B522F7300E6EC7D /* Menu.xib */,
+				76FB444B1AB2F0F70088432F /* Resources */,
+				763C22A71AB2DCC000BACA07 /* Supporting Files */,
+			);
+			path = BingPaper;
+			sourceTree = "<group>";
+		};
+		763C22A71AB2DCC000BACA07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7602FE071B52BEF000E6EC7D /* Credits.rtf */,
+				763C22AD1AB2DCC000BACA07 /* Images.xcassets */,
+				763C22A81AB2DCC000BACA07 /* Info.plist */,
+				7602FE011B526C7800E6EC7D /* BingPaper.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		763C22B91AB2DCC000BACA07 /* BingPaperTests */ = {
+			isa = PBXGroup;
+			children = (
+				763C22BC1AB2DCC000BACA07 /* BingPaperTests.swift */,
+				763C22BA1AB2DCC000BACA07 /* Supporting Files */,
+			);
+			path = BingPaperTests;
+			sourceTree = "<group>";
+		};
+		763C22BA1AB2DCC000BACA07 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				763C22BB1AB2DCC000BACA07 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		76FB444B1AB2F0F70088432F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7602FDFF1B52355400E6EC7D /* StatusBarIcon384x256.png */,
+				76FB44491AB2F0F00088432F /* StatusBarIcon@3x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		763C22A31AB2DCC000BACA07 /* BingPaper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 763C22C01AB2DCC000BACA07 /* Build configuration list for PBXNativeTarget "BingPaper" */;
+			buildPhases = (
+				763C22A01AB2DCC000BACA07 /* Sources */,
+				763C22A11AB2DCC000BACA07 /* Frameworks */,
+				763C22A21AB2DCC000BACA07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BingPaper;
+			productName = BingPaper;
+			productReference = 763C22A41AB2DCC000BACA07 /* BingPaper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		763C22B51AB2DCC000BACA07 /* BingPaperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 763C22C31AB2DCC000BACA07 /* Build configuration list for PBXNativeTarget "BingPaperTests" */;
+			buildPhases = (
+				763C22B21AB2DCC000BACA07 /* Sources */,
+				763C22B31AB2DCC000BACA07 /* Frameworks */,
+				763C22B41AB2DCC000BACA07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				763C22B81AB2DCC000BACA07 /* PBXTargetDependency */,
+			);
+			name = BingPaperTests;
+			productName = BingPaperTests;
+			productReference = 763C22B61AB2DCC000BACA07 /* BingPaperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		763C229C1AB2DCC000BACA07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Peng Jingwen";
+				TargetAttributes = {
+					763C22A31AB2DCC000BACA07 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = RTLZDJ5FTU;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					763C22B51AB2DCC000BACA07 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 763C22A31AB2DCC000BACA07;
+					};
+				};
+			};
+			buildConfigurationList = 763C229F1AB2DCC000BACA07 /* Build configuration list for PBXProject "BingPaper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 763C229B1AB2DCC000BACA07;
+			productRefGroup = 763C22A51AB2DCC000BACA07 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				763C22A31AB2DCC000BACA07 /* BingPaper */,
+				763C22B51AB2DCC000BACA07 /* BingPaperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		763C22A21AB2DCC000BACA07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76FB444A1AB2F0F00088432F /* StatusBarIcon@3x.png in Resources */,
+				763C22AE1AB2DCC000BACA07 /* Images.xcassets in Resources */,
+				7602FE001B52355400E6EC7D /* StatusBarIcon384x256.png in Resources */,
+				7602FDF91B522F7300E6EC7D /* Menu.xib in Resources */,
+				7602FE051B52BEF000E6EC7D /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		763C22B41AB2DCC000BACA07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		763C22A01AB2DCC000BACA07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				763C22CB1AB2E48400BACA07 /* StatusBarView.swift in Sources */,
+				76FB444D1AB2F82F0088432F /* MenuViewController.swift in Sources */,
+				7602FE031B526EC900E6EC7D /* PictureManager.swift in Sources */,
+				763C22AA1AB2DCC000BACA07 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		763C22B21AB2DCC000BACA07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				763C22BD1AB2DCC000BACA07 /* BingPaperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		763C22B81AB2DCC000BACA07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 763C22A31AB2DCC000BACA07 /* BingPaper */;
+			targetProxy = 763C22B71AB2DCC000BACA07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7602FDFB1B522F7300E6EC7D /* Menu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7602FDFC1B522F8000E6EC7D /* Base */,
+				7602FDFD1B522F8E00E6EC7D /* zh-Hans */,
+				7602FDFE1B522FA800E6EC7D /* en */,
+			);
+			name = Menu.xib;
+			sourceTree = "<group>";
+		};
+		7602FE071B52BEF000E6EC7D /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7602FE081B52BEF500E6EC7D /* Base */,
+				7602FE091B52BEF600E6EC7D /* en */,
+				7602FE0A1B52BF5400E6EC7D /* zh-Hans */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		763C22BE1AB2DCC000BACA07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		763C22BF1AB2DCC000BACA07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		763C22C11AB2DCC000BACA07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BingPaper/BingPaper.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BingPaper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		763C22C21AB2DCC000BACA07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BingPaper/BingPaper.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = BingPaper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		763C22C41AB2DCC000BACA07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BingPaperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BingPaper.app/Contents/MacOS/BingPaper";
+			};
+			name = Debug;
+		};
+		763C22C51AB2DCC000BACA07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BingPaperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BingPaper.app/Contents/MacOS/BingPaper";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		763C229F1AB2DCC000BACA07 /* Build configuration list for PBXProject "BingPaper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				763C22BE1AB2DCC000BACA07 /* Debug */,
+				763C22BF1AB2DCC000BACA07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		763C22C01AB2DCC000BACA07 /* Build configuration list for PBXNativeTarget "BingPaper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				763C22C11AB2DCC000BACA07 /* Debug */,
+				763C22C21AB2DCC000BACA07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		763C22C31AB2DCC000BACA07 /* Build configuration list for PBXNativeTarget "BingPaperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				763C22C41AB2DCC000BACA07 /* Debug */,
+				763C22C51AB2DCC000BACA07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 763C229C1AB2DCC000BACA07 /* Project object */;
+}
