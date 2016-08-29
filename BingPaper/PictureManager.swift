@@ -9,7 +9,7 @@
 import Cocoa
 
 class PictureManager: NSObject {
-
+    
     var pastWallpapersRange = 15
     
     let workDirectory = "\(NSHomeDirectory())/Pictures/BingPaper"
@@ -23,8 +23,7 @@ class PictureManager: NSObject {
         
         do {
             try self.fileManager.createDirectoryAtPath(self.workDirectory, withIntermediateDirectories: true, attributes: nil)
-        } catch _ {
-        }
+        } catch _ {}
     }
     
     private func obtainWallpaperDateAndUrlAt(index index: Int) -> (Int, String) {
@@ -35,9 +34,7 @@ class PictureManager: NSObject {
             var err: NSError?
             var dataObject: AnyObject?
             do {
-                dataObject = try NSJSONSerialization.JSONObjectWithData(
-                                dataValue,
-                                options: NSJSONReadingOptions())
+                dataObject = try NSJSONSerialization.JSONObjectWithData(dataValue, options: NSJSONReadingOptions())
             } catch let error as NSError {
                 err = error
                 dataObject = nil
@@ -45,7 +42,6 @@ class PictureManager: NSObject {
             
             if err == nil {
                 if let objects: AnyObject = dataObject?.valueForKey("images") {
-                    
                     if let dateString = objects[0].valueForKey("startdate") as? String {
                         if let urlString = objects[0].valueForKey("url") as? String {
                             if let dateNumber = Int(dateString) {
@@ -62,10 +58,8 @@ class PictureManager: NSObject {
     
     private func checkAndFetchWallpaperAt(index index: Int) {
         let wallpaper = self.obtainWallpaperDateAndUrlAt(index: index)
-        
         if wallpaper.0 != 0 && !self.fileManager.fileExistsAtPath("\(self.workDirectory)/\(wallpaper.0).jpg") {
-            
-            self.netRequest.URL = NSURL(string: wallpaper.1)
+            self.netRequest.URL = NSURL.init(string: "https://www.bing.com\(wallpaper.1)")
             let imageResponData = try? NSURLConnection.sendSynchronousRequest(self.netRequest, returningResponse: nil)
             imageResponData?.writeToFile("\(self.workDirectory)/\(wallpaper.0).jpg", atomically: true)
         }
@@ -73,6 +67,7 @@ class PictureManager: NSObject {
     
     func fetchLastWallpaperAndSetAsWallpaper(forceUpdate forceUpdate: Bool) {
         let lastWallpaper = self.obtainWallpaperDateAndUrlAt(index: 0)
+        
         if lastWallpaper.0 != 0 {
             let path = "\(self.workDirectory)/\(lastWallpaper.0).jpg"
             var updateFlag = false

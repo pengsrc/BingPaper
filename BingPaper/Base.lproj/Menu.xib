@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner"/>
@@ -70,7 +69,7 @@
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C4n-yP-ACp">
                     <rect key="frame" x="20" y="170" width="58" height="60"/>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="AppIcon" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="JfM-a6-aKy">
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Bing AppIcon" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="JfM-a6-aKy">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -107,6 +106,6 @@
         </popover>
     </objects>
     <resources>
-        <image name="AppIcon" width="128" height="128"/>
+        <image name="Bing AppIcon" width="128" height="128"/>
     </resources>
 </document>
