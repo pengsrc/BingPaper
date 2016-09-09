@@ -1,18 +1,24 @@
 
-/* Class = "NSButtonCell"; title = "Dock Icon"; ObjectID = "2R1-3a-BMH"; */
-"2R1-3a-BMH.title" = "  Dock Icon";
+/* Class = "NSTextFieldCell"; placeholderString = "2016-09-09"; ObjectID = "077-MH-XsJ"; */
+"077-MH-XsJ.placeholderString" = "2016-09-09";
 
-/* Class = "NSButtonCell"; title = "About"; ObjectID = "6M6-Uk-yrH"; */
-"6M6-Uk-yrH.title" = "About";
+/* Class = "NSTextFieldCell"; title = "Loading..."; ObjectID = "077-MH-XsJ"; */
+"077-MH-XsJ.title" = "Loading...";
+
+/* Class = "NSButtonCell"; title = "Preferences"; ObjectID = "6M6-Uk-yrH"; */
+"6M6-Uk-yrH.title" = "Preferences";
 
 /* Class = "NSButtonCell"; title = "Quit"; ObjectID = "Hr4-sd-meE"; */
 "Hr4-sd-meE.title" = "Quit";
 
-/* Class = "NSTextFieldCell"; title = "Bing Paper"; ObjectID = "VwN-ZN-Spn"; */
+/* Class = "NSButtonCell"; alternateTitle = "苏拉群岛上的苏格兰松树\n松恩-菲尤拉讷\n挪威 \n© Orsolya Haarberg "; ObjectID = "R7D-hG-r6g"; */
+"R7D-hG-r6g.alternateTitle" = "苏拉群岛上的苏格兰松树\n松恩-菲尤拉讷\n挪威 \n© Orsolya Haarberg ";
+
+/* Class = "NSButtonCell"; title = "Loading..."; ObjectID = "R7D-hG-r6g"; */
+"R7D-hG-r6g.title" = "Loading...";
+
+/* Class = "NSTextFieldCell"; title = "BingPaper"; ObjectID = "VwN-ZN-Spn"; */
 "VwN-ZN-Spn.title" = "BingPaper";
 
 /* Class = "NSButtonCell"; title = "Today !"; ObjectID = "jDq-jy-kaQ"; */
 "jDq-jy-kaQ.title" = "Today !";
-
-/* Class = "NSButtonCell"; title = "Auto Change"; ObjectID = "y0Q-9f-tFq"; */
-"y0Q-9f-tFq.title" = "Auto Change";
