@@ -28,23 +28,23 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EtJ-Ol-Cb2">
-                    <rect key="frame" x="113" y="0.0" width="50" height="32"/>
+                    <rect key="frame" x="100" y="0.0" width="50" height="32"/>
                     <buttonCell key="cell" type="bevel" title="Quit" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="Hr4-sd-meE">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="quit:" target="yPt-f7-kZe" id="cbm-5B-tQn"/>
+                        <action selector="quitApplication:" target="yPt-f7-kZe" id="7V2-JM-2rE"/>
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mFw-a6-vbi">
-                    <rect key="frame" x="37" y="0.0" width="77" height="32"/>
-                    <buttonCell key="cell" type="bevel" title="Preferences" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="6M6-Uk-yrH">
+                    <rect key="frame" x="51" y="0.0" width="50" height="32"/>
+                    <buttonCell key="cell" type="bevel" title="Prefs" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="6M6-Uk-yrH">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="about:" target="yPt-f7-kZe" id="xFv-sj-tcX"/>
+                        <action selector="launchPreferencesWindow:" target="yPt-f7-kZe" id="mAP-yP-obe"/>
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o2v-Zn-xFQ">
@@ -71,7 +71,7 @@
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Cz-mh-mg1">
                     <rect key="frame" x="30" y="132" width="141" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="Loading..." placeholderString="2016-09-09" id="077-MH-XsJ">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="2016-09-09" placeholderString="" id="077-MH-XsJ">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -88,13 +88,13 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAH-5N-LM1">
-                    <rect key="frame" x="25" y="47" width="151" height="73"/>
-                    <buttonCell key="cell" type="bevel" title="Loading..." bezelStyle="regularSquare" alignment="center" scrollable="YES" lineBreakMode="clipping" imageScaling="proportionallyDown" inset="2" id="R7D-hG-r6g">
+                    <rect key="frame" x="18" y="41" width="164" height="80"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" alignment="center" scrollable="YES" lineBreakMode="clipping" imageScaling="proportionallyDown" inset="2" id="R7D-hG-r6g">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <string key="alternateTitle">苏拉群岛上的苏格兰松树
+                        <string key="title">苏拉群岛上的苏格兰松树
 松恩-菲尤拉讷
-挪威 
-© Orsolya Haarberg </string>
+挪威
+© Orsolya Haarberg/Minden Pictures</string>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>

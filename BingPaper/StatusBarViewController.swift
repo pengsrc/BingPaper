@@ -54,14 +54,6 @@ class StatusBarViewController: NSViewController {
         }
     }
     
-    @IBAction func about(sender: NSButton) {
-        NSApplication.sharedApplication().orderFrontStandardAboutPanel(self)
-    }
-    
-    @IBAction func quit(sender: NSButton) {
-        NSApplication.sharedApplication().terminate(nil)
-    }
-    
     @IBAction func today(sender: NSButton) {
         self.pictureManager.fetchLastWallpaperAndSetAsWallpaper(forceUpdate: true)
         self.refreshWallpaper()
@@ -71,16 +63,25 @@ class StatusBarViewController: NSViewController {
         NSWorkspace.sharedWorkspace().openFile(self.pictureManager.workDirectory)
     }
     
-    @IBAction func toggleAutoChange(sender: NSButton) {
-        self.isAutoChangeWallpaperOn = sender.state == 1 ? true : false
-        self.preferences.setBool(self.isAutoChangeWallpaperOn, forKey: "isAutoChangeWallpaperOn")
-        self.resetTimerTask()
+//    @IBAction func toggleAutoChange(sender: NSButton) {
+//        self.isAutoChangeWallpaperOn = sender.state == 1 ? true : false
+//        self.preferences.setBool(self.isAutoChangeWallpaperOn, forKey: "isAutoChangeWallpaperOn")
+//        self.resetTimerTask()
+//    }
+//    
+//    @IBAction func toggleDockIcon(sender: NSButton) {
+//        self.isDockIconOn = sender.state == 1 ? true : false
+//        self.preferences.setBool(self.isDockIconOn, forKey: "isDockIconOn")
+//        self.resetDockIcon()
+//    }
+    
+    @IBAction func launchPreferencesWindow(sender: NSButton) {
+//        NSApplication.sharedApplication().orderFrontStandardAboutPanel(self)
+        
     }
     
-    @IBAction func toggleDockIcon(sender: NSButton) {
-        self.isDockIconOn = sender.state == 1 ? true : false
-        self.preferences.setBool(self.isDockIconOn, forKey: "isDockIconOn")
-        self.resetDockIcon()
+    @IBAction func quitApplication(sender: NSButton) {
+        NSApplication.sharedApplication().terminate(nil)
     }
     
 }
