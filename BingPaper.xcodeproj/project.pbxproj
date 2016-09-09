@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7602FDF91B522F7300E6EC7D /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7602FDFB1B522F7300E6EC7D /* Menu.xib */; };
+		7602FDF91B522F7300E6EC7D /* StatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7602FDFB1B522F7300E6EC7D /* StatusBar.xib */; };
 		7602FE001B52355400E6EC7D /* StatusBarIcon384x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7602FDFF1B52355400E6EC7D /* StatusBarIcon384x256.png */; };
 		7602FE031B526EC900E6EC7D /* PictureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7602FE021B526EC900E6EC7D /* PictureManager.swift */; };
 		7602FE051B52BEF000E6EC7D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7602FE071B52BEF000E6EC7D /* Credits.rtf */; };
@@ -16,7 +16,7 @@
 		763C22BD1AB2DCC000BACA07 /* BingPaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22BC1AB2DCC000BACA07 /* BingPaperTests.swift */; };
 		763C22CB1AB2E48400BACA07 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22CA1AB2E48400BACA07 /* StatusBarView.swift */; };
 		76FB444A1AB2F0F00088432F /* StatusBarIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76FB44491AB2F0F00088432F /* StatusBarIcon@3x.png */; };
-		76FB444D1AB2F82F0088432F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB444C1AB2F82F0088432F /* MenuViewController.swift */; };
+		76FB444D1AB2F82F0088432F /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,9 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7602FDFC1B522F8000E6EC7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Menu.xib; sourceTree = "<group>"; };
-		7602FDFD1B522F8E00E6EC7D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Menu.strings"; sourceTree = "<group>"; };
-		7602FDFE1B522FA800E6EC7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Menu.strings; sourceTree = "<group>"; };
+		7602FDFC1B522F8000E6EC7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/StatusBar.xib; sourceTree = "<group>"; };
+		7602FDFD1B522F8E00E6EC7D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/StatusBar.strings"; sourceTree = "<group>"; };
+		7602FDFE1B522FA800E6EC7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/StatusBar.strings; sourceTree = "<group>"; };
 		7602FDFF1B52355400E6EC7D /* StatusBarIcon384x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusBarIcon384x256.png; sourceTree = "<group>"; };
 		7602FE011B526C7800E6EC7D /* BingPaper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BingPaper.entitlements; sourceTree = "<group>"; };
 		7602FE021B526EC900E6EC7D /* PictureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureManager.swift; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 		763C22BC1AB2DCC000BACA07 /* BingPaperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingPaperTests.swift; sourceTree = "<group>"; };
 		763C22CA1AB2E48400BACA07 /* StatusBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
 		76FB44491AB2F0F00088432F /* StatusBarIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StatusBarIcon@3x.png"; sourceTree = "<group>"; };
-		76FB444C1AB2F82F0088432F /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +94,9 @@
 			children = (
 				763C22A91AB2DCC000BACA07 /* AppDelegate.swift */,
 				763C22CA1AB2E48400BACA07 /* StatusBarView.swift */,
-				76FB444C1AB2F82F0088432F /* MenuViewController.swift */,
+				76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */,
 				7602FE021B526EC900E6EC7D /* PictureManager.swift */,
-				7602FDFB1B522F7300E6EC7D /* Menu.xib */,
+				7602FDFB1B522F7300E6EC7D /* StatusBar.xib */,
 				76FB444B1AB2F0F70088432F /* Resources */,
 				763C22A71AB2DCC000BACA07 /* Supporting Files */,
 			);
@@ -232,7 +232,7 @@
 				76FB444A1AB2F0F00088432F /* StatusBarIcon@3x.png in Resources */,
 				763C22AE1AB2DCC000BACA07 /* Images.xcassets in Resources */,
 				7602FE001B52355400E6EC7D /* StatusBarIcon384x256.png in Resources */,
-				7602FDF91B522F7300E6EC7D /* Menu.xib in Resources */,
+				7602FDF91B522F7300E6EC7D /* StatusBar.xib in Resources */,
 				7602FE051B52BEF000E6EC7D /* Credits.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				763C22CB1AB2E48400BACA07 /* StatusBarView.swift in Sources */,
-				76FB444D1AB2F82F0088432F /* MenuViewController.swift in Sources */,
+				76FB444D1AB2F82F0088432F /* StatusBarViewController.swift in Sources */,
 				7602FE031B526EC900E6EC7D /* PictureManager.swift in Sources */,
 				763C22AA1AB2DCC000BACA07 /* AppDelegate.swift in Sources */,
 			);
@@ -277,14 +277,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7602FDFB1B522F7300E6EC7D /* Menu.xib */ = {
+		7602FDFB1B522F7300E6EC7D /* StatusBar.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7602FDFC1B522F8000E6EC7D /* Base */,
 				7602FDFD1B522F8E00E6EC7D /* zh-Hans */,
 				7602FDFE1B522FA800E6EC7D /* en */,
 			);
-			name = Menu.xib;
+			name = StatusBar.xib;
 			sourceTree = "<group>";
 		};
 		7602FE071B52BEF000E6EC7D /* Credits.rtf */ = {

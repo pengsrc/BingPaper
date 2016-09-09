@@ -1,5 +1,5 @@
 //
-//  MenuViewController.swift
+//  StatusBarViewController.swift
 //  BingPaper
 //
 //  Created by Peng Jingwen on 2015-03-13.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MenuViewController: NSViewController {
+class StatusBarViewController: NSViewController {
 
     var isAutoChangeWallpaperOn = true
     var isDockIconOn = true
@@ -24,8 +24,8 @@ class MenuViewController: NSViewController {
         self.isAutoChangeWallpaperOn = preferences.boolForKey("isAutoChangeWallpaperOn")
         self.isDockIconOn = preferences.boolForKey("isDockIconOn")
         
-        self.isAutoChangeWallpaperOnSwitch.state = self.isAutoChangeWallpaperOn ? 1 : 0
-        self.isDockIconOnSwitch.state = self.isDockIconOn ? 1 : 0
+//        self.isAutoChangeWallpaperOnSwitch.state = self.isAutoChangeWallpaperOn ? 1 : 0
+//        self.isDockIconOnSwitch.state = self.isDockIconOn ? 1 : 0
         
         resetTimerTask()
         resetDockIcon()
@@ -40,7 +40,7 @@ class MenuViewController: NSViewController {
     
     func resetTimerTask() {
         if self.isAutoChangeWallpaperOn {
-            self.timerTask = NSTimer.scheduledTimerWithTimeInterval(3600, target: self, selector: #selector(MenuViewController.refreshWallpaper), userInfo: nil, repeats: true)
+            self.timerTask = NSTimer.scheduledTimerWithTimeInterval(3600, target: self, selector: #selector(StatusBarViewController.refreshWallpaper), userInfo: nil, repeats: true)
         } else {
             self.timerTask.invalidate()
         }
