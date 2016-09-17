@@ -14,36 +14,36 @@ class PictureManager: NSObject {
     
     let workDirectory = "\(NSHomeDirectory())/Pictures/BingPaper"
     let netRequest = NSMutableURLRequest()
-    let fileManager = NSFileManager.defaultManager()
+    let fileManager = FileManager.default
     
     override init() {
-        self.netRequest.cachePolicy = NSURLRequestCachePolicy.UseProtocolCachePolicy
+        self.netRequest.cachePolicy = NSURLRequest.CachePolicy.useProtocolCachePolicy
         self.netRequest.timeoutInterval = 15
-        self.netRequest.HTTPMethod = "GET"
+        self.netRequest.httpMethod = "GET"
         
         do {
-            try self.fileManager.createDirectoryAtPath(self.workDirectory, withIntermediateDirectories: true, attributes: nil)
+            try self.fileManager.createDirectory(atPath: self.workDirectory, withIntermediateDirectories: true, attributes: nil)
         } catch _ {}
     }
     
-    private func obtainWallpaperDateAndUrlAt(index index: Int) -> (Int, String) {
+    fileprivate func obtainWallpaperDateAndUrlAt(index: Int) -> (Int, String) {
         
-        self.netRequest.URL = NSURL(string: "http://www.bing.com/HpImageArchive.aspx?format=js&idx=\(index)&n=1&mkt=zh-CN")
-        let reponseData = try? NSURLConnection.sendSynchronousRequest(self.netRequest, returningResponse: nil)
+        self.netRequest.url = URL(string: "http://www.bing.com/HpImageArchive.aspx?format=js&idx=\(index)&n=1&mkt=zh-CN")
+        let reponseData = try? NSURLConnection.sendSynchronousRequest(self.netRequest as URLRequest, returning: nil)
         if let dataValue = reponseData {
             var err: NSError?
             var dataObject: AnyObject?
             do {
-                dataObject = try NSJSONSerialization.JSONObjectWithData(dataValue, options: NSJSONReadingOptions())
+                dataObject = try JSONSerialization.jsonObject(with: dataValue, options: JSONSerialization.ReadingOptions())
             } catch let error as NSError {
                 err = error
                 dataObject = nil
             };
             
             if err == nil {
-                if let objects: AnyObject = dataObject?.valueForKey("images") {
-                    if let dateString = objects[0].valueForKey("startdate") as? String {
-                        if let urlString = objects[0].valueForKey("url") as? String {
+                if let objects: AnyObject = dataObject?.value(forKey: "images") {
+                    if let dateString = objects[0].value(forKey: "startdate") as? String {
+                        if let urlString = objects[0].value(forKey: "url") as? String {
                             if let dateNumber = Int(dateString) {
                                 return (dateNumber, urlString)
                             }
@@ -56,23 +56,23 @@ class PictureManager: NSObject {
         return (0, "")
     }
     
-    private func checkAndFetchWallpaperAt(index index: Int) {
+    fileprivate func checkAndFetchWallpaperAt(index: Int) {
         let wallpaper = self.obtainWallpaperDateAndUrlAt(index: index)
-        if wallpaper.0 != 0 && !self.fileManager.fileExistsAtPath("\(self.workDirectory)/\(wallpaper.0).jpg") {
-            self.netRequest.URL = NSURL.init(string: "https://www.bing.com\(wallpaper.1)")
-            let imageResponData = try? NSURLConnection.sendSynchronousRequest(self.netRequest, returningResponse: nil)
-            imageResponData?.writeToFile("\(self.workDirectory)/\(wallpaper.0).jpg", atomically: true)
+        if wallpaper.0 != 0 && !self.fileManager.fileExists(atPath: "\(self.workDirectory)/\(wallpaper.0).jpg") {
+            self.netRequest.url = URL.init(string: "https://www.bing.com\(wallpaper.1)")
+            let imageResponData = try? NSURLConnection.sendSynchronousRequest(self.netRequest as URLRequest, returning: nil)
+            try? imageResponData?.write(to: URL(fileURLWithPath: "\(self.workDirectory)/\(wallpaper.0).jpg"), options: [.atomic])
         }
     }
     
-    func fetchLastWallpaperAndSetAsWallpaper(forceUpdate forceUpdate: Bool) {
+    func fetchLastWallpaperAndSetAsWallpaper(forceUpdate: Bool) {
         let lastWallpaper = self.obtainWallpaperDateAndUrlAt(index: 0)
         
         if lastWallpaper.0 != 0 {
             let path = "\(self.workDirectory)/\(lastWallpaper.0).jpg"
             var updateFlag = false
 
-            if !self.fileManager.fileExistsAtPath(path) {
+            if !self.fileManager.fileExists(atPath: path) {
                 updateFlag = true
                 
                 self.checkAndFetchWallpaperAt(index: 0)
@@ -82,9 +82,9 @@ class PictureManager: NSObject {
                 if let screens = NSScreen.screens() {
                     for screen in screens {
                         do {
-                            try NSWorkspace.sharedWorkspace().setDesktopImageURL(
-                                NSURL(fileURLWithPath: path),
-                                forScreen: screen ,
+                            try NSWorkspace.shared().setDesktopImageURL(
+                                URL(fileURLWithPath: path),
+                                for: screen ,
                                 options: [:])
                         } catch _ {
                         }

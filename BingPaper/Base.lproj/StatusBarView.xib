@@ -12,7 +12,6 @@
                 <outlet property="popover" destination="0WD-1k-8Xa" id="4dT-0T-XyF"/>
             </connections>
         </customObject>
-        <customObject id="XW9-IT-P7a" customClass="NSFontManager"/>
         <customView id="7xe-pE-msc">
             <rect key="frame" x="0.0" y="0.0" width="200" height="282"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -101,6 +100,7 @@
             </subviews>
             <point key="canvasLocation" x="-596" y="-283"/>
         </customView>
+        <customObject id="XW9-IT-P7a" customClass="NSFontManager"/>
         <customObject id="yPt-f7-kZe" customClass="StatusBarViewController" customModule="BingPaper" customModuleProvider="target"/>
         <viewController id="F95-OJ-xb7" userLabel="Popover View Controller">
             <connections>

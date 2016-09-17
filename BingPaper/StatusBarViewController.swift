@@ -12,17 +12,17 @@ class StatusBarViewController: NSViewController {
 
     var isAutoChangeWallpaperOn = true
     var isDockIconOn = true
-    var timerTask = NSTimer()
+    var timerTask = Timer()
     
-    let preferences = NSUserDefaults.standardUserDefaults()
+    let preferences = UserDefaults.standard
     let pictureManager = PictureManager()
 
     @IBOutlet weak var isAutoChangeWallpaperOnSwitch: NSButton!
     @IBOutlet weak var isDockIconOnSwitch: NSButton!
     
     override func awakeFromNib() {
-        self.isAutoChangeWallpaperOn = preferences.boolForKey("isAutoChangeWallpaperOn")
-        self.isDockIconOn = preferences.boolForKey("isDockIconOn")
+        self.isAutoChangeWallpaperOn = preferences.bool(forKey: "isAutoChangeWallpaperOn")
+        self.isDockIconOn = preferences.bool(forKey: "isDockIconOn")
         
 //        self.isAutoChangeWallpaperOnSwitch.state = self.isAutoChangeWallpaperOn ? 1 : 0
 //        self.isDockIconOnSwitch.state = self.isDockIconOn ? 1 : 0
@@ -32,7 +32,7 @@ class StatusBarViewController: NSViewController {
     }
     
     func refreshWallpaper() {
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        DispatchQueue.main.async(execute: { () -> Void in
             self.pictureManager.fetchLastWallpaperAndSetAsWallpaper(forceUpdate: false)
             self.pictureManager.fetchPastWallpapers()
         })
@@ -40,7 +40,7 @@ class StatusBarViewController: NSViewController {
     
     func resetTimerTask() {
         if self.isAutoChangeWallpaperOn {
-            self.timerTask = NSTimer.scheduledTimerWithTimeInterval(3600, target: self, selector: #selector(StatusBarViewController.refreshWallpaper), userInfo: nil, repeats: true)
+            self.timerTask = Timer.scheduledTimer(timeInterval: 3600, target: self, selector: #selector(StatusBarViewController.refreshWallpaper), userInfo: nil, repeats: true)
         } else {
             self.timerTask.invalidate()
         }
@@ -48,19 +48,19 @@ class StatusBarViewController: NSViewController {
     
     func resetDockIcon() {
         if self.isDockIconOn {
-            NSApp.setActivationPolicy(NSApplicationActivationPolicy.Regular)
+            NSApp.setActivationPolicy(NSApplicationActivationPolicy.regular)
         } else {
-            NSApp.setActivationPolicy(NSApplicationActivationPolicy.Accessory)
+            NSApp.setActivationPolicy(NSApplicationActivationPolicy.accessory)
         }
     }
     
-    @IBAction func today(sender: NSButton) {
+    @IBAction func today(_ sender: NSButton) {
         self.pictureManager.fetchLastWallpaperAndSetAsWallpaper(forceUpdate: true)
         self.refreshWallpaper()
     }
     
-    @IBAction func logoClicked(sender: NSButton) {
-        NSWorkspace.sharedWorkspace().openFile(self.pictureManager.workDirectory)
+    @IBAction func logoClicked(_ sender: NSButton) {
+        NSWorkspace.shared().openFile(self.pictureManager.workDirectory)
     }
     
 //    @IBAction func toggleAutoChange(sender: NSButton) {
@@ -75,13 +75,13 @@ class StatusBarViewController: NSViewController {
 //        self.resetDockIcon()
 //    }
     
-    @IBAction func launchPreferencesWindow(sender: NSButton) {
+    @IBAction func launchPreferencesWindow(_ sender: NSButton) {
 //        NSApplication.sharedApplication().orderFrontStandardAboutPanel(self)
         
     }
     
-    @IBAction func quitApplication(sender: NSButton) {
-        NSApplication.sharedApplication().terminate(nil)
+    @IBAction func quitApplication(_ sender: NSButton) {
+        NSApplication.shared().terminate(nil)
     }
     
 }

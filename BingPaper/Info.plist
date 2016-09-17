@@ -38,7 +38,7 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2015 Peng Jingwen. All rights reserved.</string>
 	<key>NSMainNibFile</key>
-	<string>StatusBar</string>
+	<string>StatusBarView</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

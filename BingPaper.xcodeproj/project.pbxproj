@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7602FDF91B522F7300E6EC7D /* StatusBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7602FDFB1B522F7300E6EC7D /* StatusBar.xib */; };
+		7602FDF91B522F7300E6EC7D /* StatusBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7602FDFB1B522F7300E6EC7D /* StatusBarView.xib */; };
 		7602FE001B52355400E6EC7D /* StatusBarIcon384x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7602FDFF1B52355400E6EC7D /* StatusBarIcon384x256.png */; };
 		7602FE031B526EC900E6EC7D /* PictureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7602FE021B526EC900E6EC7D /* PictureManager.swift */; };
 		7602FE051B52BEF000E6EC7D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7602FE071B52BEF000E6EC7D /* Credits.rtf */; };
@@ -15,8 +15,7 @@
 		763C22AE1AB2DCC000BACA07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 763C22AD1AB2DCC000BACA07 /* Images.xcassets */; };
 		763C22BD1AB2DCC000BACA07 /* BingPaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22BC1AB2DCC000BACA07 /* BingPaperTests.swift */; };
 		763C22CB1AB2E48400BACA07 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22CA1AB2E48400BACA07 /* StatusBarView.swift */; };
-		76904C0C1D82558A0076C399 /* PreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76904C0B1D82558A0076C399 /* PreferencesWindow.xib */; };
-		76904C0E1D8255C20076C399 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76904C0D1D8255C20076C399 /* PreferencesWindowController.swift */; };
+		76904C191D83E6FF0076C399 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76904C181D83E6FF0076C399 /* Storyboard.storyboard */; };
 		76FB444A1AB2F0F00088432F /* StatusBarIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76FB44491AB2F0F00088432F /* StatusBarIcon@3x.png */; };
 		76FB444D1AB2F82F0088432F /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */; };
 /* End PBXBuildFile section */
@@ -32,7 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7602FDFC1B522F8000E6EC7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/StatusBar.xib; sourceTree = "<group>"; };
+		7602FDFC1B522F8000E6EC7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/StatusBarView.xib; sourceTree = "<group>"; };
 		7602FDFF1B52355400E6EC7D /* StatusBarIcon384x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusBarIcon384x256.png; sourceTree = "<group>"; };
 		7602FE011B526C7800E6EC7D /* BingPaper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BingPaper.entitlements; sourceTree = "<group>"; };
 		7602FE021B526EC900E6EC7D /* PictureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureManager.swift; sourceTree = "<group>"; };
@@ -46,10 +45,9 @@
 		763C22BB1AB2DCC000BACA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		763C22BC1AB2DCC000BACA07 /* BingPaperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingPaperTests.swift; sourceTree = "<group>"; };
 		763C22CA1AB2E48400BACA07 /* StatusBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
-		76904C0B1D82558A0076C399 /* PreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
-		76904C0D1D8255C20076C399 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		76904C121D8257DC0076C399 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		76904C131D8257DE0076C399 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
+		76904C181D83E6FF0076C399 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		76FB44491AB2F0F00088432F /* StatusBarIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StatusBarIcon@3x.png"; sourceTree = "<group>"; };
 		76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,13 +92,9 @@
 		763C22A61AB2DCC000BACA07 /* BingPaper */ = {
 			isa = PBXGroup;
 			children = (
-				763C22A91AB2DCC000BACA07 /* AppDelegate.swift */,
-				763C22CA1AB2E48400BACA07 /* StatusBarView.swift */,
-				76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */,
-				76904C0D1D8255C20076C399 /* PreferencesWindowController.swift */,
+				76904C1A1D83EB5F0076C399 /* StatusBar */,
+				76904C1B1D83EBD50076C399 /* Storyboard */,
 				7602FE021B526EC900E6EC7D /* PictureManager.swift */,
-				7602FDFB1B522F7300E6EC7D /* StatusBar.xib */,
-				76904C0B1D82558A0076C399 /* PreferencesWindow.xib */,
 				76FB444B1AB2F0F70088432F /* Resources */,
 				763C22A71AB2DCC000BACA07 /* Supporting Files */,
 			);
@@ -133,6 +127,25 @@
 				763C22BB1AB2DCC000BACA07 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		76904C1A1D83EB5F0076C399 /* StatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				763C22A91AB2DCC000BACA07 /* AppDelegate.swift */,
+				763C22CA1AB2E48400BACA07 /* StatusBarView.swift */,
+				7602FDFB1B522F7300E6EC7D /* StatusBarView.xib */,
+				76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */,
+			);
+			name = StatusBar;
+			sourceTree = "<group>";
+		};
+		76904C1B1D83EBD50076C399 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				76904C181D83E6FF0076C399 /* Storyboard.storyboard */,
+			);
+			name = Storyboard;
 			sourceTree = "<group>";
 		};
 		76FB444B1AB2F0F70088432F /* Resources */ = {
@@ -196,6 +209,7 @@
 					763C22A31AB2DCC000BACA07 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = RTLZDJ5FTU;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -204,6 +218,7 @@
 					};
 					763C22B51AB2DCC000BACA07 = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = 763C22A31AB2DCC000BACA07;
 					};
 				};
@@ -236,9 +251,9 @@
 				76FB444A1AB2F0F00088432F /* StatusBarIcon@3x.png in Resources */,
 				763C22AE1AB2DCC000BACA07 /* Images.xcassets in Resources */,
 				7602FE001B52355400E6EC7D /* StatusBarIcon384x256.png in Resources */,
-				7602FDF91B522F7300E6EC7D /* StatusBar.xib in Resources */,
-				76904C0C1D82558A0076C399 /* PreferencesWindow.xib in Resources */,
+				7602FDF91B522F7300E6EC7D /* StatusBarView.xib in Resources */,
 				7602FE051B52BEF000E6EC7D /* Credits.rtf in Resources */,
+				76904C191D83E6FF0076C399 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +273,6 @@
 			files = (
 				763C22CB1AB2E48400BACA07 /* StatusBarView.swift in Sources */,
 				76FB444D1AB2F82F0088432F /* StatusBarViewController.swift in Sources */,
-				76904C0E1D8255C20076C399 /* PreferencesWindowController.swift in Sources */,
 				7602FE031B526EC900E6EC7D /* PictureManager.swift in Sources */,
 				763C22AA1AB2DCC000BACA07 /* AppDelegate.swift in Sources */,
 			);
@@ -283,12 +297,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7602FDFB1B522F7300E6EC7D /* StatusBar.xib */ = {
+		7602FDFB1B522F7300E6EC7D /* StatusBarView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7602FDFC1B522F8000E6EC7D /* Base */,
 			);
-			name = StatusBar.xib;
+			name = StatusBarView.xib;
 			sourceTree = "<group>";
 		};
 		7602FE071B52BEF000E6EC7D /* Credits.rtf */ = {
@@ -394,6 +408,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prettyxw.mac.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -409,6 +424,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.prettyxw.mac.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -429,6 +445,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.prettyx.mac.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BingPaper.app/Contents/MacOS/BingPaper";
 			};
 			name = Debug;
@@ -446,6 +463,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.prettyx.mac.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BingPaper.app/Contents/MacOS/BingPaper";
 			};
 			name = Release;

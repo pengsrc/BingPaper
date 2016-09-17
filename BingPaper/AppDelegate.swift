@@ -11,20 +11,38 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
     @IBOutlet weak var popover: NSPopover!
+
+    var windowController: NSWindowController?
     
     override func awakeFromNib(){
 
-        let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1);
+        let statusItem = NSStatusBar.system().statusItem(withLength: -1);
         
         statusItem.view = StatusBarView(image: NSImage(named: "StatusBarIcon")!, statusItem: statusItem, popover: self.popover)
         
-//        test()
+        // test()
+    }
+    
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        let storyboard = NSStoryboard.init(name: "Storyboard", bundle: nil)
+        let controller = storyboard.instantiateInitialController()
+        
+        if let windowController = controller as? NSWindowController {
+            self.windowController = windowController
+            
+            windowController.loadWindow()
+            windowController.showWindow(self)
+            windowController.window?.makeKeyAndOrderFront(self)
+            
+            NSApplication.shared().activate(ignoringOtherApps: true)
+            
+            print(controller)
+        }
     }
     
     func test() {
         
-        NSApplication.sharedApplication().terminate(nil)
+        NSApplication.shared().terminate(nil)
     }
 }

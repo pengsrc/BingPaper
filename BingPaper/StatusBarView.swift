@@ -10,11 +10,11 @@ import Cocoa
 
 class StatusBarView: NSView {
     
-    private let image: NSImage
-    private let statusItem: NSStatusItem
-    private let popover: NSPopover
+    fileprivate let image: NSImage
+    fileprivate let statusItem: NSStatusItem
+    fileprivate let popover: NSPopover
     
-    private var popoverTransiencyMonitor: AnyObject?
+    fileprivate var popoverTransiencyMonitor: AnyObject?
     
     init(image: NSImage, statusItem: NSStatusItem, popover: NSPopover){
         self.image = image
@@ -23,8 +23,8 @@ class StatusBarView: NSView {
         
         self.popoverTransiencyMonitor = nil
         
-        let thickness = NSStatusBar.systemStatusBar().thickness
-        let rect = CGRectMake(0, 0, thickness, thickness)
+        let thickness = NSStatusBar.system().thickness
+        let rect = CGRect(x: 0, y: 0, width: thickness, height: thickness)
         
         super.init(frame: rect)
     }
@@ -34,27 +34,27 @@ class StatusBarView: NSView {
     }
     
     
-    override func drawRect(dirtyRect: NSRect){
-        self.statusItem.drawStatusBarBackgroundInRect(dirtyRect, withHighlight: false)
+    override func draw(_ dirtyRect: NSRect){
+        self.statusItem.drawStatusBarBackground(in: dirtyRect, withHighlight: false)
 
         let size = self.image.size
-        let rect = CGRectMake(2, 2, size.width, size.height)
+        let rect = CGRect(x: 2, y: 2, width: size.width, height: size.height)
         
-        self.image.drawInRect(rect)
+        self.image.draw(in: rect)
     }
     
-    override func mouseDown(theEvent: NSEvent){
+    override func mouseDown(with theEvent: NSEvent){
         if (self.popoverTransiencyMonitor == nil) {
             
-            self.popover.showRelativeToRect(self.frame, ofView: self, preferredEdge: NSRectEdge.MinY)
+            self.popover.show(relativeTo: self.frame, of: self, preferredEdge: NSRectEdge.minY)
             
-            self.popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask(
-                NSEventMask.LeftMouseUpMask, handler: { (event: NSEvent) -> Void in
+            self.popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEvents(
+                matching: NSEventMask.leftMouseUp, handler: { (event: NSEvent) -> Void in
 
                     NSEvent.removeMonitor(self.popoverTransiencyMonitor!)
                     self.popoverTransiencyMonitor = nil
                     self.popover.close()
-            })
+            }) as AnyObject?
         } else {
             
             NSEvent.removeMonitor(self.popoverTransiencyMonitor!)
