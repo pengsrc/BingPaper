@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="r0X-n5-5qP">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="Vb8-H3-O6i">
+            <objects>
+                <windowController id="r0X-n5-5qP" customClass="PreferencesWindowController" customModule="BingPaper" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="BingPaper Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Xy6-0t-w8s">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" unifiedTitleAndToolbar="YES"/>
+                        <rect key="contentRect" x="975" y="639" width="500" height="300"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+                    </window>
+                    <connections>
+                        <segue destination="Lby-dK-C0O" kind="relationship" relationship="window.shadowedContentViewController" id="sZH-Hm-7YD"/>
+                    </connections>
+                </windowController>
+                <customObject id="c7Q-yS-5E3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="479" y="640"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rL7-Lc-82P">
+            <objects>
+                <viewController id="Lby-dK-C0O" sceneMemberID="viewController">
+                    <visualEffectView key="view" appearanceType="vibrantLight" blendingMode="behindWindow" material="light" state="followsWindowActiveState" id="qSK-Wx-BpI">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </visualEffectView>
+                </viewController>
+                <customObject id="YMP-42-LPP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1178" y="633"/>
+        </scene>
+    </scenes>
+</document>

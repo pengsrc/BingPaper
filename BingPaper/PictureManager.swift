@@ -29,29 +29,29 @@ class PictureManager: NSObject {
     fileprivate func obtainWallpaperDateAndUrlAt(index: Int) -> (Int, String) {
         
         self.netRequest.url = URL(string: "http://www.bing.com/HpImageArchive.aspx?format=js&idx=\(index)&n=1&mkt=zh-CN")
-        let reponseData = try? NSURLConnection.sendSynchronousRequest(self.netRequest as URLRequest, returning: nil)
-        if let dataValue = reponseData {
-            var err: NSError?
-            var dataObject: AnyObject?
-            do {
-                dataObject = try JSONSerialization.jsonObject(with: dataValue, options: JSONSerialization.ReadingOptions())
-            } catch let error as NSError {
-                err = error
-                dataObject = nil
-            };
-            
-            if err == nil {
-                if let objects: AnyObject = dataObject?.value(forKey: "images") {
-                    if let dateString = objects[0].value(forKey: "startdate") as? String {
-                        if let urlString = objects[0].value(forKey: "url") as? String {
-                            if let dateNumber = Int(dateString) {
-                                return (dateNumber, urlString)
-                            }
-                        }
-                    }
-                }
-            }
-        }
+//        let reponseData = try? NSURLConnection.sendSynchronousRequest(self.netRequest as URLRequest, returning: nil)
+//        if let dataValue = reponseData {
+//            var err: NSError?
+//            var dataObject: AnyObject?
+//            do {
+//                dataObject = try JSONSerialization.jsonObject(with: dataValue, options: JSONSerialization.ReadingOptions()) as AnyObject
+//            } catch let error as NSError {
+//                err = error
+//                dataObject = nil
+//            };
+//            
+//            if err == nil {
+//                if let objects = dataObject?.value(forKey: "images") as! NSObject {
+//                    if let dateString = objects[0].value(forKey: "startdate") as String {
+//                        if let urlString = objects[0].value(forKey: "url") as String {
+//                            if let dateNumber = Int(dateString) {
+//                                return (dateNumber, urlString)
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
 
         return (0, "")
     }

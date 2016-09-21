@@ -20,6 +20,8 @@ class StatusBarViewController: NSViewController {
     @IBOutlet weak var isAutoChangeWallpaperOnSwitch: NSButton!
     @IBOutlet weak var isDockIconOnSwitch: NSButton!
     
+    var preferencesWindowController: NSWindowController?
+    
     override func awakeFromNib() {
         self.isAutoChangeWallpaperOn = preferences.bool(forKey: "isAutoChangeWallpaperOn")
         self.isDockIconOn = preferences.bool(forKey: "isDockIconOn")
@@ -76,8 +78,18 @@ class StatusBarViewController: NSViewController {
 //    }
     
     @IBAction func launchPreferencesWindow(_ sender: NSButton) {
-//        NSApplication.sharedApplication().orderFrontStandardAboutPanel(self)
+        let preferencesStoryboard = NSStoryboard.init(name: "Preferences", bundle: nil)
+        let preferencesWindowController = preferencesStoryboard.instantiateInitialController()
         
+        if let controller = preferencesWindowController as? PreferencesWindowController {
+            self.preferencesWindowController = controller
+            
+            controller.loadWindow()
+            controller.showWindow(self)
+            controller.window?.makeKeyAndOrderFront(self)
+            
+            NSApplication.shared().activate(ignoringOtherApps: true)
+        }
     }
     
     @IBAction func quitApplication(_ sender: NSButton) {
