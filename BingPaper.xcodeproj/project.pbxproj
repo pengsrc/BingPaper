@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13F210EC88189653FA3C8CCB /* Pods_BingPaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CAAB9C49B322AE3723A34D /* Pods_BingPaper.framework */; };
 		7602FDF91B522F7300E6EC7D /* StatusBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7602FDFB1B522F7300E6EC7D /* StatusBarView.xib */; };
 		7602FE001B52355400E6EC7D /* StatusBarIcon384x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7602FDFF1B52355400E6EC7D /* StatusBarIcon384x256.png */; };
 		7602FE031B526EC900E6EC7D /* PictureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7602FE021B526EC900E6EC7D /* PictureManager.swift */; };
@@ -15,11 +16,13 @@
 		763C22AE1AB2DCC000BACA07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 763C22AD1AB2DCC000BACA07 /* Images.xcassets */; };
 		763C22BD1AB2DCC000BACA07 /* BingPaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22BC1AB2DCC000BACA07 /* BingPaperTests.swift */; };
 		763C22CB1AB2E48400BACA07 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22CA1AB2E48400BACA07 /* StatusBarView.swift */; };
-		76904C191D83E6FF0076C399 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76904C181D83E6FF0076C399 /* Preferences.storyboard */; };
+		7695AB271D9AAF1D006CA215 /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7695AB251D9AAF1D006CA215 /* GeneralPreferencesView.xib */; };
+		7695AB2B1D9AAF3B006CA215 /* AboutPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7695AB291D9AAF3B006CA215 /* AboutPreferencesView.xib */; };
+		7695AB2D1D9AB363006CA215 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7695AB2C1D9AB363006CA215 /* GeneralPreferencesViewController.swift */; };
+		7695AB301D9AB388006CA215 /* AboutPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7695AB2E1D9AB388006CA215 /* AboutPreferencesViewController.swift */; };
 		76FB444A1AB2F0F00088432F /* StatusBarIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76FB44491AB2F0F00088432F /* StatusBarIcon@3x.png */; };
 		76FB444D1AB2F82F0088432F /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */; };
-		76FC8CCB1D92D328008D4EF5 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FC8CCA1D92D328008D4EF5 /* PreferencesViewController.swift */; };
-		76FC8CCD1D92D33C008D4EF5 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FC8CCC1D92D33C008D4EF5 /* PreferencesWindowController.swift */; };
+		ED32B9DA9675D670B387772F /* Pods_BingPaperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7082E9B74124607292FF75C4 /* Pods_BingPaperTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7082E9B74124607292FF75C4 /* Pods_BingPaperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingPaperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7602FDFC1B522F8000E6EC7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/StatusBarView.xib; sourceTree = "<group>"; };
 		7602FDFF1B52355400E6EC7D /* StatusBarIcon384x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusBarIcon384x256.png; sourceTree = "<group>"; };
 		7602FE011B526C7800E6EC7D /* BingPaper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BingPaper.entitlements; sourceTree = "<group>"; };
@@ -49,11 +53,17 @@
 		763C22CA1AB2E48400BACA07 /* StatusBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
 		76904C121D8257DC0076C399 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		76904C131D8257DE0076C399 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
-		76904C181D83E6FF0076C399 /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
+		7695AB251D9AAF1D006CA215 /* GeneralPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferencesView.xib; sourceTree = "<group>"; };
+		7695AB291D9AAF3B006CA215 /* AboutPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutPreferencesView.xib; sourceTree = "<group>"; };
+		7695AB2C1D9AB363006CA215 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
+		7695AB2E1D9AB388006CA215 /* AboutPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPreferencesViewController.swift; sourceTree = "<group>"; };
 		76FB44491AB2F0F00088432F /* StatusBarIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StatusBarIcon@3x.png"; sourceTree = "<group>"; };
 		76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
-		76FC8CCA1D92D328008D4EF5 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		76FC8CCC1D92D33C008D4EF5 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		89CAAB9C49B322AE3723A34D /* Pods_BingPaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingPaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		948600370E83C7A1EA54FA4D /* Pods-BingPaperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingPaperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BingPaperTests/Pods-BingPaperTests.release.xcconfig"; sourceTree = "<group>"; };
+		AA072B2BC6186C48BEFCA9F7 /* Pods-BingPaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingPaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-BingPaper/Pods-BingPaper.release.xcconfig"; sourceTree = "<group>"; };
+		B3462F8D6EF74A5A88299BB9 /* Pods-BingPaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingPaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BingPaper/Pods-BingPaper.debug.xcconfig"; sourceTree = "<group>"; };
+		F28A1DC1EC2F3D8A4E2CD43D /* Pods-BingPaperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingPaperTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BingPaperTests/Pods-BingPaperTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13F210EC88189653FA3C8CCB /* Pods_BingPaper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +79,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED32B9DA9675D670B387772F /* Pods_BingPaperTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E03EE642DA655B323D59E13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3462F8D6EF74A5A88299BB9 /* Pods-BingPaper.debug.xcconfig */,
+				AA072B2BC6186C48BEFCA9F7 /* Pods-BingPaper.release.xcconfig */,
+				F28A1DC1EC2F3D8A4E2CD43D /* Pods-BingPaperTests.debug.xcconfig */,
+				948600370E83C7A1EA54FA4D /* Pods-BingPaperTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		763C229B1AB2DCC000BACA07 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +104,8 @@
 				763C22A61AB2DCC000BACA07 /* BingPaper */,
 				763C22B91AB2DCC000BACA07 /* BingPaperTests */,
 				763C22A51AB2DCC000BACA07 /* Products */,
+				2E03EE642DA655B323D59E13 /* Pods */,
+				B677810806D566C866F5FE61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,9 +172,10 @@
 		76904C1B1D83EBD50076C399 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				76904C181D83E6FF0076C399 /* Preferences.storyboard */,
-				76FC8CCA1D92D328008D4EF5 /* PreferencesViewController.swift */,
-				76FC8CCC1D92D33C008D4EF5 /* PreferencesWindowController.swift */,
+				7695AB251D9AAF1D006CA215 /* GeneralPreferencesView.xib */,
+				7695AB2C1D9AB363006CA215 /* GeneralPreferencesViewController.swift */,
+				7695AB291D9AAF3B006CA215 /* AboutPreferencesView.xib */,
+				7695AB2E1D9AB388006CA215 /* AboutPreferencesViewController.swift */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -171,6 +197,15 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		B677810806D566C866F5FE61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89CAAB9C49B322AE3723A34D /* Pods_BingPaper.framework */,
+				7082E9B74124607292FF75C4 /* Pods_BingPaperTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 763C22C01AB2DCC000BACA07 /* Build configuration list for PBXNativeTarget "BingPaper" */;
 			buildPhases = (
+				605B15CE0A3F8E4E44964224 /* [CP] Check Pods Manifest.lock */,
 				763C22A01AB2DCC000BACA07 /* Sources */,
 				763C22A11AB2DCC000BACA07 /* Frameworks */,
 				763C22A21AB2DCC000BACA07 /* Resources */,
+				2748003AFB0F47C15CA172C2 /* [CP] Embed Pods Frameworks */,
+				A04A85D975CD436987AA0E30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,9 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 763C22C31AB2DCC000BACA07 /* Build configuration list for PBXNativeTarget "BingPaperTests" */;
 			buildPhases = (
+				889E05C623D0AA8A26C3554A /* [CP] Check Pods Manifest.lock */,
 				763C22B21AB2DCC000BACA07 /* Sources */,
 				763C22B31AB2DCC000BACA07 /* Frameworks */,
 				763C22B41AB2DCC000BACA07 /* Resources */,
+				B06DFCBAA05E19845E7479C1 /* [CP] Embed Pods Frameworks */,
+				C9BDBDC04FC4D8933F5B9CDB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,6 +265,7 @@
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = RTLZDJ5FTU;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -263,11 +305,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				76FB444A1AB2F0F00088432F /* StatusBarIcon@3x.png in Resources */,
+				7695AB2B1D9AAF3B006CA215 /* AboutPreferencesView.xib in Resources */,
+				7695AB271D9AAF1D006CA215 /* GeneralPreferencesView.xib in Resources */,
 				763C22AE1AB2DCC000BACA07 /* Images.xcassets in Resources */,
 				7602FE001B52355400E6EC7D /* StatusBarIcon384x256.png in Resources */,
 				7602FDF91B522F7300E6EC7D /* StatusBarView.xib in Resources */,
 				7602FE051B52BEF000E6EC7D /* Credits.rtf in Resources */,
-				76904C191D83E6FF0076C399 /* Preferences.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,13 +323,106 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2748003AFB0F47C15CA172C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BingPaper/Pods-BingPaper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		605B15CE0A3F8E4E44964224 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		889E05C623D0AA8A26C3554A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A04A85D975CD436987AA0E30 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BingPaper/Pods-BingPaper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B06DFCBAA05E19845E7479C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BingPaperTests/Pods-BingPaperTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9BDBDC04FC4D8933F5B9CDB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BingPaperTests/Pods-BingPaperTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		763C22A01AB2DCC000BACA07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76FC8CCD1D92D33C008D4EF5 /* PreferencesWindowController.swift in Sources */,
-				76FC8CCB1D92D328008D4EF5 /* PreferencesViewController.swift in Sources */,
+				7695AB2D1D9AB363006CA215 /* GeneralPreferencesViewController.swift in Sources */,
+				7695AB301D9AB388006CA215 /* AboutPreferencesViewController.swift in Sources */,
 				763C22CB1AB2E48400BACA07 /* StatusBarView.swift in Sources */,
 				76FB444D1AB2F82F0088432F /* StatusBarViewController.swift in Sources */,
 				7602FE031B526EC900E6EC7D /* PictureManager.swift in Sources */,
@@ -354,7 +490,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -373,7 +509,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -401,7 +537,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -414,7 +550,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -423,11 +559,13 @@
 		};
 		763C22C11AB2DCC000BACA07 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3462F8D6EF74A5A88299BB9 /* Pods-BingPaper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Bing AppIcon";
 				CODE_SIGN_ENTITLEMENTS = BingPaper/BingPaper.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RTLZDJ5FTU;
 				INFOPLIST_FILE = BingPaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -439,11 +577,13 @@
 		};
 		763C22C21AB2DCC000BACA07 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA072B2BC6186C48BEFCA9F7 /* Pods-BingPaper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "Bing AppIcon";
 				CODE_SIGN_ENTITLEMENTS = BingPaper/BingPaper.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = RTLZDJ5FTU;
 				INFOPLIST_FILE = BingPaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -455,6 +595,7 @@
 		};
 		763C22C41AB2DCC000BACA07 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F28A1DC1EC2F3D8A4E2CD43D /* Pods-BingPaperTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -477,6 +618,7 @@
 		};
 		763C22C51AB2DCC000BACA07 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 948600370E83C7A1EA54FA4D /* Pods-BingPaperTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;

@@ -1,0 +1,12 @@
+PODS:
+  - MASPreferences (1.1.4)
+
+DEPENDENCIES:
+  - MASPreferences (~> 1.1)
+
+SPEC CHECKSUMS:
+  MASPreferences: 7bdcfe891d7840453cf48f95fa866c3e152ace7a
+
+PODFILE CHECKSUM: dc7c073452d27fe0f3f3c9c4f67e59a8832a8753
+
+COCOAPODS: 1.0.1

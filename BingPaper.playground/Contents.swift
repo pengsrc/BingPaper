@@ -2,4 +2,4 @@
 
 import Cocoa
 
-
+let hello = "Hello World!"

@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import MASPreferences
 
 class StatusBarViewController: NSViewController {
 
@@ -16,11 +17,11 @@ class StatusBarViewController: NSViewController {
     
     let preferences = UserDefaults.standard
     let pictureManager = PictureManager()
+    
+    var preferencesWindowController: NSWindowController?
 
     @IBOutlet weak var isAutoChangeWallpaperOnSwitch: NSButton!
     @IBOutlet weak var isDockIconOnSwitch: NSButton!
-    
-    var preferencesWindowController: NSWindowController?
     
     override func awakeFromNib() {
         self.isAutoChangeWallpaperOn = preferences.bool(forKey: "isAutoChangeWallpaperOn")
@@ -78,18 +79,23 @@ class StatusBarViewController: NSViewController {
 //    }
     
     @IBAction func launchPreferencesWindow(_ sender: NSButton) {
-        let preferencesStoryboard = NSStoryboard.init(name: "Preferences", bundle: nil)
-        let preferencesWindowController = preferencesStoryboard.instantiateInitialController()
-        
-        if let controller = preferencesWindowController as? PreferencesWindowController {
-            self.preferencesWindowController = controller
+        if (self.preferencesWindowController == nil) {
+            let generalViewController = GeneralPreferencesViewController()
+            let aboutViewController = AboutPreferencesViewController()
             
-            controller.loadWindow()
-            controller.showWindow(self)
-            controller.window?.makeKeyAndOrderFront(self)
+            generalViewController.loadView()
+            aboutViewController.loadView()
             
-            NSApplication.shared().activate(ignoringOtherApps: true)
+            self.preferencesWindowController = MASPreferencesWindowController.init(
+                viewControllers: [generalViewController, aboutViewController],
+                title: "Preferences"
+            )
         }
+        
+        self.preferencesWindowController?.showWindow(self)
+        self.preferencesWindowController?.window?.makeKeyAndOrderFront(self)
+        
+        NSApplication.shared().activate(ignoringOtherApps: true)
     }
     
     @IBAction func quitApplication(_ sender: NSButton) {
