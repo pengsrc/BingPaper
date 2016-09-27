@@ -34,6 +34,6 @@ class AboutPreferencesViewController: NSViewController, MASPreferencesViewContro
         }
     }
     
-    var toolbarItemImage: NSImage! = NSImage.init(named: "Toolbar-About")
-    var toolbarItemLabel: String! = "About"
+    var toolbarItemImage: NSImage! = NSImage.init(named: "Envolope")
+    var toolbarItemLabel: String! = "About  "
 }
