@@ -17,7 +17,7 @@
 		763C22CB1AB2E48400BACA07 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22CA1AB2E48400BACA07 /* StatusBarView.swift */; };
 		767B02BB1D9B99D2003BBC47 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 767B02BD1D9B99D2003BBC47 /* Localizable.strings */; };
 		767B02C21D9BB318003BBC47 /* AboutPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767B02C41D9BB318003BBC47 /* AboutPreferencesView.xib */; };
-		7695AB271D9AAF1D006CA215 /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7695AB251D9AAF1D006CA215 /* GeneralPreferencesView.xib */; };
+		767B02C81D9BC4F6003BBC47 /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767B02CA1D9BC4F6003BBC47 /* GeneralPreferencesView.xib */; };
 		7695AB2D1D9AB363006CA215 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7695AB2C1D9AB363006CA215 /* GeneralPreferencesViewController.swift */; };
 		7695AB301D9AB388006CA215 /* AboutPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7695AB2E1D9AB388006CA215 /* AboutPreferencesViewController.swift */; };
 		76FB444D1AB2F82F0088432F /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */; };
@@ -53,8 +53,10 @@
 		767B02C11D9B9CC4003BBC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Base; path = Base.lproj/Credits.rtf; sourceTree = "<group>"; };
 		767B02C31D9BB318003BBC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutPreferencesView.xib; sourceTree = "<group>"; };
 		767B02C61D9BB31A003BBC47 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AboutPreferencesView.strings"; sourceTree = "<group>"; };
+		767B02C91D9BC4F6003BBC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GeneralPreferencesView.xib; sourceTree = "<group>"; };
+		767B02CC1D9BC4F8003BBC47 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/GeneralPreferencesView.strings"; sourceTree = "<group>"; };
+		767B02CE1D9BC62E003BBC47 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/StatusBarView.strings"; sourceTree = "<group>"; };
 		76904C131D8257DE0076C399 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
-		7695AB251D9AAF1D006CA215 /* GeneralPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferencesView.xib; sourceTree = "<group>"; };
 		7695AB2C1D9AB363006CA215 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		7695AB2E1D9AB388006CA215 /* AboutPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPreferencesViewController.swift; sourceTree = "<group>"; };
 		76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
@@ -171,7 +173,7 @@
 		76904C1B1D83EBD50076C399 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				7695AB251D9AAF1D006CA215 /* GeneralPreferencesView.xib */,
+				767B02CA1D9BC4F6003BBC47 /* GeneralPreferencesView.xib */,
 				7695AB2C1D9AB363006CA215 /* GeneralPreferencesViewController.swift */,
 				767B02C41D9BB318003BBC47 /* AboutPreferencesView.xib */,
 				7695AB2E1D9AB388006CA215 /* AboutPreferencesViewController.swift */,
@@ -295,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				767B02C21D9BB318003BBC47 /* AboutPreferencesView.xib in Resources */,
-				7695AB271D9AAF1D006CA215 /* GeneralPreferencesView.xib in Resources */,
+				767B02C81D9BC4F6003BBC47 /* GeneralPreferencesView.xib in Resources */,
 				763C22AE1AB2DCC000BACA07 /* Images.xcassets in Resources */,
 				7602FDF91B522F7300E6EC7D /* StatusBarView.xib in Resources */,
 				7602FE051B52BEF000E6EC7D /* Credits.rtf in Resources */,
@@ -442,6 +444,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7602FDFC1B522F8000E6EC7D /* Base */,
+				767B02CE1D9BC62E003BBC47 /* zh-Hans */,
 			);
 			name = StatusBarView.xib;
 			sourceTree = "<group>";
@@ -471,6 +474,15 @@
 				767B02C61D9BB31A003BBC47 /* zh-Hans */,
 			);
 			name = AboutPreferencesView.xib;
+			sourceTree = "<group>";
+		};
+		767B02CA1D9BC4F6003BBC47 /* GeneralPreferencesView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				767B02C91D9BC4F6003BBC47 /* Base */,
+				767B02CC1D9BC4F8003BBC47 /* zh-Hans */,
+			);
+			name = GeneralPreferencesView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

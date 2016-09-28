@@ -31,4 +31,8 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     
     var toolbarItemImage: NSImage! = #imageLiteral(resourceName: "Switch")
     var toolbarItemLabel: String! = NSLocalizedString("General", comment: "N/A")
+    
+    @IBAction func selectRegion_zh_CN(_ sender: NSMenuItem) {
+        print(sender)
+    }
 }
