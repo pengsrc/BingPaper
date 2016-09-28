@@ -34,6 +34,6 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
         }
     }
     
-    var toolbarItemImage: NSImage! = NSImage.init(named: "Switch")
+    var toolbarItemImage: NSImage! = #imageLiteral(resourceName: "Switch")
     var toolbarItemLabel: String! = " General "
 }

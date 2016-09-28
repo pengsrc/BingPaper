@@ -18,8 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let statusItem = NSStatusBar.system().statusItem(withLength: -1);
         
         statusItem.view = StatusBarView(
-            image: NSImage(named: "StatusBarIcon")!,
-            statusItem: statusItem, popover: self.popover
+            image: #imageLiteral(resourceName: "StatusBarIcon"), statusItem: statusItem, popover: self.popover
         )
     }
 }

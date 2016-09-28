@@ -80,14 +80,8 @@ class StatusBarViewController: NSViewController {
     
     @IBAction func launchPreferencesWindow(_ sender: NSButton) {
         if (self.preferencesWindowController == nil) {
-            let generalViewController = GeneralPreferencesViewController()
-            let aboutViewController = AboutPreferencesViewController()
-            
-            generalViewController.loadView()
-            aboutViewController.loadView()
-            
             self.preferencesWindowController = MASPreferencesWindowController.init(
-                viewControllers: [generalViewController, aboutViewController],
+                viewControllers: [GeneralPreferencesViewController(), AboutPreferencesViewController()],
                 title: "BingPaper Preferences"
             )
         }

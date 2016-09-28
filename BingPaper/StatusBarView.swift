@@ -9,6 +9,10 @@
 import Cocoa
 
 class StatusBarView: NSView {
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     fileprivate let image: NSImage
     fileprivate let statusItem: NSStatusItem
@@ -28,11 +32,6 @@ class StatusBarView: NSView {
         
         super.init(frame: rect)
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     
     override func draw(_ dirtyRect: NSRect){
         self.statusItem.drawStatusBarBackground(in: dirtyRect, withHighlight: false)

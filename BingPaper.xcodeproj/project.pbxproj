@@ -15,6 +15,7 @@
 		763C22AE1AB2DCC000BACA07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 763C22AD1AB2DCC000BACA07 /* Images.xcassets */; };
 		763C22BD1AB2DCC000BACA07 /* BingPaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22BC1AB2DCC000BACA07 /* BingPaperTests.swift */; };
 		763C22CB1AB2E48400BACA07 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22CA1AB2E48400BACA07 /* StatusBarView.swift */; };
+		767B02BB1D9B99D2003BBC47 /* Localize.strings in Resources */ = {isa = PBXBuildFile; fileRef = 767B02BD1D9B99D2003BBC47 /* Localize.strings */; };
 		7695AB271D9AAF1D006CA215 /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7695AB251D9AAF1D006CA215 /* GeneralPreferencesView.xib */; };
 		7695AB2B1D9AAF3B006CA215 /* AboutPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7695AB291D9AAF3B006CA215 /* AboutPreferencesView.xib */; };
 		7695AB2D1D9AB363006CA215 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7695AB2C1D9AB363006CA215 /* GeneralPreferencesViewController.swift */; };
@@ -39,7 +40,6 @@
 		7602FE011B526C7800E6EC7D /* BingPaper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BingPaper.entitlements; sourceTree = "<group>"; };
 		7602FE021B526EC900E6EC7D /* PictureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureManager.swift; sourceTree = "<group>"; };
 		7602FE041B52961D00E6EC7D /* BingPaper.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BingPaper.playground; sourceTree = "<group>"; };
-		7602FE081B52BEF500E6EC7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Base; path = Base.lproj/Credits.rtf; sourceTree = "<group>"; };
 		763C22A41AB2DCC000BACA07 /* BingPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		763C22A81AB2DCC000BACA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		763C22A91AB2DCC000BACA07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +48,10 @@
 		763C22BB1AB2DCC000BACA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		763C22BC1AB2DCC000BACA07 /* BingPaperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingPaperTests.swift; sourceTree = "<group>"; };
 		763C22CA1AB2E48400BACA07 /* StatusBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
-		76904C121D8257DC0076C399 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		767B02BC1D9B99D2003BBC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localize.strings; sourceTree = "<group>"; };
+		767B02BF1D9B99D6003BBC47 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localize.strings"; sourceTree = "<group>"; };
+		767B02C01D9B9CAA003BBC47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		767B02C11D9B9CC4003BBC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Base; path = Base.lproj/Credits.rtf; sourceTree = "<group>"; };
 		76904C131D8257DE0076C399 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		7695AB251D9AAF1D006CA215 /* GeneralPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferencesView.xib; sourceTree = "<group>"; };
 		7695AB291D9AAF3B006CA215 /* AboutPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutPreferencesView.xib; sourceTree = "<group>"; };
@@ -129,10 +132,11 @@
 		763C22A71AB2DCC000BACA07 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7602FE071B52BEF000E6EC7D /* Credits.rtf */,
-				763C22AD1AB2DCC000BACA07 /* Images.xcassets */,
 				763C22A81AB2DCC000BACA07 /* Info.plist */,
 				7602FE011B526C7800E6EC7D /* BingPaper.entitlements */,
+				7602FE071B52BEF000E6EC7D /* Credits.rtf */,
+				767B02BD1D9B99D2003BBC47 /* Localize.strings */,
+				763C22AD1AB2DCC000BACA07 /* Images.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -295,6 +299,7 @@
 				763C22AE1AB2DCC000BACA07 /* Images.xcassets in Resources */,
 				7602FDF91B522F7300E6EC7D /* StatusBarView.xib in Resources */,
 				7602FE051B52BEF000E6EC7D /* Credits.rtf in Resources */,
+				767B02BB1D9B99D2003BBC47 /* Localize.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,11 +449,20 @@
 		7602FE071B52BEF000E6EC7D /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7602FE081B52BEF500E6EC7D /* Base */,
-				76904C121D8257DC0076C399 /* en */,
 				76904C131D8257DE0076C399 /* zh-Hans */,
+				767B02C01D9B9CAA003BBC47 /* en */,
+				767B02C11D9B9CC4003BBC47 /* Base */,
 			);
 			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		767B02BD1D9B99D2003BBC47 /* Localize.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				767B02BC1D9B99D2003BBC47 /* Base */,
+				767B02BF1D9B99D6003BBC47 /* zh-Hans */,
+			);
+			name = Localize.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
