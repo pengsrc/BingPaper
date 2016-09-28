@@ -1,9 +1,14 @@
 /* 
-  Localize.strings
+  Localizable.strings
   BingPaper
 
   Created by Aspire on 2016-09-28.
   Copyright © 2016 Peng Jingwen. All rights reserved.
 */
+
+"BingPaper Preferences" = "BingPaper 偏好设置";
+
+"General" = "通用";
+"About" = "关于";
 
 "Version" = "版本";

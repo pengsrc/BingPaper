@@ -82,7 +82,7 @@ class StatusBarViewController: NSViewController {
         if (self.preferencesWindowController == nil) {
             self.preferencesWindowController = MASPreferencesWindowController.init(
                 viewControllers: [GeneralPreferencesViewController(), AboutPreferencesViewController()],
-                title: "BingPaper Preferences"
+                title: NSLocalizedString("BingPaper Preferences", comment: "N/A")
             )
         }
         

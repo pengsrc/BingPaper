@@ -1,0 +1,24 @@
+
+/* Class = "NSButtonCell"; title = "hi@pjw.io"; ObjectID = "4YV-gI-R2O"; */
+"4YV-gI-R2O.title" = "hi@pjw.io";
+
+/* Class = "NSTextFieldCell"; title = "Website: "; ObjectID = "6kH-Rn-scH"; */
+"6kH-Rn-scH.title" = "网站: ";
+
+/* Class = "NSTextFieldCell"; title = "All rights reserved."; ObjectID = "HEo-Iz-SY1"; */
+"HEo-Iz-SY1.title" = "保留所有权利.";
+
+/* Class = "NSTextFieldCell"; title = "Copyright © 2015-2016 Peng Jingwen."; ObjectID = "JYS-CU-ihO"; */
+"JYS-CU-ihO.title" = "版权所有 © 2015-2016 Peng Jingwen.";
+
+/* Class = "NSButtonCell"; title = "https://pjw.io"; ObjectID = "bW2-4j-5G7"; */
+"bW2-4j-5G7.title" = "https://pjw.io";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Version& Build String"; ObjectID = "tQu-DK-Ukt"; */
+"tQu-DK-Ukt.placeholderString" = "Version & Build String";
+
+/* Class = "NSTextFieldCell"; title = "BingPaper"; ObjectID = "tXO-Gc-lIP"; */
+"tXO-Gc-lIP.title" = "BingPaper";
+
+/* Class = "NSTextFieldCell"; title = "Email: "; ObjectID = "tgA-N9-W8J"; */
+"tgA-N9-W8J.title" = "邮箱: ";

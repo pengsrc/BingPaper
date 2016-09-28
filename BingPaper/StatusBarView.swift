@@ -10,15 +10,15 @@ import Cocoa
 
 class StatusBarView: NSView {
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     fileprivate let image: NSImage
     fileprivate let statusItem: NSStatusItem
     fileprivate let popover: NSPopover
     
     fileprivate var popoverTransiencyMonitor: AnyObject?
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     init(image: NSImage, statusItem: NSStatusItem, popover: NSPopover){
         self.image = image

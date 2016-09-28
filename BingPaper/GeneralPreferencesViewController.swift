@@ -25,15 +25,10 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     }
 
     override var identifier: String? {
-        get {
-            return "General"
-        }
-        
-        set {
-            super.identifier = newValue
-        }
+        get { return "General" }
+        set { super.identifier = newValue }
     }
     
     var toolbarItemImage: NSImage! = #imageLiteral(resourceName: "Switch")
-    var toolbarItemLabel: String! = " General "
+    var toolbarItemLabel: String! = NSLocalizedString("General", comment: "N/A")
 }

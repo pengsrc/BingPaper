@@ -10,45 +10,38 @@ import Cocoa
 import MASPreferences
 
 class AboutPreferencesViewController: NSViewController, MASPreferencesViewController {
-
+    
+    override var identifier: String? {
+        get { return "About" }
+        set { super.identifier = newValue }
+    }
+    
+    var toolbarItemImage: NSImage! = #imageLiteral(resourceName: "Envolope")
+    var toolbarItemLabel: String! = NSLocalizedString("About", comment: "N/A")
+    
+    @IBOutlet weak var versionAndBuildString: NSTextField!
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
     }
 
     init() {
         // NSApplication.shared().orderFrontStandardAboutPanel(self)
         super.init(nibName: "AboutPreferencesView", bundle: Bundle())!
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        self.loadView()
         self.setup()
     }
 
-    override var identifier: String? {
-        get {
-            return "About"
-        }
-
-        set {
-            super.identifier = newValue
-        }
-    }
-
-    var toolbarItemImage: NSImage! = #imageLiteral(resourceName: "Envolope")
-    var toolbarItemLabel: String! = "About  "
-    
-    @IBOutlet weak var versionAndBuildString: NSTextField!
-
     func setup() {
-        let prefixString = "\(NSLocalizedString("Version", comment: "N/A")): "
-        let versionString = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
-        let buildString = Bundle.main.infoDictionary?["CFBundleVersion"]
+        let prefix = "\(NSLocalizedString("Version", comment: "N/A")): "
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"]
         
-        self.versionAndBuildString.stringValue = "\(prefixString)\(versionString!) (\(buildString!))"
+        self.versionAndBuildString.stringValue = "\(prefix)\(version!) (\(build!))"
     }
 
     @IBAction func openEmail(_ sender: NSButton) {
