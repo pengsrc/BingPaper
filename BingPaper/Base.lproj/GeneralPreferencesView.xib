@@ -6,6 +6,12 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="GeneralPreferencesViewController" customModule="BingPaper" customModuleProvider="target">
             <connections>
+                <outlet property="autoDownloadCheckButton" destination="LyS-Iv-Avw" id="13v-hv-vT5"/>
+                <outlet property="autoStartCheckButton" destination="k7x-eM-qlW" id="jiE-rR-354"/>
+                <outlet property="dockIconCheckButton" destination="6dy-W2-9IW" id="OuE-gl-PvD"/>
+                <outlet property="downloadAllRegionsCheckButton" destination="Y95-Gu-Q3v" id="6D7-AN-1TZ"/>
+                <outlet property="regionSelectPopUp" destination="s6u-f1-xZd" id="vbW-W1-YKu"/>
+                <outlet property="storagePathButton" destination="V4e-rj-Hec" id="aOH-uI-iik"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -52,6 +58,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="toggleLaunchOnSystemStartup:" target="-2" id="8nd-n7-nK9"/>
+                    </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LyS-Iv-Avw">
                     <rect key="frame" x="144" y="243" width="210" height="18"/>
@@ -81,18 +90,18 @@
                 <popUpButton fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N9F-jL-tcu" userLabel="Bing Region Select">
                     <rect key="frame" x="144" y="181" width="115" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="bevel" title="China" bezelStyle="regularSquare" imagePosition="left" lineBreakMode="truncatingTail" continuous="YES" state="on" borderStyle="border" inset="2" selectedItem="ZUS-Yh-ryZ" id="s6u-f1-xZd">
+                    <popUpButtonCell key="cell" type="bevel" title="China" bezelStyle="regularSquare" imagePosition="left" lineBreakMode="truncatingTail" continuous="YES" state="on" borderStyle="border" tag="1" inset="2" selectedItem="ZUS-Yh-ryZ" id="s6u-f1-xZd">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" id="bHc-gv-XUj">
                             <items>
-                                <menuItem title="China" state="on" id="ZUS-Yh-ryZ">
+                                <menuItem title="China" state="on" tag="1" id="ZUS-Yh-ryZ">
                                     <connections>
                                         <action selector="selectRegion_zh_CN:" target="-2" id="wBf-eY-H5T"/>
                                     </connections>
                                 </menuItem>
-                                <menuItem title="USA" id="rFg-Ls-hK0"/>
-                                <menuItem title="Japan" id="G8x-T4-05y">
+                                <menuItem title="USA" tag="2" id="rFg-Ls-hK0"/>
+                                <menuItem title="Japan" tag="3" id="G8x-T4-05y">
                                     <modifierMask key="keyEquivalentModifierMask"/>
                                 </menuItem>
                             </items>
@@ -136,7 +145,7 @@
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V4e-rj-Hec">
                     <rect key="frame" x="144" y="115" width="210" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="roundTextured" title="/Users/Name/Pictures/BingPaper" bezelStyle="texturedRounded" image="NSQuickLookTemplate" imagePosition="right" alignment="center" lineBreakMode="truncatingMiddle" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gjF-Cz-ybT">
+                    <buttonCell key="cell" type="roundTextured" title="/Users/Name/BingPaper" bezelStyle="texturedRounded" image="NSQuickLookTemplate" imagePosition="right" alignment="center" lineBreakMode="truncatingMiddle" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gjF-Cz-ybT">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -150,7 +159,7 @@
                     </buttonCell>
                 </button>
             </subviews>
-            <point key="canvasLocation" x="114" y="216.5"/>
+            <point key="canvasLocation" x="-70" y="78"/>
         </customView>
     </objects>
     <resources>

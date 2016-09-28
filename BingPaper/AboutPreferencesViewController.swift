@@ -33,10 +33,10 @@ class AboutPreferencesViewController: NSViewController, MASPreferencesViewContro
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setup()
+        self.loadStrings()
     }
 
-    func setup() {
+    func loadStrings() {
         let prefix = "\(NSLocalizedString("Version", comment: "N/A")): "
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
         let build = Bundle.main.infoDictionary?["CFBundleVersion"]

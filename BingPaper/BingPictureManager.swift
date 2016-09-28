@@ -1,5 +1,5 @@
 //
-//  PicturesManager.swift
+//  BingPictureManager.swift
 //  BingPaper
 //
 //  Created by Peng Jingwen on 2015-07-12.
@@ -8,7 +8,13 @@
 
 import Cocoa
 
-class PictureManager: NSObject {
+enum BingRegion: String {
+    case China = "zh-CN"
+    case USA = "en-US"
+    case Japan = "ja-JP"
+}
+
+class BingPictureManager: NSObject {
     
     var pastWallpapersRange = 15
     

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		13F210EC88189653FA3C8CCB /* Pods_BingPaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89CAAB9C49B322AE3723A34D /* Pods_BingPaper.framework */; };
 		7602FDF91B522F7300E6EC7D /* StatusBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7602FDFB1B522F7300E6EC7D /* StatusBarView.xib */; };
-		7602FE031B526EC900E6EC7D /* PictureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7602FE021B526EC900E6EC7D /* PictureManager.swift */; };
+		7602FE031B526EC900E6EC7D /* BingPictureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7602FE021B526EC900E6EC7D /* BingPictureManager.swift */; };
 		7602FE051B52BEF000E6EC7D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7602FE071B52BEF000E6EC7D /* Credits.rtf */; };
 		763C22AA1AB2DCC000BACA07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22A91AB2DCC000BACA07 /* AppDelegate.swift */; };
 		763C22AE1AB2DCC000BACA07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 763C22AD1AB2DCC000BACA07 /* Images.xcassets */; };
@@ -20,6 +20,7 @@
 		767B02C81D9BC4F6003BBC47 /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767B02CA1D9BC4F6003BBC47 /* GeneralPreferencesView.xib */; };
 		7695AB2D1D9AB363006CA215 /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7695AB2C1D9AB363006CA215 /* GeneralPreferencesViewController.swift */; };
 		7695AB301D9AB388006CA215 /* AboutPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7695AB2E1D9AB388006CA215 /* AboutPreferencesViewController.swift */; };
+		769EC31C1D9BF7E7001F7CBC /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769EC31B1D9BF7E7001F7CBC /* Shared.swift */; };
 		76FB444D1AB2F82F0088432F /* StatusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */; };
 		ED32B9DA9675D670B387772F /* Pods_BingPaperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7082E9B74124607292FF75C4 /* Pods_BingPaperTests.framework */; };
 /* End PBXBuildFile section */
@@ -38,7 +39,7 @@
 		7082E9B74124607292FF75C4 /* Pods_BingPaperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingPaperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7602FDFC1B522F8000E6EC7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/StatusBarView.xib; sourceTree = "<group>"; };
 		7602FE011B526C7800E6EC7D /* BingPaper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BingPaper.entitlements; sourceTree = "<group>"; };
-		7602FE021B526EC900E6EC7D /* PictureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureManager.swift; sourceTree = "<group>"; };
+		7602FE021B526EC900E6EC7D /* BingPictureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingPictureManager.swift; sourceTree = "<group>"; };
 		7602FE041B52961D00E6EC7D /* BingPaper.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BingPaper.playground; sourceTree = "<group>"; };
 		763C22A41AB2DCC000BACA07 /* BingPaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingPaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		763C22A81AB2DCC000BACA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		76904C131D8257DE0076C399 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		7695AB2C1D9AB363006CA215 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		7695AB2E1D9AB388006CA215 /* AboutPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPreferencesViewController.swift; sourceTree = "<group>"; };
+		769EC31B1D9BF7E7001F7CBC /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarViewController.swift; sourceTree = "<group>"; };
 		89CAAB9C49B322AE3723A34D /* Pods_BingPaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingPaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		948600370E83C7A1EA54FA4D /* Pods-BingPaperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingPaperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BingPaperTests/Pods-BingPaperTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -184,7 +186,8 @@
 		76C618251D92C4BA00D98E38 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				7602FE021B526EC900E6EC7D /* PictureManager.swift */,
+				769EC31B1D9BF7E7001F7CBC /* Shared.swift */,
+				7602FE021B526EC900E6EC7D /* BingPictureManager.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -412,11 +415,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				769EC31C1D9BF7E7001F7CBC /* Shared.swift in Sources */,
 				7695AB2D1D9AB363006CA215 /* GeneralPreferencesViewController.swift in Sources */,
 				7695AB301D9AB388006CA215 /* AboutPreferencesViewController.swift in Sources */,
 				763C22CB1AB2E48400BACA07 /* StatusBarView.swift in Sources */,
 				76FB444D1AB2F82F0088432F /* StatusBarViewController.swift in Sources */,
-				7602FE031B526EC900E6EC7D /* PictureManager.swift in Sources */,
+				7602FE031B526EC900E6EC7D /* BingPictureManager.swift in Sources */,
 				763C22AA1AB2DCC000BACA07 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

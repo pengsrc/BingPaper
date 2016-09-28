@@ -10,9 +10,9 @@ import Cocoa
 
 class StatusBarView: NSView {
 
-    fileprivate let image: NSImage
-    fileprivate let statusItem: NSStatusItem
-    fileprivate let popover: NSPopover
+    fileprivate var image: NSImage
+    fileprivate var statusItem: NSStatusItem
+    fileprivate var popover: NSPopover
     
     fileprivate var popoverTransiencyMonitor: AnyObject?
     
@@ -44,7 +44,6 @@ class StatusBarView: NSView {
     
     override func mouseDown(with theEvent: NSEvent){
         if (self.popoverTransiencyMonitor == nil) {
-            
             self.popover.show(relativeTo: self.frame, of: self, preferredEdge: NSRectEdge.minY)
             
             self.popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEvents(
@@ -55,7 +54,6 @@ class StatusBarView: NSView {
                     self.popover.close()
             }) as AnyObject?
         } else {
-            
             NSEvent.removeMonitor(self.popoverTransiencyMonitor!)
             self.popoverTransiencyMonitor = nil
             self.popover.close()

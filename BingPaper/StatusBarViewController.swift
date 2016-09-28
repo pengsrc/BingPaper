@@ -16,7 +16,7 @@ class StatusBarViewController: NSViewController {
     var timerTask = Timer()
     
     let preferences = UserDefaults.standard
-    let pictureManager = PictureManager()
+    let pictureManager = BingPictureManager()
     
     var preferencesWindowController: NSWindowController?
 
