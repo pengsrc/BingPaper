@@ -53,7 +53,31 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
             forKey: SharedPreferencesKey.WillLaunchOnSystemStartup.rawValue
         ) ? 1 : 0
         
-        self.regionSelectPopUp.selectItem(withTag: 2)
+        self.dockIconCheckButton.state = self.standardDefaults.bool(
+            forKey: SharedPreferencesKey.WillDisplayIconInDock.rawValue
+        ) ? 1 : 0
+        
+        self.autoDownloadCheckButton.state = self.standardDefaults.bool(
+            forKey: SharedPreferencesKey.WillAutoDownloadNewImages.rawValue
+        ) ? 1 : 0
+        
+        self.downloadAllRegionsCheckButton.state = self.standardDefaults.bool(
+            forKey: SharedPreferencesKey.WillDownloadImagesOfAllRegions.rawValue
+        ) ? 1 : 0
+        
+        if let region = self.standardDefaults.string(
+            forKey: SharedPreferencesKey.CurrentSelectedBingRegion.rawValue
+        ) {
+            if let regionTag = self.reginTagMap[region] {
+                self.regionSelectPopUp.selectItem(withTag: regionTag)
+            }
+        }
+        
+        if let storagePath = self.standardDefaults.string(
+            forKey: SharedPreferencesKey.DownloadedImagesStoragePath.rawValue
+        ) {
+            self.storagePathButton.stringValue = storagePath
+        }
     }
     
     @IBAction func toggleLaunchOnSystemStartup(_ sender: NSButton) {
@@ -63,8 +87,55 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
         )
     }
     
-    @IBAction func selectRegion_zh_CN(_ sender: NSMenuItem) {
-        print(sender)
+    @IBAction func toggleDockIcon(_ sender: NSButton) {
+        self.standardDefaults.set(
+            sender.state == 1 ? true : false,
+            forKey: SharedPreferencesKey.WillDisplayIconInDock.rawValue
+        )
+    }
+    
+    @IBAction func toggleDownload(_ sender: NSButton) {
+        self.standardDefaults.set(
+            sender.state == 1 ? true : false,
+            forKey: SharedPreferencesKey.WillAutoDownloadNewImages.rawValue
+        )
+    }
+    
+    @IBAction func toggleDownloadAll(_ sender: NSButton) {
+        self.standardDefaults.set(
+            sender.state == 1 ? true : false,
+            forKey: SharedPreferencesKey.WillDownloadImagesOfAllRegions.rawValue
+        )
+    }
+    
+    @IBAction func selectRegionChina(_ sender: NSMenuItem) {
+        self.standardDefaults.set(
+            BingRegion.China.rawValue,
+            forKey: SharedPreferencesKey.CurrentSelectedBingRegion.rawValue
+        )
     }
 
+    @IBAction func selectRegionUSA(_ sender: NSMenuItem) {
+        self.standardDefaults.set(
+            BingRegion.USA.rawValue,
+            forKey: SharedPreferencesKey.CurrentSelectedBingRegion.rawValue
+        )
+    }
+ 
+    @IBAction func selectRegionJapan(_ sender: NSMenuItem) {
+        self.standardDefaults.set(
+            BingRegion.Japan.rawValue,
+            forKey: SharedPreferencesKey.CurrentSelectedBingRegion.rawValue
+        )
+    }
+    
+    @IBAction func viewStoragePath(_ sender: NSButton) {
+    }
+    
+    @IBAction func changeStoragePath(_ sender: NSButton) {
+    }
+    
+    
+    @IBAction func resetPreferences(_ sender: NSButton) {
+    }
 }

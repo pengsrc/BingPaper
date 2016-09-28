@@ -69,6 +69,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="toggleDownload:" target="-2" id="uvr-Mv-osS"/>
+                    </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6dy-W2-9IW">
                     <rect key="frame" x="144" y="305" width="210" height="18"/>
@@ -77,6 +80,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="toggleDockIcon:" target="-2" id="lnO-zj-39F"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DgU-zF-TQA">
                     <rect key="frame" x="38" y="188" width="100" height="18"/>
@@ -97,12 +103,19 @@
                             <items>
                                 <menuItem title="China" state="on" tag="1" id="ZUS-Yh-ryZ">
                                     <connections>
-                                        <action selector="selectRegion_zh_CN:" target="-2" id="wBf-eY-H5T"/>
+                                        <action selector="selectRegionChina:" target="-2" id="kUp-wG-XKF"/>
                                     </connections>
                                 </menuItem>
-                                <menuItem title="USA" tag="2" id="rFg-Ls-hK0"/>
+                                <menuItem title="USA" tag="2" id="rFg-Ls-hK0">
+                                    <connections>
+                                        <action selector="selectRegionUSA:" target="-2" id="1t9-a6-Rwa"/>
+                                    </connections>
+                                </menuItem>
                                 <menuItem title="Japan" tag="3" id="G8x-T4-05y">
                                     <modifierMask key="keyEquivalentModifierMask"/>
+                                    <connections>
+                                        <action selector="selectRegionJapan:" target="-2" id="ydE-W6-rDi"/>
+                                    </connections>
                                 </menuItem>
                             </items>
                         </menu>
@@ -127,12 +140,15 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J0o-HH-2ru">
-                    <rect key="frame" x="271" y="83" width="87" height="32"/>
+                    <rect key="frame" x="275" y="83" width="87" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Change" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eN3-Up-aKr">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="changeStoragePath:" target="-2" id="WJT-Fv-P5f"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qfT-Pb-a8T">
                     <rect key="frame" x="138" y="20" width="151" height="32"/>
@@ -141,14 +157,20 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="resetPreferences:" target="-2" id="Ufo-1G-QK7"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V4e-rj-Hec">
-                    <rect key="frame" x="144" y="115" width="210" height="25"/>
+                    <rect key="frame" x="146" y="115" width="210" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="roundTextured" title="/Users/Name/BingPaper" bezelStyle="texturedRounded" image="NSQuickLookTemplate" imagePosition="right" alignment="center" lineBreakMode="truncatingMiddle" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gjF-Cz-ybT">
+                    <buttonCell key="cell" type="roundTextured" title="Please select storage path" bezelStyle="texturedRounded" image="NSQuickLookTemplate" imagePosition="right" alignment="center" lineBreakMode="truncatingMiddle" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gjF-Cz-ybT">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="viewStoragePath:" target="-2" id="js3-dp-1Zi"/>
+                    </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y95-Gu-Q3v">
                     <rect key="frame" x="144" y="217" width="210" height="18"/>
@@ -157,6 +179,9 @@
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="toggleDownloadAll:" target="-2" id="PhV-6j-kzW"/>
+                    </connections>
                 </button>
             </subviews>
             <point key="canvasLocation" x="-70" y="78"/>
