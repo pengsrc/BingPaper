@@ -15,13 +15,13 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
         fatalError("init(coder:) has not been implemented")
     }
     
+    init() {
+        super.init(nibName: "GeneralPreferencesView", bundle: Bundle())!
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-    }
-    
-    init() {
-        super.init(nibName: "GeneralPreferencesView", bundle: Bundle())!
     }
 
     override var identifier: String? {
