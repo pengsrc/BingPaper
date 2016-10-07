@@ -20,6 +20,8 @@
 		763C22AE1AB2DCC000BACA07 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 763C22AD1AB2DCC000BACA07 /* Images.xcassets */; };
 		763C22BD1AB2DCC000BACA07 /* BingPaperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22BC1AB2DCC000BACA07 /* BingPaperTests.swift */; };
 		763C22CB1AB2E48400BACA07 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763C22CA1AB2E48400BACA07 /* StatusBarView.swift */; };
+		763E701B1DA7FA06008AC2E6 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763E701A1DA7FA06008AC2E6 /* MenuItem.swift */; };
+		763E701E1DA7FDBE008AC2E6 /* PopUpButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763E701D1DA7FDBE008AC2E6 /* PopUpButtonCell.swift */; };
 		767B02BB1D9B99D2003BBC47 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 767B02BD1D9B99D2003BBC47 /* Localizable.strings */; };
 		767B02C21D9BB318003BBC47 /* AboutPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767B02C41D9BB318003BBC47 /* AboutPreferencesView.xib */; };
 		767B02C81D9BC4F6003BBC47 /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 767B02CA1D9BC4F6003BBC47 /* GeneralPreferencesView.xib */; };
@@ -81,6 +83,8 @@
 		763C22BB1AB2DCC000BACA07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		763C22BC1AB2DCC000BACA07 /* BingPaperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingPaperTests.swift; sourceTree = "<group>"; };
 		763C22CA1AB2E48400BACA07 /* StatusBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		763E701A1DA7FA06008AC2E6 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		763E701D1DA7FDBE008AC2E6 /* PopUpButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpButtonCell.swift; sourceTree = "<group>"; };
 		767B02BC1D9B99D2003BBC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		767B02BF1D9B99D6003BBC47 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		767B02C11D9B9CC4003BBC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Base; path = Base.lproj/Credits.rtf; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 				76C618251D92C4BA00D98E38 /* Core */,
 				76904C1A1D83EB5F0076C399 /* StatusBar */,
 				76904C1B1D83EBD50076C399 /* Preferences */,
+				763E701C1DA7FAB3008AC2E6 /* Override Basic */,
 				763C22A71AB2DCC000BACA07 /* Supporting Files */,
 			);
 			path = BingPaper;
@@ -250,6 +255,15 @@
 				763C22BB1AB2DCC000BACA07 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		763E701C1DA7FAB3008AC2E6 /* Override Basic */ = {
+			isa = PBXGroup;
+			children = (
+				763E701A1DA7FA06008AC2E6 /* MenuItem.swift */,
+				763E701D1DA7FDBE008AC2E6 /* PopUpButtonCell.swift */,
+			);
+			name = "Override Basic";
 			sourceTree = "<group>";
 		};
 		76904C1A1D83EB5F0076C399 /* StatusBar */ = {
@@ -598,7 +612,9 @@
 				7695AB301D9AB388006CA215 /* AboutPreferencesViewController.swift in Sources */,
 				763C22CB1AB2E48400BACA07 /* StatusBarView.swift in Sources */,
 				76FB444D1AB2F82F0088432F /* StatusBarViewController.swift in Sources */,
+				763E701B1DA7FA06008AC2E6 /* MenuItem.swift in Sources */,
 				7602FE031B526EC900E6EC7D /* BingPictureManager.swift in Sources */,
+				763E701E1DA7FDBE008AC2E6 /* PopUpButtonCell.swift in Sources */,
 				763C22AA1AB2DCC000BACA07 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

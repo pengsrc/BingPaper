@@ -8,12 +8,6 @@
 
 import Cocoa
 
-enum BingRegion: String {
-    case China = "zh-CN"
-    case USA = "en-US"
-    case Japan = "ja-JP"
-}
-
 class BingPictureManager: NSObject {
     
     var pastWallpapersRange = 15

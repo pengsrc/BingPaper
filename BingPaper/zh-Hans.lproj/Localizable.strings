@@ -12,3 +12,8 @@
 "About" = "关于";
 
 "Version" = "版本";
+
+"Reset Warning" = "重置警告";
+"Are you sure to reset you would like to reset the preferences?" = "确定要重置所有的偏好设置吗？";
+"Reset" = "重置";
+"Cancel" = "取消";

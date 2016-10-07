@@ -13,15 +13,13 @@ class StatusBarViewController: NSViewController {
     var timerTask = Timer()
     let pictureManager = BingPictureManager()
     
-    var standardDefaults: UserDefaults! = UserDefaults.standard
-    
     var preferencesWindowController: NSWindowController?
 
     @IBOutlet weak var isAutoChangeWallpaperOnSwitch: NSButton!
     @IBOutlet weak var isDockIconOnSwitch: NSButton!
     
     override func awakeFromNib() {
-        if standardDefaults.bool(forKey: SharedPreferencesKey.WillDisplayIconInDock.rawValue) {
+        if SharedPreferences.bool(forKey: SharedPreferences.Key.WillDisplayIconInDock) {
             NSApplication.shared().setActivationPolicy(NSApplicationActivationPolicy.regular)
         } else {
             NSApplication.shared().setActivationPolicy(NSApplicationActivationPolicy.accessory)
@@ -37,7 +35,7 @@ class StatusBarViewController: NSViewController {
     }
     
     func refreshWallpaper() {
-        if standardDefaults.bool(forKey: SharedPreferencesKey.WillAutoDownloadNewImages.rawValue) {
+        if SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoDownloadNewImages) {
             DispatchQueue.main.async(execute: { () -> Void in
                 self.pictureManager.fetchLastWallpaperAndSetAsWallpaper(forceUpdate: false)
                 self.pictureManager.fetchPastWallpapers()
@@ -51,7 +49,11 @@ class StatusBarViewController: NSViewController {
     }
     
     @IBAction func logoClicked(_ sender: NSButton) {
-        NSWorkspace.shared().openFile(self.pictureManager.workDirectory)
+        if let path = SharedPreferences.string(
+            forKey: SharedPreferences.Key.DownloadedImagesStoragePath
+        ) {
+            NSWorkspace.shared().openFile(path)
+        }
     }
     
     @IBAction func launchPreferencesWindow(_ sender: NSButton) {
