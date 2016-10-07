@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ServiceManagement
 import MASPreferences
 
 class GeneralPreferencesViewController: NSViewController, MASPreferencesViewController {
@@ -81,17 +82,32 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     }
     
     @IBAction func toggleLaunchOnSystemStartup(_ sender: NSButton) {
+        let isEnabled = sender.state == 1 ? true : false
+
         self.standardDefaults.set(
-            sender.state == 1 ? true : false,
-            forKey: SharedPreferencesKey.WillLaunchOnSystemStartup.rawValue
+            isEnabled, forKey: SharedPreferencesKey.WillLaunchOnSystemStartup.rawValue
         )
+
+        if SMLoginItemSetEnabled("com.prettyxw.mac.BingPaperLoginItem" as CFString, isEnabled) {
+            
+        } else {
+            
+        }
     }
     
     @IBAction func toggleDockIcon(_ sender: NSButton) {
+        let isOn = sender.state == 1 ? true : false
+        
         self.standardDefaults.set(
-            sender.state == 1 ? true : false,
-            forKey: SharedPreferencesKey.WillDisplayIconInDock.rawValue
+            isOn, forKey: SharedPreferencesKey.WillDisplayIconInDock.rawValue
         )
+        
+        if isOn {
+            NSApplication.shared().setActivationPolicy(NSApplicationActivationPolicy.regular)
+        } else {
+            NSApplication.shared().setActivationPolicy(NSApplicationActivationPolicy.accessory)
+            NSApplication.shared().activate(ignoringOtherApps: true)
+        }
     }
     
     @IBAction func toggleDownload(_ sender: NSButton) {
