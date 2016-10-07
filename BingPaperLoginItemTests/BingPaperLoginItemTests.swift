@@ -6,6 +6,7 @@
 //  Copyright © 2016 Peng Jingwen. All rights reserved.
 //
 
+import Cocoa
 import XCTest
 
 class BingPaperLoginItemTests: XCTestCase {

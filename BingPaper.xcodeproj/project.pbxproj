@@ -162,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				761FBF871DA78F1300F4409E /* BingPaperLoginItemTests.swift */,
-				761FBF891DA78F1400F4409E /* Info.plist */,
 				761FBF8F1DA790CB00F4409E /* Supporting Files */,
 			);
 			path = BingPaperLoginItemTests;
@@ -171,6 +170,7 @@
 		761FBF8F1DA790CB00F4409E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				761FBF891DA78F1400F4409E /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -898,7 +898,7 @@
 				);
 				INFOPLIST_FILE = BingPaperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.prettyx.mac.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prettyx.mac.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BingPaper.app/Contents/MacOS/BingPaper";
@@ -917,7 +917,7 @@
 				);
 				INFOPLIST_FILE = BingPaperTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.prettyx.mac.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prettyx.mac.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BingPaper.app/Contents/MacOS/BingPaper";
