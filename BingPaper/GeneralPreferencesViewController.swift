@@ -77,6 +77,7 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
         SharedPreferences.set(
             isEnabled, forKey: SharedPreferences.Key.WillLaunchOnSystemStartup
         )
+        
         SMLoginItemSetEnabled("com.prettyxw.mac.BingPaperLoginItem" as CFString, isEnabled)
     }
     
@@ -86,6 +87,7 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
         SharedPreferences.set(
             isOn, forKey: SharedPreferences.Key.WillDisplayIconInDock
         )
+        
         if isOn {
             NSApplication.shared().setActivationPolicy(NSApplicationActivationPolicy.regular)
         } else {
@@ -95,6 +97,7 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     
     @IBAction func toggleDownload(_ sender: NSButton) {
         let isEnabled = sender.state == 1 ? true : false
+        
         SharedPreferences.set(isEnabled, forKey: SharedPreferences.Key.WillAutoDownloadNewImages)
     }
     
@@ -117,7 +120,6 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     
     @IBAction func changeStoragePath(_ sender: NSButton) {
         let openPanel = NSOpenPanel();
-        openPanel.title = "Choose a storage path"
         openPanel.showsResizeIndicator = true
         openPanel.showsHiddenFiles = false
         openPanel.canChooseFiles = false;
@@ -132,12 +134,12 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
                         path,
                         forKey: SharedPreferences.Key.DownloadedImagesStoragePath
                     )
+                    
                     self.loadPreferences()
                 }
             }
         }
     }
-    
     
     @IBAction func resetPreferences(_ sender: NSButton) {
         let alert = NSAlert()
@@ -153,6 +155,7 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
         alert.beginSheetModal(for: self.view.window!, completionHandler: { (response) -> Void in
             if response == NSAlertFirstButtonReturn {
                 SharedPreferences.clear()
+                
                 self.loadPreferences()
             }
         })
