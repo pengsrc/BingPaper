@@ -19,7 +19,7 @@
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tye-0u-m7e">
                     <rect key="frame" x="58" y="155" width="85" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="Today !" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jDq-jy-kaQ">
+                    <buttonCell key="cell" type="push" title="Today !" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jDq-jy-kaQ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -65,6 +65,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="yesterday:" target="yPt-f7-kZe" id="Qo6-nF-TFN"/>
+                    </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdA-LM-ElN">
                     <rect key="frame" x="138" y="155" width="37" height="32"/>
@@ -73,6 +76,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="tomorrow:" target="yPt-f7-kZe" id="8xy-5F-W6n"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Cz-mh-mg1">
                     <rect key="frame" x="30" y="132" width="141" height="17"/>
@@ -97,7 +103,7 @@
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAH-5N-LM1">
                     <rect key="frame" x="18" y="41" width="164" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" alignment="center" scrollable="YES" lineBreakMode="clipping" imageScaling="axesIndependently" inset="2" id="R7D-hG-r6g">
+                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" alignment="center" imageScaling="axesIndependently" inset="2" id="R7D-hG-r6g">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <string key="title">苏拉群岛上的苏格兰松树
 松恩-菲尤拉讷
@@ -105,12 +111,23 @@
 © Orsolya Haarberg</string>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="wallpaperInfoButtonClicked:" target="yPt-f7-kZe" id="YSQ-OZ-tSg"/>
+                    </connections>
                 </button>
             </subviews>
             <point key="canvasLocation" x="-596" y="-283"/>
         </customView>
         <customObject id="XW9-IT-P7a" customClass="NSFontManager"/>
-        <customObject id="yPt-f7-kZe" customClass="StatusBarViewController" customModule="BingPaper" customModuleProvider="target"/>
+        <customObject id="yPt-f7-kZe" customClass="StatusBarViewController" customModule="BingPaper" customModuleProvider="target">
+            <connections>
+                <outlet property="dateTextField" destination="8Cz-mh-mg1" id="NkS-xL-LY0"/>
+                <outlet property="todayButton" destination="Tye-0u-m7e" id="n38-YA-Bm6"/>
+                <outlet property="tomorrowButton" destination="JdA-LM-ElN" id="6gf-uB-1ME"/>
+                <outlet property="wallpaperInfoButton" destination="DAH-5N-LM1" id="kCV-QE-sfx"/>
+                <outlet property="yesterdayButton" destination="pgR-WI-LWb" id="sEv-ao-uve"/>
+            </connections>
+        </customObject>
         <viewController id="F95-OJ-xb7" userLabel="Popover View Controller">
             <connections>
                 <outlet property="view" destination="7xe-pE-msc" id="JcF-ek-hif"/>

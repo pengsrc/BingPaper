@@ -23,6 +23,7 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     @IBOutlet weak var autoStartCheckButton: NSButton!
     @IBOutlet weak var dockIconCheckButton: NSButton!
     @IBOutlet weak var autoDownloadCheckButton: NSButton!
+    @IBOutlet weak var autoChangeWallpaperCheckButton: NSButton!
     @IBOutlet weak var downloadAllRegionsCheckButton: NSButton!
     @IBOutlet weak var regionSelectPopUp: PopUpButtonCell!
     @IBOutlet weak var storagePathButton: NSButton!
@@ -54,9 +55,21 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
             forKey: SharedPreferences.Key.WillAutoDownloadNewImages
         ) ? 1 : 0
         
+        self.autoChangeWallpaperCheckButton.state = SharedPreferences.bool(
+            forKey: SharedPreferences.Key.WillAutoChangeWallpaper
+        ) ? 1 : 0
+        
+        self.autoChangeWallpaperCheckButton.isEnabled = SharedPreferences.bool(
+            forKey: SharedPreferences.Key.WillAutoDownloadNewImages
+        )
+        
         self.downloadAllRegionsCheckButton.state = SharedPreferences.bool(
             forKey: SharedPreferences.Key.WillDownloadImagesOfAllRegions
         ) ? 1 : 0
+        
+        self.downloadAllRegionsCheckButton.isEnabled = SharedPreferences.bool(
+            forKey: SharedPreferences.Key.WillAutoDownloadNewImages
+        )
         
         if let region = SharedPreferences.string(
             forKey: SharedPreferences.Key.CurrentSelectedBingRegion
@@ -98,7 +111,20 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     @IBAction func toggleDownload(_ sender: NSButton) {
         let isEnabled = sender.state == 1 ? true : false
         
-        SharedPreferences.set(isEnabled, forKey: SharedPreferences.Key.WillAutoDownloadNewImages)
+        SharedPreferences.set(
+            sender.state == 1 ? true : false,
+            forKey: SharedPreferences.Key.WillAutoDownloadNewImages
+        )
+        
+        self.autoChangeWallpaperCheckButton.isEnabled = isEnabled
+        self.downloadAllRegionsCheckButton.isEnabled = isEnabled
+    }
+    
+    @IBAction func toggleChangeWallpaper(_ sender: NSButton) {
+        SharedPreferences.set(
+            sender.state == 1 ? true : false,
+            forKey: SharedPreferences.Key.WillAutoChangeWallpaper
+        )
     }
     
     @IBAction func toggleDownloadAll(_ sender: NSButton) {

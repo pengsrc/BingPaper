@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -67,6 +67,7 @@
 		7602FDFC1B522F8000E6EC7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/StatusBarView.xib; sourceTree = "<group>"; };
 		7602FE021B526EC900E6EC7D /* BingPictureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingPictureManager.swift; sourceTree = "<group>"; };
 		7602FE041B52961D00E6EC7D /* BingPaper.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BingPaper.playground; sourceTree = "<group>"; };
+		761A8E8D1DAA402100C69356 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/GeneralPreferencesView.strings"; sourceTree = "<group>"; };
 		761FBF5D1DA7824F00F4409E /* BingPaperLoginItem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingPaperLoginItem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		761FBF5F1DA7824F00F4409E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		761FBF661DA7824F00F4409E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		767B02C31D9BB318003BBC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutPreferencesView.xib; sourceTree = "<group>"; };
 		767B02C61D9BB31A003BBC47 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AboutPreferencesView.strings"; sourceTree = "<group>"; };
 		767B02C91D9BC4F6003BBC47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GeneralPreferencesView.xib; sourceTree = "<group>"; };
-		767B02CC1D9BC4F8003BBC47 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/GeneralPreferencesView.strings"; sourceTree = "<group>"; };
 		767B02CE1D9BC62E003BBC47 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/StatusBarView.strings"; sourceTree = "<group>"; };
 		76904C131D8257DE0076C399 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
 		7695AB2C1D9AB363006CA215 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
@@ -269,8 +269,8 @@
 		76904C1A1D83EB5F0076C399 /* StatusBar */ = {
 			isa = PBXGroup;
 			children = (
-				763C22CA1AB2E48400BACA07 /* StatusBarView.swift */,
 				7602FDFB1B522F7300E6EC7D /* StatusBarView.xib */,
+				763C22CA1AB2E48400BACA07 /* StatusBarView.swift */,
 				76FB444C1AB2F82F0088432F /* StatusBarViewController.swift */,
 			);
 			name = StatusBar;
@@ -433,7 +433,7 @@
 				};
 			};
 			buildConfigurationList = 763C229F1AB2DCC000BACA07 /* Build configuration list for PBXProject "BingPaper" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -683,7 +683,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				767B02C91D9BC4F6003BBC47 /* Base */,
-				767B02CC1D9BC4F8003BBC47 /* zh-Hans */,
+				761A8E8D1DAA402100C69356 /* zh-Hans */,
 			);
 			name = GeneralPreferencesView.xib;
 			sourceTree = "<group>";

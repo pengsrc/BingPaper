@@ -13,20 +13,20 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="310" height="390"/>
+            <rect key="frame" x="0.0" y="0.0" width="310" height="370"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <visualEffectView appearanceType="vibrantLight" fixedFrame="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="J9e-kl-zKh">
-                    <rect key="frame" x="0.0" y="0.0" width="310" height="390"/>
+                    <rect key="frame" x="0.0" y="0.0" width="310" height="370"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
                         <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Gd-y2-V1b">
-                            <rect key="frame" x="83" y="220" width="144" height="144"/>
+                            <rect key="frame" x="83" y="210" width="144" height="144"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="AppIcon Bing" id="V9v-Gq-OAy"/>
                         </imageView>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Jx-Se-vmL">
-                            <rect key="frame" x="87" y="190" width="136" height="19"/>
+                            <rect key="frame" x="87" y="180" width="136" height="19"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="BingPaper" placeholderString="" id="tXO-Gc-lIP">
                                 <font key="font" metaFont="system" size="15"/>
@@ -35,7 +35,7 @@
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1NN-CR-93z">
-                            <rect key="frame" x="41" y="67" width="229" height="14"/>
+                            <rect key="frame" x="41" y="57" width="229" height="14"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Copyright © 2015-2016 Peng Jingwen." id="JYS-CU-ihO">
                                 <font key="font" metaFont="smallSystem"/>
@@ -44,7 +44,7 @@
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="av4-dt-bmk">
-                            <rect key="frame" x="41" y="45" width="229" height="14"/>
+                            <rect key="frame" x="41" y="35" width="229" height="14"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="All rights reserved." id="HEo-Iz-SY1">
                                 <font key="font" metaFont="smallSystem"/>
@@ -53,7 +53,7 @@
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twP-xe-p8l">
-                            <rect key="frame" x="74" y="165" width="162" height="17"/>
+                            <rect key="frame" x="74" y="155" width="162" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="Version &amp; Build String" id="tQu-DK-Ukt">
                                 <font key="font" metaFont="system"/>
@@ -62,7 +62,7 @@
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xvu-Pc-TSx">
-                            <rect key="frame" x="78" y="127" width="62" height="17"/>
+                            <rect key="frame" x="78" y="117" width="62" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Email: " id="tgA-N9-W8J">
                                 <font key="font" metaFont="system"/>
@@ -71,7 +71,7 @@
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gfm-ne-aIx">
-                            <rect key="frame" x="78" y="104" width="62" height="17"/>
+                            <rect key="frame" x="78" y="94" width="62" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Website: " id="6kH-Rn-scH">
                                 <font key="font" metaFont="system"/>
@@ -80,7 +80,7 @@
                             </textFieldCell>
                         </textField>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wwe-X7-poK">
-                            <rect key="frame" x="142" y="103" width="88" height="17"/>
+                            <rect key="frame" x="142" y="93" width="88" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <buttonCell key="cell" type="inline" title="https://pjw.io" bezelStyle="inline" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bW2-4j-5G7">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -91,7 +91,7 @@
                             </connections>
                         </button>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZkW-Gd-I0N">
-                            <rect key="frame" x="142" y="126" width="66" height="17"/>
+                            <rect key="frame" x="142" y="116" width="66" height="17"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <buttonCell key="cell" type="inline" title="hi@pjw.io" bezelStyle="inline" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4YV-gI-R2O">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -104,7 +104,7 @@
                     </subviews>
                 </visualEffectView>
             </subviews>
-            <point key="canvasLocation" x="66" y="226"/>
+            <point key="canvasLocation" x="66" y="214.5"/>
         </customView>
     </objects>
     <resources>

@@ -8,7 +8,10 @@
 /* Class = "NSTextFieldCell"; title = "Reset:"; ObjectID = "A4s-r2-Ccn"; */
 "A4s-r2-Ccn.title" = "重置:";
 
-/* Class = "NSMenuItem"; title = "日本"; ObjectID = "G8x-T4-05y"; */
+/* Class = "NSButtonCell"; title = "Auto change wallpaper"; ObjectID = "FVl-LU-XPO"; */
+"FVl-LU-XPO.title" = "自动更换壁纸";
+
+/* Class = "NSMenuItem"; title = "Japan"; ObjectID = "G8x-T4-05y"; */
 "G8x-T4-05y.title" = "日本";
 
 /* Class = "NSButtonCell"; title = "Display icon in Dock"; ObjectID = "J2a-iz-FQL"; */
@@ -17,7 +20,7 @@
 /* Class = "NSBox"; title = "Title"; ObjectID = "MOt-5t-uG5"; */
 "MOt-5t-uG5.title" = "标题";
 
-/* Class = "NSMenuItem"; title = "中国"; ObjectID = "ZUS-Yh-ryZ"; */
+/* Class = "NSMenuItem"; title = "China"; ObjectID = "ZUS-Yh-ryZ"; */
 "ZUS-Yh-ryZ.title" = "中国";
 
 /* Class = "NSButtonCell"; title = "Launch on system startup"; ObjectID = "aLU-uz-xpO"; */
@@ -35,7 +38,7 @@
 /* Class = "NSButtonCell"; title = "Change"; ObjectID = "eN3-Up-aKr"; */
 "eN3-Up-aKr.title" = "变更";
 
-/* Class = "NSButtonCell"; title = "/Users/Name/Pictures/BingPaper"; ObjectID = "gjF-Cz-ybT"; */
+/* Class = "NSButtonCell"; title = "Please select storage path"; ObjectID = "gjF-Cz-ybT"; */
 "gjF-Cz-ybT.title" = "请选择存储路径";
 
 /* Class = "NSBox"; title = "Title"; ObjectID = "j2y-xJ-9qN"; */
@@ -44,7 +47,7 @@
 /* Class = "NSButtonCell"; title = "Reset Preferences"; ObjectID = "jhq-2f-dwF"; */
 "jhq-2f-dwF.title" = "重置偏好设置";
 
-/* Class = "NSMenuItem"; title = "美国"; ObjectID = "rFg-Ls-hK0"; */
+/* Class = "NSMenuItem"; title = "USA"; ObjectID = "rFg-Ls-hK0"; */
 "rFg-Ls-hK0.title" = "美国";
 
 /* Class = "NSBox"; title = "Title"; ObjectID = "rHS-sH-tjK"; */

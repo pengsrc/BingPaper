@@ -12,6 +12,8 @@ class SharedBingRegion {
     static let China = "zh-CN"
     static let USA = "en-US"
     static let Japan = "ja-JP"
+    
+    static let All = [SharedBingRegion.China, SharedBingRegion.USA, SharedBingRegion.Japan]
 }
 
 class SharedPreferences {
@@ -20,16 +22,14 @@ class SharedPreferences {
         static let WillLaunchOnSystemStartup = "WillLaunchOnSystemStartup"
         static let WillDisplayIconInDock = "WillDisplayIconInDock"
         static let WillAutoDownloadNewImages = "WillAutoDownloadNewImages"
+        static let WillAutoChangeWallpaper = "WillAutoChangeWallpaper"
         static let WillDownloadImagesOfAllRegions = "WillDownloadImagesOfAllRegions"
         static let DownloadedImagesStoragePath = "DownloadedImagesStoragePath"
         static let CurrentSelectedBingRegion = "CurrentSelectedBingRegion"
+        static let CurrentSelectedImageDate = "CurrentSelectedImageDate"
     }
     
     class Defaults : NSObject {
-        static let WillLaunchOnSystemStartup = false
-        static let WillDisplayIconInDock = false
-        static let WillAutoDownloadNewImages = false
-        static let WillDownloadImagesOfAllRegions = false
         static let DownloadedImagesStoragePath = "\(NSHomeDirectory())/Pictures/BingPaper"
         static let CurrentSelectedBingRegion = SharedBingRegion.China
     }
