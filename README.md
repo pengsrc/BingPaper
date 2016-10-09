@@ -6,23 +6,23 @@ Use Bing daily photo as your wallpaper on Mac OS X.
 
 ####Version 0.9
 
-![Screenshot](Screenshots/BingPaper-v0.9-en_US.jpg)
-![Screenshot](Screenshots/BingPaper-v0.9-zh_CN.jpg)
+![Screenshot](Screenshots/BingPaper_v0.9_en_US.jpg)
+![Screenshot](Screenshots/BingPaper_v0.9_zh_CN.jpg)
 
 ## Features
 
 - Auto launch on system startup 
-- Hide/Show Dock icon
+- Hide/Show the dock icon
 - Auto download new Bing images
 - Auto download images of all regions
 - Auto change wallpaper
-- Switch Bing region
+- Support switching Bing region
 - Storage the Bing images
 - Select a storage place for these images
 - Use history images as wallpaper
 - Display the Bing image information
 
-Feel free to give feedback or contribute to this project.
+_Feel free to [give feedback](https://github.com/prettyxw/BingPaper/issues/new) or contribute to this project._
 
 ## Usage
 
@@ -30,19 +30,19 @@ Feel free to give feedback or contribute to this project.
 
 You can download the application directly from the [releases tab](https://github.com/prettyxw/BingPaper/releases), and put the `BingPaper.app` application in to your `/Applications` folder.
 
-I did't signed the released application, so you have to disable the gatekeeper on your mac to run it.
+___Notice:___ _I did't signed the released application, so you have to disable the gatekeeper on your mac to run it._
 
 ### Build from Source
 
 Also can you build the application from source code.
 
-___Download or clone the project___
+___Download or Clone the Project___
 
 ``` bash
 $ git clone git@github.com:prettyxw/BingPaper.git
 ```
 
-___Install the dependences___
+___Install the Dependences___
 
 [CocoaPods](https://cocoapods.org) was used to manage the project dependences.
 
@@ -50,9 +50,9 @@ ___Install the dependences___
 $ pod install
 ```
 
-___Build and run___
+___Build and Run___
 
-Finally, just hit `⌘ + R` to run the application or `⌘ + B` to build the application, and you can drag the built app into your `/Applications` folder.
+Finally, just hit `⌘ + R` to run the application or `⌘ + B` to build the application, then you can drag the built app into your `/Applications` folder.
 
 ## LICENSE
 
