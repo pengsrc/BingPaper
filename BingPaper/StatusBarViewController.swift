@@ -30,14 +30,13 @@ class StatusBarViewController: NSViewController {
     override func awakeFromNib() {
         self.setupDockIcon()
         self.setupTimerTask()
+        self.downloadWallpapers()
         
         if let currentDate = SharedPreferences.string(
             forKey: SharedPreferences.Key.CurrentSelectedImageDate
         ) {
-            print("A")
             _ = self.jumpToDate(currentDate)
         } else {
-            print("B")
             self.jumpToToday()
         }
     }
