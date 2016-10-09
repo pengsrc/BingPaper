@@ -54,6 +54,14 @@ ___Build and Run___
 
 Finally, just hit `⌘ + R` to run the application or `⌘ + B` to build the application, then you can drag the built app into your `/Applications` folder.
 
+## Contributing
+
+1. Fork it ( https://github.com/prettyxw/BingPaper/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+
 ## LICENSE
 
 The GPL License Version 3.0. Read [GNU General Public License Version 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) for further information.
