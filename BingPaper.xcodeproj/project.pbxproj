@@ -347,11 +347,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 763C22C01AB2DCC000BACA07 /* Build configuration list for PBXNativeTarget "BingPaper" */;
 			buildPhases = (
+				605B15CE0A3F8E4E44964224 /* [CP] Check Pods Manifest.lock */,
 				763C22A01AB2DCC000BACA07 /* Sources */,
 				763C22A11AB2DCC000BACA07 /* Frameworks */,
 				763C22A21AB2DCC000BACA07 /* Resources */,
 				761FBF331DA780AB00F4409E /* CopyFiles */,
-				605B15CE0A3F8E4E44964224 /* [CP] Check Pods Manifest.lock */,
 				2748003AFB0F47C15CA172C2 /* [CP] Embed Pods Frameworks */,
 				A04A85D975CD436987AA0E30 /* [CP] Copy Pods Resources */,
 			);
@@ -368,10 +368,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 763C22C31AB2DCC000BACA07 /* Build configuration list for PBXNativeTarget "BingPaperTests" */;
 			buildPhases = (
+				889E05C623D0AA8A26C3554A /* [CP] Check Pods Manifest.lock */,
 				763C22B21AB2DCC000BACA07 /* Sources */,
 				763C22B31AB2DCC000BACA07 /* Frameworks */,
 				763C22B41AB2DCC000BACA07 /* Resources */,
-				889E05C623D0AA8A26C3554A /* [CP] Check Pods Manifest.lock */,
 				B06DFCBAA05E19845E7479C1 /* [CP] Embed Pods Frameworks */,
 				C9BDBDC04FC4D8933F5B9CDB /* [CP] Copy Pods Resources */,
 			);
@@ -886,7 +886,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Bing";
 				CODE_SIGN_ENTITLEMENTS = BingPaper/BingPaper.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = RTLZDJ5FTU;
 				INFOPLIST_FILE = BingPaper/Info.plist;
