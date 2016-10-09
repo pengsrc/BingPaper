@@ -141,6 +141,8 @@ class StatusBarViewController: NSViewController {
                         ) {
                             self.yesterdayDate = yesterdayDateString
                             self.yesterdayButton.isEnabled = true
+                            
+                            break
                         }
                     }
                 }
@@ -157,6 +159,8 @@ class StatusBarViewController: NSViewController {
                             ) {
                             self.tomorrowDate = tomorrowDateStrint
                             self.tomorrowButton.isEnabled = true
+                            
+                            break
                         }
                     }
                 }
