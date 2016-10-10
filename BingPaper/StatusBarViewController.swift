@@ -14,6 +14,7 @@ class StatusBarViewController: NSViewController {
     var bingPictureManager = BingPictureManager()
     
     var yesterdayDate = ""
+    var currentDate = ""
     var tomorrowDate = ""
     var wallpaperInfoUrl = ""
     
@@ -101,6 +102,8 @@ class StatusBarViewController: NSViewController {
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy-MM-dd"
                     _ = self.jumpToDate(formatter.string(from: Date()))
+                } else {
+                    _ = self.jumpToDate(self.currentDate)
                 }
             }
         }
@@ -113,6 +116,7 @@ class StatusBarViewController: NSViewController {
             
             if self.bingPictureManager.checkWallpaperExist(onDate: date, atRegion: region) {
                 self.bingPictureManager.setWallpaper(onDate: date, atRegion: region)
+                self.currentDate = date
                 self.dateTextField.stringValue = date
                 
                 let info = self.bingPictureManager.getWallpaperInfo(onDate: date, atRegion: region)

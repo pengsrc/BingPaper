@@ -121,7 +121,7 @@
         <customObject id="XW9-IT-P7a" customClass="NSFontManager"/>
         <customObject id="yPt-f7-kZe" customClass="StatusBarViewController" customModule="BingPaper" customModuleProvider="target">
             <connections>
-                <outlet property="dateTextField" destination="8Cz-mh-mg1" id="NkS-xL-LY0"/>
+                <outlet property="dateTextField" destination="8Cz-mh-mg1" id="Qv5-LU-3gy"/>
                 <outlet property="todayButton" destination="Tye-0u-m7e" id="n38-YA-Bm6"/>
                 <outlet property="tomorrowButton" destination="JdA-LM-ElN" id="6gf-uB-1ME"/>
                 <outlet property="wallpaperInfoButton" destination="DAH-5N-LM1" id="kCV-QE-sfx"/>
