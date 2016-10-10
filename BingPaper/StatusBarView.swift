@@ -25,7 +25,7 @@ class StatusBarView: NSView {
         self.statusItem = statusItem
         self.popover = popover
         
-        self.popoverTransiencyMonitor = nil
+        popoverTransiencyMonitor = nil
         
         let thickness = NSStatusBar.system().thickness
         let rect = CGRect(x: 0, y: 0, width: thickness, height: thickness)
@@ -34,29 +34,28 @@ class StatusBarView: NSView {
     }
     
     override func draw(_ dirtyRect: NSRect){
-        self.statusItem.drawStatusBarBackground(in: dirtyRect, withHighlight: false)
+        statusItem.drawStatusBarBackground(in: dirtyRect, withHighlight: false)
 
-        let size = self.image.size
+        let size = image.size
         let rect = CGRect(x: 2, y: 2, width: size.width, height: size.height)
         
-        self.image.draw(in: rect)
+        image.draw(in: rect)
     }
     
     override func mouseDown(with theEvent: NSEvent){
-        if (self.popoverTransiencyMonitor == nil) {
-            self.popover.show(relativeTo: self.frame, of: self, preferredEdge: NSRectEdge.minY)
+        if (popoverTransiencyMonitor == nil) {
+            popover.show(relativeTo: frame, of: self, preferredEdge: NSRectEdge.minY)
             
-            self.popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEvents(
+            popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEvents(
                 matching: NSEventMask.leftMouseUp, handler: { (event: NSEvent) -> Void in
-
                     NSEvent.removeMonitor(self.popoverTransiencyMonitor!)
                     self.popoverTransiencyMonitor = nil
                     self.popover.close()
             }) as AnyObject?
         } else {
-            NSEvent.removeMonitor(self.popoverTransiencyMonitor!)
-            self.popoverTransiencyMonitor = nil
-            self.popover.close()
+            NSEvent.removeMonitor(popoverTransiencyMonitor!)
+            popoverTransiencyMonitor = nil
+            popover.close()
         }
     }
 }

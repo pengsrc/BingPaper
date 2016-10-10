@@ -13,41 +13,33 @@ class StatusBarViewController: NSViewController {
     var timerTask = Timer()
     var bingPictureManager = BingPictureManager()
     
-    var yesterdayDate = ""
-    var currentDate = ""
-    var tomorrowDate = ""
-    var wallpaperInfoUrl = ""
+    var previousDateString = ""
+    var currentDateString = ""
+    var nextDateString = ""
+    var wallpaperInfoUrlString = ""
     
     var preferencesWindowController: NSWindowController?
     
-    @IBOutlet weak var yesterdayButton: NSButton!
+    @IBOutlet weak var previousDayButton: NSButton!
     @IBOutlet weak var todayButton: NSButton!
-    @IBOutlet weak var tomorrowButton: NSButton!
+    @IBOutlet weak var nextDayButton: NSButton!
     
     @IBOutlet weak var dateTextField: NSTextField!
     @IBOutlet weak var wallpaperInfoButton: NSButton!
     
     
     override func awakeFromNib() {
-        self.setupDockIcon()
-        self.setupTimerTask()
-        self.downloadWallpapers()
+        setupDockIcon()
+        setupTimerTask()
+        setupBingPictureManager()
         
-        if let currentDate = SharedPreferences.string(
-            forKey: SharedPreferences.Key.CurrentSelectedImageDate
-        ) {
-            _ = self.jumpToDate(currentDate)
+        if let currentDate = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedImageDate) {
+            _ = jumpToDate(currentDate)
         } else {
-            self.jumpToToday()
+            jumpToToday()
         }
-    }
-    
-    func setupBingPictureManager() {
-        if let workDirectory = SharedPreferences.string(
-            forKey: SharedPreferences.Key.DownloadedImagesStoragePath
-        ) {
-            self.bingPictureManager.workDirectory = workDirectory
-        }
+        
+        downloadWallpapers()
     }
     
     func setupDockIcon() {
@@ -59,7 +51,7 @@ class StatusBarViewController: NSViewController {
     }
     
     func setupTimerTask() {
-        self.timerTask = Timer.scheduledTimer(
+        timerTask = Timer.scheduledTimer(
             timeInterval: 3600,
             target: self,
             selector: #selector(StatusBarViewController.downloadWallpapers),
@@ -68,19 +60,17 @@ class StatusBarViewController: NSViewController {
         )
     }
     
+    func setupBingPictureManager() {
+        if let workDirectory = SharedPreferences.string(forKey: SharedPreferences.Key.DownloadedImagesStoragePath) {
+            bingPictureManager.workDirectory = workDirectory
+        }
+    }
+    
     func downloadWallpapers() {
-        let willDownload = SharedPreferences.bool(
-            forKey: SharedPreferences.Key.WillAutoDownloadNewImages
-        )
-        let willChangeWallpaper = SharedPreferences.bool(
-            forKey: SharedPreferences.Key.WillAutoChangeWallpaper
-        )
-        let isAllRegion = SharedPreferences.bool(
-            forKey: SharedPreferences.Key.WillDownloadImagesOfAllRegions
-        )
-        let currentRegion = SharedPreferences.string(
-            forKey: SharedPreferences.Key.CurrentSelectedBingRegion
-        )
+        let willDownload = SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoDownloadNewImages)
+        let willChangeWallpaper = SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoChangeWallpaper)
+        let isAllRegion = SharedPreferences.bool(forKey: SharedPreferences.Key.WillDownloadImagesOfAllRegions)
+        let currentRegion = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedBingRegion)
         
         if willDownload {
             DispatchQueue.global().async {
@@ -103,48 +93,45 @@ class StatusBarViewController: NSViewController {
                     formatter.dateFormat = "yyyy-MM-dd"
                     _ = self.jumpToDate(formatter.string(from: Date()))
                 } else {
-                    _ = self.jumpToDate(self.currentDate)
+                    _ = self.jumpToDate(self.currentDateString)
                 }
             }
         }
     }
     
     func jumpToDate(_ date: String) -> Bool {
-        if let region = SharedPreferences.string(
-            forKey: SharedPreferences.Key.CurrentSelectedBingRegion
-            ) {
+        if let region = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedBingRegion) {
             
-            if self.bingPictureManager.checkWallpaperExist(onDate: date, atRegion: region) {
-                self.bingPictureManager.setWallpaper(onDate: date, atRegion: region)
-                self.currentDate = date
-                self.dateTextField.stringValue = date
-                
-                let info = self.bingPictureManager.getWallpaperInfo(onDate: date, atRegion: region)
+            if bingPictureManager.checkWallpaperExist(onDate: date, atRegion: region) {
+                let info = bingPictureManager.getWallpaperInfo(onDate: date, atRegion: region)
                 var infoString = info.copyright
                 infoString = infoString.replacingOccurrences(of: ",", with: "\n")
                 infoString = infoString.replacingOccurrences(of: "(", with: "\n")
                 infoString = infoString.replacingOccurrences(of: ")", with: "")
-                self.wallpaperInfoButton.title = infoString
-                self.wallpaperInfoUrl = info.copyrightLink
                 
+                wallpaperInfoButton.title = infoString
+                wallpaperInfoUrlString = info.copyrightLink
+                
+                currentDateString = date
+                dateTextField.stringValue = date
                 SharedPreferences.set(date, forKey: SharedPreferences.Key.CurrentSelectedImageDate)
+                
+                bingPictureManager.setWallpaper(onDate: date, atRegion: region)
                 
                 let searchLimit = 365
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
                 
                 if let date = formatter.date(from: date) {
-                    self.yesterdayButton.isEnabled = false
+                    previousDayButton.isEnabled = false
                     for index in 1...searchLimit {
                         let timeInterval = TimeInterval(-3600 * 24 * index)
-                        let yesterdayDate = date.addingTimeInterval(timeInterval)
-                        let yesterdayDateString = formatter.string(from: yesterdayDate)
+                        let anotherDay = date.addingTimeInterval(timeInterval)
+                        let anotherDayString = formatter.string(from: anotherDay)
                         
-                        if self.bingPictureManager.checkWallpaperExist(
-                            onDate: yesterdayDateString, atRegion: region
-                        ) {
-                            self.yesterdayDate = yesterdayDateString
-                            self.yesterdayButton.isEnabled = true
+                        if bingPictureManager.checkWallpaperExist(onDate: anotherDayString, atRegion: region) {
+                            previousDateString = anotherDayString
+                            previousDayButton.isEnabled = true
                             
                             break
                         }
@@ -152,17 +139,15 @@ class StatusBarViewController: NSViewController {
                 }
                 
                 if let date = formatter.date(from: date) {
-                    self.tomorrowButton.isEnabled = false
+                    nextDayButton.isEnabled = false
                     for index in 1...searchLimit {
                         let timeInterval = TimeInterval(3600 * 24 * index)
-                        let tomorrowDate = date.addingTimeInterval(timeInterval)
-                        let tomorrowDateStrint = formatter.string(from: tomorrowDate)
+                        let anotherDay = date.addingTimeInterval(timeInterval)
+                        let anotherDayString = formatter.string(from: anotherDay)
                         
-                        if self.bingPictureManager.checkWallpaperExist(
-                            onDate: tomorrowDateStrint, atRegion: region
-                            ) {
-                            self.tomorrowDate = tomorrowDateStrint
-                            self.tomorrowButton.isEnabled = true
+                        if bingPictureManager.checkWallpaperExist(onDate: anotherDayString, atRegion: region) {
+                            nextDateString = anotherDayString
+                            nextDayButton.isEnabled = true
                             
                             break
                         }
@@ -179,9 +164,7 @@ class StatusBarViewController: NSViewController {
             self.todayButton.isEnabled = false
             self.todayButton.title = NSLocalizedString("Fetching...", comment: "N/A")
             
-            if let currentRegion = SharedPreferences.string(
-                forKey: SharedPreferences.Key.CurrentSelectedBingRegion
-                ) {
+            if let currentRegion = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedBingRegion) {
                 self.bingPictureManager.fetchLastWallpaper(atRegin: currentRegion)
             }
             
@@ -195,39 +178,37 @@ class StatusBarViewController: NSViewController {
     }
     
     @IBAction func logoClicked(_ sender: NSButton) {
-        if let path = SharedPreferences.string(
-            forKey: SharedPreferences.Key.DownloadedImagesStoragePath
-            ) {
+        if let path = SharedPreferences.string(forKey: SharedPreferences.Key.DownloadedImagesStoragePath) {
             NSWorkspace.shared().openFile(path)
         }
     }
     
-    @IBAction func yesterday(_ sender: NSButton) {
-        _ = self.jumpToDate(self.yesterdayDate)
+    @IBAction func previousDay(_ sender: NSButton) {
+        _ = jumpToDate(previousDateString)
     }
     
     @IBAction func today(_ sender: NSButton) {
-        self.jumpToToday()
+        jumpToToday()
     }
     
-    @IBAction func tomorrow(_ sender: NSButton) {
-        _ = self.jumpToDate(self.tomorrowDate)
+    @IBAction func nextDay(_ sender: NSButton) {
+        _ = jumpToDate(nextDateString)
     }
 
     @IBAction func wallpaperInfoButtonClicked(_ sender: NSButton) {
-        NSWorkspace.shared().open(NSURL(string: self.wallpaperInfoUrl) as! URL)
+        NSWorkspace.shared().open(NSURL(string: wallpaperInfoUrlString) as! URL)
     }
     
     @IBAction func launchPreferencesWindow(_ sender: NSButton) {
-        if (self.preferencesWindowController == nil) {
-            self.preferencesWindowController = MASPreferencesWindowController.init(
+        if (preferencesWindowController == nil) {
+            preferencesWindowController = MASPreferencesWindowController.init(
                 viewControllers: [GeneralPreferencesViewController(), AboutPreferencesViewController()],
                 title: NSLocalizedString("BingPaper Preferences", comment: "N/A")
             )
         }
         
-        self.preferencesWindowController?.showWindow(self)
-        self.preferencesWindowController?.window?.makeKeyAndOrderFront(self)
+        preferencesWindowController?.showWindow(self)
+        preferencesWindowController?.window?.makeKeyAndOrderFront(self)
         
         NSApplication.shared().activate(ignoringOtherApps: true)
     }

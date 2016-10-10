@@ -17,29 +17,28 @@ class BingPictureManager {
     let fileManager = FileManager.default
     
     init() {
-        self.netRequest.cachePolicy = NSURLRequest.CachePolicy.useProtocolCachePolicy
-        self.netRequest.timeoutInterval = 15
-        self.netRequest.httpMethod = "GET"
+        netRequest.cachePolicy = NSURLRequest.CachePolicy.useProtocolCachePolicy
+        netRequest.timeoutInterval = 15
+        netRequest.httpMethod = "GET"
+    }
+    
+    fileprivate func buildInfoPath(onDate: String, atRegion: String) -> String {
+        return "\(workDirectory)/\(onDate)_\(atRegion).json"
+    }
+    
+    fileprivate func buildImagePath(onDate: String, atRegion: String) -> String {
+        return "\(workDirectory)/\(onDate)_\(atRegion).jpg"
     }
     
     fileprivate func checkAndCreateWorkDirectory() {
-        do {
-            try self.fileManager.createDirectory(
-                atPath: self.workDirectory,
-                withIntermediateDirectories: true,
-                attributes: nil
-            )
-        } catch _ {}
+        try? fileManager.createDirectory(atPath: workDirectory, withIntermediateDirectories: true, attributes: nil)
     }
     
     fileprivate func obtainWallpaper(atIndex: Int, atRegion: String) {
         let baseURL = "http://www.bing.com/HpImageArchive.aspx"
-        self.netRequest.url = URL(string: "\(baseURL)?format=js&n=1&idx=\(atIndex)&mkt=\(atRegion)")
+        netRequest.url = URL(string: "\(baseURL)?format=js&n=1&idx=\(atIndex)&mkt=\(atRegion)")
 
-        let reponseData = try? NSURLConnection.sendSynchronousRequest(
-            self.netRequest as URLRequest,
-            returning: nil
-        )
+        let reponseData = try? NSURLConnection.sendSynchronousRequest(netRequest as URLRequest, returning: nil)
         
         if let dataValue = reponseData {
             let data = try? JSONSerialization.jsonObject(with: dataValue, options: []) as AnyObject
@@ -54,28 +53,21 @@ class BingPictureManager {
                         formatter.dateFormat = "yyyy-MM-dd"
                         let dateString = formatter.string(from: startDate)
                         
-                        let infoPath = "\(self.workDirectory)/\(dateString)_\(atRegion).json"
-                        let imagePath = "\(self.workDirectory)/\(dateString)_\(atRegion).jpg"
+                        let infoPath = buildInfoPath(onDate: dateString, atRegion: atRegion)
+                        let imagePath = buildImagePath(onDate: dateString, atRegion: atRegion)
                         
-                        if !self.fileManager.fileExists(atPath: infoPath) {
-                            try? dataValue.write(
-                                to: URL(fileURLWithPath: infoPath), options: [.atomic]
-                            )
+                        if !fileManager.fileExists(atPath: infoPath) {
+                            checkAndCreateWorkDirectory()
+                            
+                            try? dataValue.write(to: URL(fileURLWithPath: infoPath), options: [.atomic])
                         }
                         
-                        if !self.fileManager.fileExists(atPath: imagePath) {
-                            self.checkAndCreateWorkDirectory()
+                        if !fileManager.fileExists(atPath: imagePath) {
+                            checkAndCreateWorkDirectory()
                             
-                            self.netRequest.url = URL.init(
-                                string: "https://www.bing.com\(urlString)"
-                            )
-                            let imageResponData = try? NSURLConnection.sendSynchronousRequest(
-                                self.netRequest as URLRequest, returning: nil
-                            )
-                            
-                            try? imageResponData?.write(
-                                to: URL(fileURLWithPath: imagePath), options: [.atomic]
-                            )
+                            netRequest.url = URL.init(string: "https://www.bing.com\(urlString)")
+                            let imageResponData = try? NSURLConnection.sendSynchronousRequest(netRequest as URLRequest, returning: nil)
+                            try? imageResponData?.write(to: URL(fileURLWithPath: imagePath), options: [.atomic])
                         }
                     }
                 }
@@ -85,29 +77,25 @@ class BingPictureManager {
     
     func fetchWallpapers(atRegin: String) {
         for index in -1...pastWallpapersRange {
-            self.obtainWallpaper(atIndex: index, atRegion: atRegin)
+            obtainWallpaper(atIndex: index, atRegion: atRegin)
         }
     }
     
     func fetchLastWallpaper(atRegin: String) {
         for index in -1...0 {
-            self.obtainWallpaper(atIndex: index, atRegion: atRegin)
+            obtainWallpaper(atIndex: index, atRegion: atRegin)
         }
     }
     
     func checkWallpaperExist(onDate: String, atRegion: String) -> Bool {
-        let path = "\(self.workDirectory)/\(onDate)_\(atRegion).jpg"
-        
-        if self.fileManager.fileExists(atPath: path) {
+        if fileManager.fileExists(atPath: buildImagePath(onDate: onDate, atRegion: atRegion)) {
             return true
         }
-        
         return false
     }
     
     func getWallpaperInfo(onDate: String, atRegion: String) -> (copyright: String, copyrightLink: String) {
-        let path = "\(self.workDirectory)/\(onDate)_\(atRegion).json"
-        let jsonString = try? String.init(contentsOfFile: path)
+        let jsonString = try? String.init(contentsOfFile: buildInfoPath(onDate: onDate, atRegion: atRegion))
         
         if let jsonData = jsonString?.data(using: String.Encoding.utf8) {
             let data = try? JSONSerialization.jsonObject(with: jsonData, options: []) as AnyObject
@@ -124,19 +112,15 @@ class BingPictureManager {
     }
     
     func setWallpaper(onDate: String, atRegion: String) {
-        let path = "\(self.workDirectory)/\(onDate)_\(atRegion).jpg"
-
-        if self.checkWallpaperExist(onDate: onDate, atRegion: atRegion) {
+        if checkWallpaperExist(onDate: onDate, atRegion: atRegion) {
             if let screens = NSScreen.screens() {
-                for screen in screens {
-                    do {
-                        try NSWorkspace.shared().setDesktopImageURL(
-                            URL(fileURLWithPath: path),
-                            for: screen ,
-                            options: [:])
-                    } catch _ {
-                    }
-                }
+                screens.forEach({ (screen) in
+                    try? NSWorkspace.shared().setDesktopImageURL(
+                        URL(fileURLWithPath: buildImagePath(onDate: onDate, atRegion: atRegion)),
+                        for: screen,
+                        options: [:]
+                    )
+                })
             }
         }
         

@@ -11,11 +11,10 @@ import Cocoa
 class PopUpButtonCell: NSPopUpButtonCell {
     
     func selectItem(withValue: String) {
-        for index in 0 ..< self.numberOfItems {
-            if let menuItem = self.item(at: index) as? MenuItem? {
-                if menuItem?.value ==  withValue {
-                    self.selectItem(at: index)
-                    
+        for index in 0 ..< numberOfItems {
+            if let menuItem = item(at: index) as? MenuItem? {
+                if menuItem?.value == withValue {
+                    selectItem(at: index)
                     return
                 }
             }

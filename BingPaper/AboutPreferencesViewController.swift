@@ -26,14 +26,13 @@ class AboutPreferencesViewController: NSViewController, MASPreferencesViewContro
     }
 
     init() {
-        // NSApplication.shared().orderFrontStandardAboutPanel(self)
         super.init(nibName: "AboutPreferencesView", bundle: Bundle())!
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.loadStrings()
+        loadStrings()
     }
 
     func loadStrings() {
@@ -41,7 +40,7 @@ class AboutPreferencesViewController: NSViewController, MASPreferencesViewContro
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
         let build = Bundle.main.infoDictionary?["CFBundleVersion"]
         
-        self.versionAndBuildString.stringValue = "\(prefix)\(version!) (\(build!))"
+        versionAndBuildString.stringValue = "\(prefix)\(version!) (\(build!))"
     }
 
     @IBAction func openEmail(_ sender: NSButton) {

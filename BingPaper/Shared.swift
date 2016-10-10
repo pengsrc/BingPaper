@@ -9,6 +9,7 @@
 import Cocoa
 
 class SharedBingRegion {
+    
     static let China = "zh-CN"
     static let USA = "en-US"
     static let Japan = "ja-JP"
@@ -39,7 +40,7 @@ class SharedPreferences {
     }
     
     static func boolInt(forKey: String) -> Int {
-        return self.bool(forKey: forKey) ? 1 : 0
+        return bool(forKey: forKey) ? 1 : 0
     }
     
     static func set(_ value: Bool, forKey defaultName: String) {

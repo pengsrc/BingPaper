@@ -66,7 +66,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="yesterday:" target="yPt-f7-kZe" id="Qo6-nF-TFN"/>
+                        <action selector="previousDay:" target="yPt-f7-kZe" id="vUw-PS-O6z"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdA-LM-ElN">
@@ -77,7 +77,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="tomorrow:" target="yPt-f7-kZe" id="8xy-5F-W6n"/>
+                        <action selector="nextDay:" target="yPt-f7-kZe" id="Fqy-kx-K7P"/>
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Cz-mh-mg1">
@@ -122,10 +122,10 @@
         <customObject id="yPt-f7-kZe" customClass="StatusBarViewController" customModule="BingPaper" customModuleProvider="target">
             <connections>
                 <outlet property="dateTextField" destination="8Cz-mh-mg1" id="Qv5-LU-3gy"/>
+                <outlet property="nextDayButton" destination="JdA-LM-ElN" id="mnm-Yx-Cza"/>
+                <outlet property="previousDayButton" destination="pgR-WI-LWb" id="wtD-yT-D8f"/>
                 <outlet property="todayButton" destination="Tye-0u-m7e" id="n38-YA-Bm6"/>
-                <outlet property="tomorrowButton" destination="JdA-LM-ElN" id="6gf-uB-1ME"/>
                 <outlet property="wallpaperInfoButton" destination="DAH-5N-LM1" id="kCV-QE-sfx"/>
-                <outlet property="yesterdayButton" destination="pgR-WI-LWb" id="sEv-ao-uve"/>
             </connections>
         </customObject>
         <viewController id="F95-OJ-xb7" userLabel="Popover View Controller">
