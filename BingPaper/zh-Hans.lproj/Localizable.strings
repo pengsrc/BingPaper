@@ -17,3 +17,5 @@
 "Are you sure to reset you would like to reset the preferences?" = "确定要重置所有的偏好设置吗？";
 "Reset" = "重置";
 "Cancel" = "取消";
+
+"Fetching..." = "获取中...";

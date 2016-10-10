@@ -177,6 +177,7 @@ class StatusBarViewController: NSViewController {
     func jumpToToday() {
         DispatchQueue.global().async {
             self.todayButton.isEnabled = false
+            self.todayButton.title = NSLocalizedString("Fetching...", comment: "N/A")
             
             if let currentRegion = SharedPreferences.string(
                 forKey: SharedPreferences.Key.CurrentSelectedBingRegion
@@ -189,6 +190,7 @@ class StatusBarViewController: NSViewController {
             _ = self.jumpToDate(formatter.string(from: Date()))
             
             self.todayButton.isEnabled = true
+            self.todayButton.title = NSLocalizedString("Today !", comment: "N/A")
         }
     }
     
