@@ -65,7 +65,12 @@ class BingPictureManager {
                         if !fileManager.fileExists(atPath: imagePath) {
                             checkAndCreateWorkDirectory()
                             
-                            netRequest.url = URL.init(string: "https://www.bing.com\(urlString)")
+                            if urlString.contains("http://") || urlString.contains("https://") {
+                                netRequest.url = URL.init(string: urlString)
+                            } else {
+                                netRequest.url = URL.init(string: "https://www.bing.com\(urlString)")
+                            }
+                            
                             let imageResponData = try? NSURLConnection.sendSynchronousRequest(netRequest as URLRequest, returning: nil)
                             try? imageResponData?.write(to: URL(fileURLWithPath: imagePath), options: [.atomic])
                         }
