@@ -30,6 +30,8 @@ _Feel free to [give feedback](https://github.com/prettyxw/BingPaper/issues/new) 
 
 You can download the application directly from the [releases tab](https://github.com/prettyxw/BingPaper/releases), and put the `BingPaper.app` application in to your `/Applications` folder.
 
+___Notice:___ _I did't signed the released application, so you have to disable the gatekeeper on your mac to run it._
+
 ### Build from Source
 
 Also can you build the application from source code.
