@@ -4,10 +4,10 @@ Use Bing daily photo as your wallpaper on Mac OS X.
 
 ## Screenshots
 
-####Version 0.9.5
+####Version 0.9.7
 
-![Screenshot](Screenshots/BingPaper_v0.9.5_en_US.jpg)
-![Screenshot](Screenshots/BingPaper_v0.9.5_zh_CN.jpg)
+![Screenshot](Screenshots/BingPaper_v0.9.7_en_US.jpg)
+![Screenshot](Screenshots/BingPaper_v0.9.7_zh_CN.jpg)
 
 ## Features
 
@@ -29,8 +29,6 @@ _Feel free to [give feedback](https://github.com/prettyxw/BingPaper/issues/new) 
 ### Download the Application
 
 You can download the application directly from the [releases tab](https://github.com/prettyxw/BingPaper/releases), and put the `BingPaper.app` application in to your `/Applications` folder.
-
-___Notice:___ _I did't signed the released application, so you have to disable the gatekeeper on your mac to run it._
 
 ### Build from Source
 
