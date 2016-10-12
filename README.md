@@ -17,7 +17,7 @@ Use Bing daily photo as your wallpaper on Mac OS X.
 - Auto download images of all regions
 - Auto change wallpaper
 - Support switching Bing region
-- Storage the Bing images
+- Store the Bing images
 - Select a storage place for these images
 - Use history images as wallpaper
 - Display the Bing image information
