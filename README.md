@@ -64,4 +64,4 @@ Finally, just hit `⌘ + R` to run the application or `⌘ + B` to build the app
 
 ## LICENSE
 
-The GPL License Version 3.0. Read [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) for further information.
+The GPLv3 License. Read [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html) for further information.
