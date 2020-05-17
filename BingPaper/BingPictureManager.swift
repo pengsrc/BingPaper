@@ -34,7 +34,7 @@ class BingPictureManager {
     
     fileprivate func obtainWallpaper(workDir: String, atIndex: Int, atRegion: String) {
         let baseURL = "http://www.bing.com/HpImageArchive.aspx"
-        netRequest.url = URL(string: "\(baseURL)?format=js&n=1&idx=\(atIndex)&mkt=\(atRegion)")
+        netRequest.url = URL(string: "\(baseURL)?format=js&n=1&idx=\(atIndex)&cc=\(atRegion)")
         let reponseData = try? NSURLConnection.sendSynchronousRequest(netRequest as URLRequest, returning: nil)
         
         if let dataValue = reponseData {

@@ -9,12 +9,44 @@
 import Cocoa
 
 class SharedBingRegion {
-    
-    static let China = "zh-CN"
-    static let USA = "en-US"
-    static let Japan = "ja-JP"
-    
-    static let All = [SharedBingRegion.China, SharedBingRegion.USA, SharedBingRegion.Japan]
+    static let All = [
+        "Argentina": "AR",
+        "Australia": "AU",
+        "Austria": "AT",
+        "Belgium": "BE",
+        "Brazil": "BR",
+        "Canada": "CA",
+        "Chile": "CL",
+        "Denmark": "DK",
+        "Finland": "FI",
+        "France": "FR",
+        "Germany": "DE",
+        "Hong Kong SAR": "HK",
+        "India": "IN",
+        "Indonesia": "ID",
+        "Italy": "IT",
+        "Japan": "JP",
+        "Korea": "KR",
+        "Malaysia": "MY",
+        "Mexico": "MX",
+        "Netherlands": "NL",
+        "New Zealand": "NZ",
+        "Norway": "NO",
+        "China": "CN",
+        "Poland": "PL",
+        "Portugal": "PT",
+        "Philippines": "PH",
+        "Russia": "RU",
+        "Saudi Arabia": "SA",
+        "South Africa": "ZA",
+        "Spain": "ES",
+        "Sweden": "SE",
+        "Switzerland": "CH",
+        "Taiwan": "TW",
+        "Turkey": "TR",
+        "United Kingdom": "GB",
+        "United States": "US",
+    ]
 }
 
 class SharedPreferences {
@@ -24,15 +56,13 @@ class SharedPreferences {
         static let WillDisplayIconInDock = "WillDisplayIconInDock"
         static let WillAutoDownloadNewImages = "WillAutoDownloadNewImages"
         static let WillAutoChangeWallpaper = "WillAutoChangeWallpaper"
-        static let WillDownloadImagesOfAllRegions = "WillDownloadImagesOfAllRegions"
         static let DownloadedImagesStoragePath = "DownloadedImagesStoragePath"
         static let CurrentSelectedBingRegion = "CurrentSelectedBingRegion"
         static let CurrentSelectedImageDate = "CurrentSelectedImageDate"
     }
-
+    
     static let Defaults = [
         Key.DownloadedImagesStoragePath: "\(NSHomeDirectory())/Pictures/BingPaper",
-        Key.CurrentSelectedBingRegion: SharedBingRegion.China,
     ]
     
     static func bool(forKey: String) -> Bool {

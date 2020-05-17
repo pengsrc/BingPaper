@@ -11,17 +11,14 @@
 /* Class = "NSButtonCell"; title = "Auto change wallpaper"; ObjectID = "FVl-LU-XPO"; */
 "FVl-LU-XPO.title" = "自动更换壁纸";
 
-/* Class = "NSMenuItem"; title = "Japan"; ObjectID = "G8x-T4-05y"; */
-"G8x-T4-05y.title" = "日本";
-
 /* Class = "NSButtonCell"; title = "Display icon in Dock"; ObjectID = "J2a-iz-FQL"; */
 "J2a-iz-FQL.title" = "在 Dock 栏显示图标";
 
 /* Class = "NSBox"; title = "Title"; ObjectID = "MOt-5t-uG5"; */
 "MOt-5t-uG5.title" = "标题";
 
-/* Class = "NSMenuItem"; title = "China"; ObjectID = "ZUS-Yh-ryZ"; */
-"ZUS-Yh-ryZ.title" = "中国";
+/* Class = "NSMenuItem"; title = "Automatic"; ObjectID = "ZUS-Yh-ryZ"; */
+"ZUS-Yh-ryZ.title" = "自动";
 
 /* Class = "NSButtonCell"; title = "Launch on system startup"; ObjectID = "aLU-uz-xpO"; */
 "aLU-uz-xpO.title" = "系统启动时运行程序";
@@ -46,9 +43,6 @@
 
 /* Class = "NSButtonCell"; title = "Reset Preferences"; ObjectID = "jhq-2f-dwF"; */
 "jhq-2f-dwF.title" = "重置偏好设置";
-
-/* Class = "NSMenuItem"; title = "USA"; ObjectID = "rFg-Ls-hK0"; */
-"rFg-Ls-hK0.title" = "美国";
 
 /* Class = "NSBox"; title = "Title"; ObjectID = "rHS-sH-tjK"; */
 "rHS-sH-tjK.title" = "标题";

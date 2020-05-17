@@ -19,8 +19,8 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     @IBOutlet weak var dockIconCheckButton: NSButton!
     @IBOutlet weak var autoDownloadCheckButton: NSButton!
     @IBOutlet weak var autoChangeWallpaperCheckButton: NSButton!
-    @IBOutlet weak var downloadAllRegionsCheckButton: NSButton!
     @IBOutlet weak var regionSelectPopUp: PopUpButtonCell!
+    @IBOutlet weak var regionSelectMenu: NSMenu!
     @IBOutlet weak var storagePathButton: NSButton!
 
     required init?(coder: NSCoder) {
@@ -34,7 +34,18 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadOptions()
         loadPreferences()
+    }
+    
+    func loadOptions() {
+        for regionName in SharedBingRegion.All.keys.sorted() {
+            let regionValue = SharedBingRegion.All[regionName]
+            let item = MenuItem.init(title: regionName, action: #selector(self.selectRegion(_:)), keyEquivalent: "")
+            item.target = self
+            item.value = regionValue
+            self.regionSelectMenu.addItem(item)
+        }
     }
     
     func loadPreferences() {
@@ -45,9 +56,6 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
         
         autoChangeWallpaperCheckButton.state = NSControl.StateValue(rawValue: SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoChangeWallpaper) ? 1 : 0)
         autoChangeWallpaperCheckButton.isEnabled = SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoDownloadNewImages)
-        
-        downloadAllRegionsCheckButton.state = NSControl.StateValue(rawValue: SharedPreferences.bool(forKey: SharedPreferences.Key.WillDownloadImagesOfAllRegions) ? 1 : 0)
-        downloadAllRegionsCheckButton.isEnabled = SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoDownloadNewImages)
         
         if let region = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedBingRegion) {
             self.regionSelectPopUp.selectItem(withValue: region)
@@ -84,15 +92,10 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
         SharedPreferences.set(sender.state.rawValue == 1 ? true : false, forKey: SharedPreferences.Key.WillAutoDownloadNewImages)
         
         autoChangeWallpaperCheckButton.isEnabled = isEnabled
-        downloadAllRegionsCheckButton.isEnabled = isEnabled
     }
     
     @IBAction func toggleChangeWallpaper(_ sender: NSButton) {
         SharedPreferences.set(sender.state.rawValue == 1 ? true : false, forKey: SharedPreferences.Key.WillAutoChangeWallpaper)
-    }
-    
-    @IBAction func toggleDownloadAll(_ sender: NSButton) {
-        SharedPreferences.set(sender.state.rawValue == 1 ? true : false, forKey: SharedPreferences.Key.WillDownloadImagesOfAllRegions)
     }
     
     @IBAction func selectRegion(_ sender: MenuItem) {

@@ -60,30 +60,14 @@ class StatusBarViewController: NSViewController {
     }
     
     @objc func downloadWallpapers() {
-        let willDownload = SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoDownloadNewImages)
-        let willChangeWallpaper = SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoChangeWallpaper)
-        let isAllRegion = SharedPreferences.bool(forKey: SharedPreferences.Key.WillDownloadImagesOfAllRegions)
-        let currentRegion = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedBingRegion)
-        
-        if willDownload {
+        if SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoDownloadNewImages) {
             DispatchQueue.main.async {
-                var regions: [String] = []
-                
-                if isAllRegion {
-                    regions = SharedBingRegion.All
-                } else {
-                    if let region = currentRegion {
-                        regions.append(region)
-                    }
+                if let workDir = SharedPreferences.string(forKey: SharedPreferences.Key.DownloadedImagesStoragePath),
+                    let region = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedBingRegion) {
+                    self.bingPictureManager.fetchWallpapers(workDir: workDir, atRegin: region)
                 }
 
-                for region in regions {
-                    if let workDir = SharedPreferences.string(forKey: SharedPreferences.Key.DownloadedImagesStoragePath) {
-                        self.bingPictureManager.fetchWallpapers(workDir: workDir, atRegin: region)
-                    }
-                }
-                
-                if willChangeWallpaper {
+                if SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoChangeWallpaper) {
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy-MM-dd"
                     _ = self.jumpToDate(formatter.string(from: Date()))
