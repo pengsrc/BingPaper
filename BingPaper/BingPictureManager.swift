@@ -21,10 +21,16 @@ class BingPictureManager {
     }
     
     fileprivate func buildInfoPath(workDir: String, onDate: String, atRegion: String) -> String {
+        if atRegion == "" {
+            return "\(workDir)/\(onDate).json"
+        }
         return "\(workDir)/\(onDate)_\(atRegion).json"
     }
     
     fileprivate func buildImagePath(workDir: String, onDate: String, atRegion: String) -> String {
+        if atRegion == "" {
+            return "\(workDir)/\(onDate).jpg"
+        }
         return "\(workDir)/\(onDate)_\(atRegion).jpg"
     }
     
