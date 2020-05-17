@@ -5,7 +5,7 @@ Use Bing daily photo as your wallpaper for macOS.
 ## Screenshots
 
 #### Version 0.11.1
-<img src="Screenshots/BingPaper_v0.11.1_en_US.jpg" alt="Screenshot" width="700">
+<img src="Screenshots/BingPaper_v0.11.1_en_US.jpg" alt="Screenshot" width="800">
 
 #### Version 0.10.1
 <img src="Screenshots/BingPaper_v0.10.1_en_US.jpg" alt="Screenshot" width="500">
