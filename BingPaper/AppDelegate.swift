@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     override func awakeFromNib(){
         
-        let statusItem = NSStatusBar.system.statusItem(withLength: -1);
+        let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength);
 
         statusItem.view = StatusBarView(image: #imageLiteral(resourceName: "StatusBarIcon"), statusItem: statusItem, popover: self.popover)
     }

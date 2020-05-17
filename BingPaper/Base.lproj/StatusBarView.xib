@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +14,11 @@
             </connections>
         </customObject>
         <customView id="7xe-pE-msc">
-            <rect key="frame" x="0.0" y="0.0" width="200" height="282"/>
+            <rect key="frame" x="0.0" y="0.0" width="220" height="300"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tye-0u-m7e">
-                    <rect key="frame" x="58" y="155" width="85" height="32"/>
+                    <rect key="frame" x="68" y="162" width="85" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Today !" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jDq-jy-kaQ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -30,7 +29,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EtJ-Ol-Cb2">
-                    <rect key="frame" x="100" y="0.0" width="50" height="32"/>
+                    <rect key="frame" x="110" y="11" width="50" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" title="Quit" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="Hr4-sd-meE">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -41,7 +40,7 @@
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mFw-a6-vbi">
-                    <rect key="frame" x="51" y="0.0" width="50" height="32"/>
+                    <rect key="frame" x="61" y="11" width="50" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" title="Prefs" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="6M6-Uk-yrH">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -52,7 +51,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o2v-Zn-xFQ">
-                    <rect key="frame" x="81" y="221" width="90" height="22"/>
+                    <rect key="frame" x="93" y="229" width="90" height="22"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="BingPaper" id="VwN-ZN-Spn">
                         <font key="font" metaFont="system" size="18"/>
@@ -61,7 +60,7 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pgR-WI-LWb">
-                    <rect key="frame" x="26" y="155" width="37" height="32"/>
+                    <rect key="frame" x="36" y="162" width="37" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSLeftFacingTriangleTemplate" imagePosition="overlaps" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="L4Q-5B-vfk">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -72,7 +71,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JdA-LM-ElN">
-                    <rect key="frame" x="138" y="155" width="37" height="32"/>
+                    <rect key="frame" x="148" y="162" width="37" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSRightFacingTriangleTemplate" imagePosition="overlaps" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3eT-1H-Sm2">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -83,7 +82,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Cz-mh-mg1">
-                    <rect key="frame" x="30" y="132" width="141" height="17"/>
+                    <rect key="frame" x="40" y="139" width="141" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="2016-09-09" placeholderString="" id="077-MH-XsJ">
                         <font key="font" metaFont="system"/>
@@ -92,7 +91,7 @@
                     </textFieldCell>
                 </textField>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C4n-yP-ACp">
-                    <rect key="frame" x="20" y="202" width="60" height="60"/>
+                    <rect key="frame" x="32" y="210" width="60" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Bing" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="JfM-a6-aKy">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -103,7 +102,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAH-5N-LM1">
-                    <rect key="frame" x="18" y="41" width="164" height="80"/>
+                    <rect key="frame" x="28" y="52" width="164" height="80"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" alignment="center" imageScaling="axesIndependently" inset="2" id="R7D-hG-r6g">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -118,7 +117,7 @@
                     </connections>
                 </button>
             </subviews>
-            <point key="canvasLocation" x="-596" y="-283"/>
+            <point key="canvasLocation" x="-586" y="-283"/>
         </customView>
         <customObject id="XW9-IT-P7a" customClass="NSFontManager"/>
         <customObject id="yPt-f7-kZe" customClass="StatusBarViewController" customModule="BingPaper" customModuleProvider="target">
