@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  BingPaper
 //
-//  Created by Peng Jingwen on 2015-03-13.
-//  Copyright (c) 2015 Peng Jingwen. All rights reserved.
+//  Created by Jingwen Peng on 2015-03-13.
+//  Copyright (c) 2015 Jingwen Peng. All rights reserved.
 //
 
 import Cocoa
@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     override func awakeFromNib(){
         
-        let statusItem = NSStatusBar.system().statusItem(withLength: -1);
+        let statusItem = NSStatusBar.system.statusItem(withLength: -1);
 
         statusItem.view = StatusBarView(image: #imageLiteral(resourceName: "StatusBarIcon"), statusItem: statusItem, popover: self.popover)
     }

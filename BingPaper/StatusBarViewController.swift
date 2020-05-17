@@ -31,7 +31,6 @@ class StatusBarViewController: NSViewController {
     override func awakeFromNib() {
         setupDockIcon()
         setupTimerTask()
-        setupBingPictureManager()
         
         if let currentDate = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedImageDate) {
             _ = jumpToDate(currentDate)
@@ -44,9 +43,9 @@ class StatusBarViewController: NSViewController {
     
     func setupDockIcon() {
         if SharedPreferences.bool(forKey: SharedPreferences.Key.WillDisplayIconInDock) {
-            NSApplication.shared().setActivationPolicy(NSApplicationActivationPolicy.regular)
+            NSApplication.shared.setActivationPolicy(NSApplication.ActivationPolicy.regular)
         } else {
-            NSApplication.shared().setActivationPolicy(NSApplicationActivationPolicy.accessory)
+            NSApplication.shared.setActivationPolicy(NSApplication.ActivationPolicy.accessory)
         }
     }
     
@@ -60,20 +59,14 @@ class StatusBarViewController: NSViewController {
         )
     }
     
-    func setupBingPictureManager() {
-        if let workDirectory = SharedPreferences.string(forKey: SharedPreferences.Key.DownloadedImagesStoragePath) {
-            bingPictureManager.workDirectory = workDirectory
-        }
-    }
-    
-    func downloadWallpapers() {
+    @objc func downloadWallpapers() {
         let willDownload = SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoDownloadNewImages)
         let willChangeWallpaper = SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoChangeWallpaper)
         let isAllRegion = SharedPreferences.bool(forKey: SharedPreferences.Key.WillDownloadImagesOfAllRegions)
         let currentRegion = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedBingRegion)
         
         if willDownload {
-            DispatchQueue.global().async {
+            DispatchQueue.main.async {
                 var regions: [String] = []
                 
                 if isAllRegion {
@@ -83,9 +76,11 @@ class StatusBarViewController: NSViewController {
                         regions.append(region)
                     }
                 }
-                
+
                 for region in regions {
-                    self.bingPictureManager.fetchWallpapers(atRegin: region)
+                    if let workDir = SharedPreferences.string(forKey: SharedPreferences.Key.DownloadedImagesStoragePath) {
+                        self.bingPictureManager.fetchWallpapers(workDir: workDir, atRegin: region)
+                    }
                 }
                 
                 if willChangeWallpaper {
@@ -100,10 +95,11 @@ class StatusBarViewController: NSViewController {
     }
     
     func jumpToDate(_ date: String) -> Bool {
-        if let region = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedBingRegion) {
+        if let workDir = SharedPreferences.string(forKey: SharedPreferences.Key.DownloadedImagesStoragePath),
+            let region = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedBingRegion) {
             
-            if bingPictureManager.checkWallpaperExist(onDate: date, atRegion: region) {
-                let info = bingPictureManager.getWallpaperInfo(onDate: date, atRegion: region)
+            if bingPictureManager.checkWallpaperExist(workDir: workDir, onDate: date, atRegion: region) {
+                let info = bingPictureManager.getWallpaperInfo(workDir: workDir, onDate: date, atRegion: region)
                 var infoString = info.copyright
                 infoString = infoString.replacingOccurrences(of: ",", with: "\n")
                 infoString = infoString.replacingOccurrences(of: "(", with: "\n")
@@ -116,7 +112,7 @@ class StatusBarViewController: NSViewController {
                 dateTextField.stringValue = date
                 SharedPreferences.set(date, forKey: SharedPreferences.Key.CurrentSelectedImageDate)
                 
-                bingPictureManager.setWallpaper(onDate: date, atRegion: region)
+                bingPictureManager.setWallpaper(workDir: workDir, onDate: date, atRegion: region)
                 
                 let searchLimit = 365
                 let formatter = DateFormatter()
@@ -129,7 +125,7 @@ class StatusBarViewController: NSViewController {
                         let anotherDay = date.addingTimeInterval(timeInterval)
                         let anotherDayString = formatter.string(from: anotherDay)
                         
-                        if bingPictureManager.checkWallpaperExist(onDate: anotherDayString, atRegion: region) {
+                        if bingPictureManager.checkWallpaperExist(workDir: workDir, onDate: anotherDayString, atRegion: region) {
                             previousDateString = anotherDayString
                             previousDayButton.isEnabled = true
                             
@@ -145,7 +141,7 @@ class StatusBarViewController: NSViewController {
                         let anotherDay = date.addingTimeInterval(timeInterval)
                         let anotherDayString = formatter.string(from: anotherDay)
                         
-                        if bingPictureManager.checkWallpaperExist(onDate: anotherDayString, atRegion: region) {
+                        if bingPictureManager.checkWallpaperExist(workDir: workDir, onDate: anotherDayString, atRegion: region) {
                             nextDateString = anotherDayString
                             nextDayButton.isEnabled = true
                             
@@ -153,6 +149,8 @@ class StatusBarViewController: NSViewController {
                         }
                     }
                 }
+
+                return true
             }
         }
         
@@ -160,17 +158,22 @@ class StatusBarViewController: NSViewController {
     }
     
     func jumpToToday() {
-        DispatchQueue.global().async {
+        DispatchQueue.main.async {
             self.todayButton.isEnabled = false
             self.todayButton.title = NSLocalizedString("Fetching...", comment: "N/A")
             
-            if let currentRegion = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedBingRegion) {
-                self.bingPictureManager.fetchLastWallpaper(atRegin: currentRegion)
+            if let workDir = SharedPreferences.string(forKey: SharedPreferences.Key.DownloadedImagesStoragePath),
+                let currentRegion = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedBingRegion) {
+                self.bingPictureManager.fetchLastWallpaper(workDir: workDir, atRegin: currentRegion)
             }
             
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd"
-            _ = self.jumpToDate(formatter.string(from: Date()))
+            let ok = self.jumpToDate(formatter.string(from: Date()))
+            if !ok {
+                // Try to use last day's picture.
+                _ = self.jumpToDate(formatter.string(from: Date().addingTimeInterval(-(3600 * 24))))
+            }
             
             self.todayButton.isEnabled = true
             self.todayButton.title = NSLocalizedString("Today !", comment: "N/A")
@@ -179,7 +182,7 @@ class StatusBarViewController: NSViewController {
     
     @IBAction func logoClicked(_ sender: NSButton) {
         if let path = SharedPreferences.string(forKey: SharedPreferences.Key.DownloadedImagesStoragePath) {
-            NSWorkspace.shared().openFile(path)
+            NSWorkspace.shared.openFile(path)
         }
     }
     
@@ -196,7 +199,7 @@ class StatusBarViewController: NSViewController {
     }
 
     @IBAction func wallpaperInfoButtonClicked(_ sender: NSButton) {
-        NSWorkspace.shared().open(NSURL(string: wallpaperInfoUrlString) as! URL)
+        NSWorkspace.shared.open(NSURL(string: wallpaperInfoUrlString)! as URL)
     }
     
     @IBAction func launchPreferencesWindow(_ sender: NSButton) {
@@ -210,11 +213,11 @@ class StatusBarViewController: NSViewController {
         preferencesWindowController?.showWindow(self)
         preferencesWindowController?.window?.makeKeyAndOrderFront(self)
         
-        NSApplication.shared().activate(ignoringOtherApps: true)
+        NSApplication.shared.activate(ignoringOtherApps: true)
     }
     
     @IBAction func quitApplication(_ sender: NSButton) {
-        NSApplication.shared().terminate(nil)
+        NSApplication.shared.terminate(nil)
     }
     
 }

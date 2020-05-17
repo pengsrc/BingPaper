@@ -2,8 +2,8 @@
 //  StatusBarView.swift
 //  BingPaper
 //
-//  Created by Peng Jingwen on 2015-03-13.
-//  Copyright (c) 2015 Peng Jingwen. All rights reserved.
+//  Created by Jingwen Peng on 2015-03-13.
+//  Copyright (c) 2015 Jingwen Peng. All rights reserved.
 //
 
 import Cocoa
@@ -27,7 +27,7 @@ class StatusBarView: NSView {
         
         popoverTransiencyMonitor = nil
         
-        let thickness = NSStatusBar.system().thickness
+        let thickness = NSStatusBar.system.thickness
         let rect = CGRect(x: 0, y: 0, width: thickness, height: thickness)
         
         super.init(frame: rect)
@@ -47,7 +47,7 @@ class StatusBarView: NSView {
             popover.show(relativeTo: frame, of: self, preferredEdge: NSRectEdge.minY)
             
             popoverTransiencyMonitor = NSEvent.addGlobalMonitorForEvents(
-                matching: NSEventMask.leftMouseUp, handler: { (event: NSEvent) -> Void in
+                matching: NSEvent.EventTypeMask.leftMouseUp, handler: { (event: NSEvent) -> Void in
                     NSEvent.removeMonitor(self.popoverTransiencyMonitor!)
                     self.popoverTransiencyMonitor = nil
                     self.popover.close()

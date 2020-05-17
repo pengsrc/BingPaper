@@ -2,8 +2,8 @@
 //  GeneralPreferencesViewController.swift
 //  BingPaper
 //
-//  Created by Aspire on 2016-09-27.
-//  Copyright © 2016 Peng Jingwen. All rights reserved.
+//  Created by Jingwen Peng on 2016-09-27.
+//  Copyright © 2016 Jingwen Peng. All rights reserved.
 //
 
 import Cocoa
@@ -11,14 +11,9 @@ import ServiceManagement
 import MASPreferences
 
 class GeneralPreferencesViewController: NSViewController, MASPreferencesViewController {
-    
-    override var identifier: String? {
-        get { return "General" }
-        set { super.identifier = newValue }
-    }
-    
-    var toolbarItemImage: NSImage! = #imageLiteral(resourceName: "Switch")
-    var toolbarItemLabel: String! = NSLocalizedString("General", comment: "N/A")
+    var viewIdentifier: String = "General"
+    var toolbarItemImage: NSImage? = #imageLiteral(resourceName: "Switch")
+    var toolbarItemLabel: String? = NSLocalizedString("General", comment: "N/A")
     
     @IBOutlet weak var autoStartCheckButton: NSButton!
     @IBOutlet weak var dockIconCheckButton: NSButton!
@@ -33,7 +28,7 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     }
     
     init() {
-        super.init(nibName: "GeneralPreferencesView", bundle: Bundle())!
+        super.init(nibName: "GeneralPreferencesView", bundle: Bundle())
     }
     
     override func viewDidLoad() {
@@ -43,15 +38,15 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     }
     
     func loadPreferences() {
-        autoStartCheckButton.state = SharedPreferences.bool(forKey: SharedPreferences.Key.WillLaunchOnSystemStartup) ? 1 : 0
-        dockIconCheckButton.state = SharedPreferences.bool(forKey: SharedPreferences.Key.WillDisplayIconInDock) ? 1 : 0
+        autoStartCheckButton.state = NSControl.StateValue(rawValue: SharedPreferences.bool(forKey: SharedPreferences.Key.WillLaunchOnSystemStartup) ? 1 : 0)
+        dockIconCheckButton.state = NSControl.StateValue(rawValue: SharedPreferences.bool(forKey: SharedPreferences.Key.WillDisplayIconInDock) ? 1 : 0)
         
-        autoDownloadCheckButton.state = SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoDownloadNewImages) ? 1 : 0
+        autoDownloadCheckButton.state = NSControl.StateValue(rawValue: SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoDownloadNewImages) ? 1 : 0)
         
-        autoChangeWallpaperCheckButton.state = SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoChangeWallpaper) ? 1 : 0
+        autoChangeWallpaperCheckButton.state = NSControl.StateValue(rawValue: SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoChangeWallpaper) ? 1 : 0)
         autoChangeWallpaperCheckButton.isEnabled = SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoDownloadNewImages)
         
-        downloadAllRegionsCheckButton.state = SharedPreferences.bool(forKey: SharedPreferences.Key.WillDownloadImagesOfAllRegions) ? 1 : 0
+        downloadAllRegionsCheckButton.state = NSControl.StateValue(rawValue: SharedPreferences.bool(forKey: SharedPreferences.Key.WillDownloadImagesOfAllRegions) ? 1 : 0)
         downloadAllRegionsCheckButton.isEnabled = SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoDownloadNewImages)
         
         if let region = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedBingRegion) {
@@ -64,40 +59,40 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     }
     
     @IBAction func toggleLaunchOnSystemStartup(_ sender: NSButton) {
-        let isEnabled = sender.state == 1 ? true : false
+        let isEnabled = sender.state.rawValue == 1 ? true : false
 
         SharedPreferences.set(isEnabled, forKey: SharedPreferences.Key.WillLaunchOnSystemStartup)
         
-        SMLoginItemSetEnabled("com.prettyxw.mac.BingPaperLoginItem" as CFString, isEnabled)
+        SMLoginItemSetEnabled("io.pjw.mac.BingPaperLoginItem" as CFString, isEnabled)
     }
     
     @IBAction func toggleDockIcon(_ sender: NSButton) {
-        let isOn = sender.state == 1 ? true : false
+        let isOn = sender.state.rawValue == 1 ? true : false
         
         SharedPreferences.set(isOn, forKey: SharedPreferences.Key.WillDisplayIconInDock)
         
         if isOn {
-            NSApplication.shared().setActivationPolicy(NSApplicationActivationPolicy.regular)
+            NSApplication.shared.setActivationPolicy(NSApplication.ActivationPolicy.regular)
         } else {
-            NSApplication.shared().setActivationPolicy(NSApplicationActivationPolicy.accessory)
+            NSApplication.shared.setActivationPolicy(NSApplication.ActivationPolicy.accessory)
         }
     }
     
     @IBAction func toggleDownload(_ sender: NSButton) {
-        let isEnabled = sender.state == 1 ? true : false
+        let isEnabled = sender.state.rawValue == 1 ? true : false
         
-        SharedPreferences.set(sender.state == 1 ? true : false, forKey: SharedPreferences.Key.WillAutoDownloadNewImages)
+        SharedPreferences.set(sender.state.rawValue == 1 ? true : false, forKey: SharedPreferences.Key.WillAutoDownloadNewImages)
         
         autoChangeWallpaperCheckButton.isEnabled = isEnabled
         downloadAllRegionsCheckButton.isEnabled = isEnabled
     }
     
     @IBAction func toggleChangeWallpaper(_ sender: NSButton) {
-        SharedPreferences.set(sender.state == 1 ? true : false, forKey: SharedPreferences.Key.WillAutoChangeWallpaper)
+        SharedPreferences.set(sender.state.rawValue == 1 ? true : false, forKey: SharedPreferences.Key.WillAutoChangeWallpaper)
     }
     
     @IBAction func toggleDownloadAll(_ sender: NSButton) {
-        SharedPreferences.set(sender.state == 1 ? true : false, forKey: SharedPreferences.Key.WillDownloadImagesOfAllRegions)
+        SharedPreferences.set(sender.state.rawValue == 1 ? true : false, forKey: SharedPreferences.Key.WillDownloadImagesOfAllRegions)
     }
     
     @IBAction func selectRegion(_ sender: MenuItem) {
@@ -107,7 +102,7 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     }
     
     @IBAction func viewStoragePath(_ sender: NSButton) {
-        NSWorkspace.shared().openFile(self.storagePathButton.title)
+        NSWorkspace.shared.openFile(self.storagePathButton.title)
     }
     
     @IBAction func changeStoragePath(_ sender: NSButton) {
@@ -120,7 +115,7 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
         openPanel.allowsMultipleSelection = false
         
         openPanel.beginSheetModal(for: self.view.window!) { (response) -> Void in
-            if response == NSModalResponseOK {
+            if response == NSApplication.ModalResponse.OK {
                 if let path = openPanel.url?.path {
                     SharedPreferences.set(path, forKey: SharedPreferences.Key.DownloadedImagesStoragePath)
                     
@@ -136,10 +131,10 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
         alert.informativeText = NSLocalizedString("Are you sure to reset you would like to reset the preferences?", comment: "N/A")
         alert.addButton(withTitle: NSLocalizedString("Reset", comment: "N/A"))
         alert.addButton(withTitle: NSLocalizedString("Cancel", comment: "N/A"))
-        alert.alertStyle = NSAlertStyle.warning
+        alert.alertStyle = NSAlert.Style.warning
         
         alert.beginSheetModal(for: self.view.window!, completionHandler: { (response) -> Void in
-            if response == NSAlertFirstButtonReturn {
+            if response == NSApplication.ModalResponse.alertFirstButtonReturn {
                 SharedPreferences.clear()
                 
                 self.loadPreferences()

@@ -2,8 +2,8 @@
 //  BingPaperTests.swift
 //  BingPaperTests
 //
-//  Created by Peng Jingwen on 2015-03-13.
-//  Copyright (c) 2015 Peng Jingwen. All rights reserved.
+//  Created by Jingwen Peng on 2015-03-13.
+//  Copyright (c) 2015 Jingwen Peng. All rights reserved.
 //
 
 import Cocoa

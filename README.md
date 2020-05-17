@@ -22,13 +22,13 @@ Use Bing daily photo as your wallpaper on Mac OS X.
 - Use history images as wallpaper
 - Display the Bing image information
 
-_Feel free to [give feedback](https://github.com/prettyxw/BingPaper/issues/new) or contribute to this project._
+_Feel free to [give feedback](https://github.com/pengsrc/BingPaper/issues/new) or contribute to this project._
 
 ## Usage
 
 ### Download the Application
 
-You can download the application directly from the [releases tab](https://github.com/prettyxw/BingPaper/releases), and put the `BingPaper.app` application in to your `/Applications` folder.
+You can download the application directly from the [releases tab](https://github.com/pengsrc/BingPaper/releases), and put the `BingPaper.app` application in to your `/Applications` folder.
 
 ___Notice:___ _I did't signed the released application, so you have to disable the gatekeeper on your mac to run it._
 
@@ -56,7 +56,7 @@ Finally, just hit `⌘ + R` to run the application or `⌘ + B` to build the app
 
 ## Contributing
 
-1. Fork it ( https://github.com/prettyxw/BingPaper/fork )
+1. Fork it ( https://github.com/pengsrc/BingPaper/fork )
 2. Create your feature branch (`git checkout -b the-new-feature`)
 3. Commit your changes (`git commit -asm 'Add some feature'`)
 4. Push to the branch (`git push origin the-new-feature`)

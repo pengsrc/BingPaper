@@ -2,8 +2,8 @@
 //  PopUpButtonCell.swift
 //  BingPaper
 //
-//  Created by Aspire on 2016-10-07.
-//  Copyright © 2016年 Peng Jingwen. All rights reserved.
+//  Created by Jingwen Peng on 2016-10-07.
+//  Copyright © 2016年 Jingwen Peng. All rights reserved.
 //
 
 import Cocoa

@@ -2,19 +2,17 @@
 //  BingPictureManager.swift
 //  BingPaper
 //
-//  Created by Peng Jingwen on 2015-07-12.
-//  Copyright (c) 2015 Peng Jingwen. All rights reserved.
+//  Created by Jingwen Peng on 2015-07-12.
+//  Copyright (c) 2015 Jingwen Peng. All rights reserved.
 //
 
 import Cocoa
 
 class BingPictureManager {
-    
-    var pastWallpapersRange = 15
-    var workDirectory = "\(NSHomeDirectory())/Pictures/BingPaper"
-    
     let netRequest = NSMutableURLRequest()
     let fileManager = FileManager.default
+    
+    var pastWallpapersRange = 15
     
     init() {
         netRequest.cachePolicy = NSURLRequest.CachePolicy.useProtocolCachePolicy
@@ -22,22 +20,21 @@ class BingPictureManager {
         netRequest.httpMethod = "GET"
     }
     
-    fileprivate func buildInfoPath(onDate: String, atRegion: String) -> String {
-        return "\(workDirectory)/\(onDate)_\(atRegion).json"
+    fileprivate func buildInfoPath(workDir: String, onDate: String, atRegion: String) -> String {
+        return "\(workDir)/\(onDate)_\(atRegion).json"
     }
     
-    fileprivate func buildImagePath(onDate: String, atRegion: String) -> String {
-        return "\(workDirectory)/\(onDate)_\(atRegion).jpg"
+    fileprivate func buildImagePath(workDir: String, onDate: String, atRegion: String) -> String {
+        return "\(workDir)/\(onDate)_\(atRegion).jpg"
     }
     
-    fileprivate func checkAndCreateWorkDirectory() {
-        try? fileManager.createDirectory(atPath: workDirectory, withIntermediateDirectories: true, attributes: nil)
+    fileprivate func checkAndCreateWorkDirectory(workDir: String) {
+        try? fileManager.createDirectory(atPath: workDir, withIntermediateDirectories: true, attributes: nil)
     }
     
-    fileprivate func obtainWallpaper(atIndex: Int, atRegion: String) {
+    fileprivate func obtainWallpaper(workDir: String, atIndex: Int, atRegion: String) {
         let baseURL = "http://www.bing.com/HpImageArchive.aspx"
         netRequest.url = URL(string: "\(baseURL)?format=js&n=1&idx=\(atIndex)&mkt=\(atRegion)")
-
         let reponseData = try? NSURLConnection.sendSynchronousRequest(netRequest as URLRequest, returning: nil)
         
         if let dataValue = reponseData {
@@ -53,17 +50,17 @@ class BingPictureManager {
                         formatter.dateFormat = "yyyy-MM-dd"
                         let dateString = formatter.string(from: startDate)
                         
-                        let infoPath = buildInfoPath(onDate: dateString, atRegion: atRegion)
-                        let imagePath = buildImagePath(onDate: dateString, atRegion: atRegion)
+                        let infoPath = buildInfoPath(workDir: workDir, onDate: dateString, atRegion: atRegion)
+                        let imagePath = buildImagePath(workDir: workDir, onDate: dateString, atRegion: atRegion)
                         
                         if !fileManager.fileExists(atPath: infoPath) {
-                            checkAndCreateWorkDirectory()
+                            checkAndCreateWorkDirectory(workDir: workDir)
                             
                             try? dataValue.write(to: URL(fileURLWithPath: infoPath), options: [.atomic])
                         }
                         
                         if !fileManager.fileExists(atPath: imagePath) {
-                            checkAndCreateWorkDirectory()
+                            checkAndCreateWorkDirectory(workDir: workDir)
                             
                             if urlString.contains("http://") || urlString.contains("https://") {
                                 netRequest.url = URL.init(string: urlString)
@@ -80,27 +77,27 @@ class BingPictureManager {
         }
     }
     
-    func fetchWallpapers(atRegin: String) {
+    func fetchWallpapers(workDir: String, atRegin: String) {
         for index in -1...pastWallpapersRange {
-            obtainWallpaper(atIndex: index, atRegion: atRegin)
+            obtainWallpaper(workDir: workDir, atIndex: index, atRegion: atRegin)
         }
     }
     
-    func fetchLastWallpaper(atRegin: String) {
+    func fetchLastWallpaper(workDir: String, atRegin: String) {
         for index in -1...0 {
-            obtainWallpaper(atIndex: index, atRegion: atRegin)
+            obtainWallpaper(workDir: workDir, atIndex: index, atRegion: atRegin)
         }
     }
     
-    func checkWallpaperExist(onDate: String, atRegion: String) -> Bool {
-        if fileManager.fileExists(atPath: buildImagePath(onDate: onDate, atRegion: atRegion)) {
+    func checkWallpaperExist(workDir: String, onDate: String, atRegion: String) -> Bool {
+        if fileManager.fileExists(atPath: buildImagePath(workDir: workDir, onDate: onDate, atRegion: atRegion)) {
             return true
         }
         return false
     }
     
-    func getWallpaperInfo(onDate: String, atRegion: String) -> (copyright: String, copyrightLink: String) {
-        let jsonString = try? String.init(contentsOfFile: buildInfoPath(onDate: onDate, atRegion: atRegion))
+    func getWallpaperInfo(workDir: String, onDate: String, atRegion: String) -> (copyright: String, copyrightLink: String) {
+        let jsonString = try? String.init(contentsOfFile: buildInfoPath(workDir: workDir, onDate: onDate, atRegion: atRegion))
         
         if let jsonData = jsonString?.data(using: String.Encoding.utf8) {
             let data = try? JSONSerialization.jsonObject(with: jsonData, options: []) as AnyObject
@@ -116,18 +113,15 @@ class BingPictureManager {
         return ("", "")
     }
     
-    func setWallpaper(onDate: String, atRegion: String) {
-        if checkWallpaperExist(onDate: onDate, atRegion: atRegion) {
-            if let screens = NSScreen.screens() {
-                screens.forEach({ (screen) in
-                    try? NSWorkspace.shared().setDesktopImageURL(
-                        URL(fileURLWithPath: buildImagePath(onDate: onDate, atRegion: atRegion)),
-                        for: screen,
-                        options: [:]
-                    )
-                })
-            }
+    func setWallpaper(workDir: String, onDate: String, atRegion: String) {
+        if checkWallpaperExist(workDir: workDir, onDate: onDate, atRegion: atRegion) {
+            NSScreen.screens.forEach({ (screen) in
+                try? NSWorkspace.shared.setDesktopImageURL(
+                    URL(fileURLWithPath: buildImagePath(workDir: workDir, onDate: onDate, atRegion: atRegion)),
+                    for: screen,
+                    options: [:]
+                )
+            })
         }
-        
     }
 }

@@ -2,8 +2,8 @@
 //  Shared.swift
 //  BingPaper
 //
-//  Created by Aspire on 2016-09-28.
-//  Copyright © 2016 Peng Jingwen. All rights reserved.
+//  Created by Jingwen Peng on 2016-09-28.
+//  Copyright © 2016 Jingwen Peng. All rights reserved.
 //
 
 import Cocoa
@@ -29,12 +29,12 @@ class SharedPreferences {
         static let CurrentSelectedBingRegion = "CurrentSelectedBingRegion"
         static let CurrentSelectedImageDate = "CurrentSelectedImageDate"
     }
-    
-    class Defaults : NSObject {
-        static let DownloadedImagesStoragePath = "\(NSHomeDirectory())/Pictures/BingPaper"
-        static let CurrentSelectedBingRegion = SharedBingRegion.China
-    }
 
+    static let Defaults = [
+        Key.DownloadedImagesStoragePath: "\(NSHomeDirectory())/Pictures/BingPaper",
+        Key.CurrentSelectedBingRegion: SharedBingRegion.China,
+    ]
+    
     static func bool(forKey: String) -> Bool {
         return UserDefaults.standard.bool(forKey: forKey)
     }
@@ -51,16 +51,7 @@ class SharedPreferences {
         if let value = UserDefaults.standard.string(forKey: forKey) {
             return value
         }
-        
-        if Defaults.responds(to: Selector(forKey)) {
-            if let optionalValue = Defaults.value(forKey: forKey) as? String? {
-                if let value = optionalValue {
-                    return value
-                }
-            }
-        }
-        
-        return nil
+        return Defaults[forKey]
     }
     
     static func set(_ value: String, forKey defaultName: String) {

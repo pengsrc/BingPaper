@@ -2,22 +2,18 @@
 //  AboutPreferencesViewController.swift
 //  BingPaper
 //
-//  Created by Aspire on 2016-09-27.
-//  Copyright © 2016 Peng Jingwen. All rights reserved.
+//  Created by Jingwen Peng on 2016-09-27.
+//  Copyright © 2016 Jingwen Peng. All rights reserved.
 //
 
 import Cocoa
 import MASPreferences
 
 class AboutPreferencesViewController: NSViewController, MASPreferencesViewController {
-    
-    override var identifier: String? {
-        get { return "About" }
-        set { super.identifier = newValue }
-    }
-    
-    var toolbarItemImage: NSImage! = #imageLiteral(resourceName: "Envolope")
-    var toolbarItemLabel: String! = NSLocalizedString("About", comment: "N/A")
+        
+    var viewIdentifier: String = "About"
+    var toolbarItemImage: NSImage? = #imageLiteral(resourceName: "Envolope")
+    var toolbarItemLabel: String? = NSLocalizedString("About", comment: "N/A")
     
     @IBOutlet weak var versionAndBuildString: NSTextField!
     
@@ -26,7 +22,7 @@ class AboutPreferencesViewController: NSViewController, MASPreferencesViewContro
     }
 
     init() {
-        super.init(nibName: "AboutPreferencesView", bundle: Bundle())!
+        super.init(nibName: "AboutPreferencesView", bundle: Bundle())
     }
     
     override func viewDidLoad() {
@@ -44,10 +40,10 @@ class AboutPreferencesViewController: NSViewController, MASPreferencesViewContro
     }
 
     @IBAction func openEmail(_ sender: NSButton) {
-        NSWorkspace.shared().open(NSURL(string: "mailto:hi@pjw.io") as! URL)
+        NSWorkspace.shared.open(NSURL(string: "mailto:hi@pjw.io")! as URL)
     }
     
     @IBAction func openWebsite(_ sender: NSButton) {
-        NSWorkspace.shared().open(NSURL(string: "https://pjw.io") as! URL)
+        NSWorkspace.shared.open(NSURL(string: "https://pjw.io")! as URL)
     }
 }
