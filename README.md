@@ -4,14 +4,16 @@ Use Bing daily photo as your wallpaper for macOS.
 
 ## Screenshots
 
+#### Version 0.11.1
+<img src="Screenshots/BingPaper_v0.11.1_en_US.jpg" alt="Screenshot" width="700">
+
 #### Version 0.10.1
 <img src="Screenshots/BingPaper_v0.10.1_en_US.jpg" alt="Screenshot" width="500">
 
-
 #### Version 0.9.7
 
-![Screenshot](Screenshots/BingPaper_v0.9.7_en_US.jpg)
-![Screenshot](Screenshots/BingPaper_v0.9.7_zh_CN.jpg)
+<img src="Screenshots/BingPaper_v0.9.7_en_US.jpg" alt="Screenshot" width="800">
+<img src="Screenshots/BingPaper_v0.9.7_zh_CN.jpg" alt="Screenshot" width="800">
 
 ## Features
 
@@ -20,6 +22,7 @@ Use Bing daily photo as your wallpaper for macOS.
 - Auto change wallpaper
 - Show the Bing image information
 - Use history images as wallpaper
+- Choose Bing region
 - Choose image storage location
 - Hide/Show the dock icon
 - Dark mode
