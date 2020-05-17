@@ -429,10 +429,9 @@
 			};
 			buildConfigurationList = 763C229F1AB2DCC000BACA07 /* Build configuration list for PBXProject "BingPaper" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 				"zh-Hans",
@@ -854,6 +853,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 46;
 				DEVELOPMENT_TEAM = 9AXW95X4H5;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BingPaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
@@ -874,6 +874,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 46;
 				DEVELOPMENT_TEAM = 9AXW95X4H5;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BingPaper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
