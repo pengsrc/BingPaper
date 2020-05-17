@@ -15,7 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         var alreadyRunning = false
         let runningApplications = NSWorkspace.shared.runningApplications;
         for application in runningApplications {
-            if application.bundleIdentifier == "com.prettyxw.mac.BingPaper" {
+            if application.bundleIdentifier == "io.pjw.mac.BingPaper" {
                 alreadyRunning = true
             }
         }

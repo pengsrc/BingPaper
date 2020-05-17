@@ -44,7 +44,7 @@ Also can you build the application from source code.
 ___Download or Clone the Project___
 
 ``` bash
-$ git clone git@github.com:prettyxw/BingPaper.git
+$ git clone git@github.com:pengsrc/BingPaper.git
 ```
 
 ___Install the Dependences___

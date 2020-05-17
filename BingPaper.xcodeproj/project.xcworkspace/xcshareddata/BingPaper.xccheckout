@@ -11,7 +11,7 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>C5FCA44F01B362C61930A33E2A8DE7B664433B4A</key>
-		<string>github.com:prettyxw/BingPaper.git</string>
+		<string>github.com:pengsrc/BingPaper.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>BingPaper.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:prettyxw/BingPaper.git</string>
+	<string>github.com:pengsrc/BingPaper.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
