@@ -63,6 +63,7 @@ class SharedPreferences {
     
     static let Defaults = [
         Key.DownloadedImagesStoragePath: "\(NSHomeDirectory())/Pictures/BingPaper",
+        Key.CurrentSelectedBingRegion: "",
     ]
     
     static func bool(forKey: String) -> Bool {

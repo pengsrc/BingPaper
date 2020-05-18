@@ -14,7 +14,6 @@ class StatusBarViewController: NSViewController {
     var bingPictureManager = BingPictureManager()
     
     var previousDateString = ""
-    var currentDateString = ""
     var nextDateString = ""
     var wallpaperInfoUrlString = ""
     
@@ -23,7 +22,6 @@ class StatusBarViewController: NSViewController {
     @IBOutlet weak var previousDayButton: NSButton!
     @IBOutlet weak var todayButton: NSButton!
     @IBOutlet weak var nextDayButton: NSButton!
-    
     @IBOutlet weak var dateTextField: NSTextField!
     @IBOutlet weak var wallpaperInfoButton: NSButton!
     
@@ -60,8 +58,8 @@ class StatusBarViewController: NSViewController {
     }
     
     @objc func downloadWallpapers() {
-        if SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoDownloadNewImages) {
-            DispatchQueue.main.async {
+        DispatchQueue.main.async {
+            if SharedPreferences.bool(forKey: SharedPreferences.Key.WillAutoDownloadNewImages) {
                 if let workDir = SharedPreferences.string(forKey: SharedPreferences.Key.DownloadedImagesStoragePath),
                     let region = SharedPreferences.string(forKey: SharedPreferences.Key.CurrentSelectedBingRegion) {
                     self.bingPictureManager.fetchWallpapers(workDir: workDir, atRegin: region)
@@ -71,8 +69,6 @@ class StatusBarViewController: NSViewController {
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy-MM-dd"
                     _ = self.jumpToDate(formatter.string(from: Date()))
-                } else {
-                    _ = self.jumpToDate(self.currentDateString)
                 }
             }
         }
@@ -92,7 +88,6 @@ class StatusBarViewController: NSViewController {
                 wallpaperInfoButton.title = infoString
                 wallpaperInfoUrlString = info.copyrightLink
                 
-                currentDateString = date
                 dateTextField.stringValue = date
                 SharedPreferences.set(date, forKey: SharedPreferences.Key.CurrentSelectedImageDate)
                 
